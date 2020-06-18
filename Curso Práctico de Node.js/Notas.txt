@@ -1,0 +1,10 @@
+Curso Práctico de Node.js
+1. Introducción al proyecto del curso y su arquitectura
+*Arquitectura de un backend complejo
+Desarrollo de backend con microservicios
+*Estructuras de datos para nuestro proyecto
+Devemos de crear la estructura como se va a relacionar las entidades
+
+2. Creando la estructura principal
+*Estructura inicial del proyecto: API y rutas
+

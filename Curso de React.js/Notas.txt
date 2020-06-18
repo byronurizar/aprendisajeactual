@@ -1,0 +1,161 @@
+Curso de React.js
+1. Introducción a React.js
+*¿Qué es React.js?
+    React cumple su función como biblioteca ya que para utilizar su código se debe importar. También es un Framework aunque las convenciones de cómo debe ser organizado todo no son estrictas.
+    En este curso aprenderás las prácticas que la comunidad ha decidido que son buenas.
+
+    React es declarativo, lo que quiere decir que se le indica qué debe hacer pero no cómo debe hacerse, ahorrando de esta manera muchos pasos.
+
+    JSX es HTML dentro de Javascript, esto se verá más adelante en detalle.
+
+    React está estructurado por componentes que son como pequeños bloques de lego que al ser unidos forman aplicaciones de React. Estos componentes pueden tener estilos, ser enlazados a eventos y sus estados pueden ser modificados.
+
+    Con React también se tiene la ventaja de que será escrito una sola vez y podrá ser utilizado en aplicaciones web, móviles, entre otras.
+
+*Pre-requisitos
+    Estos son los conocimientos que deberás tener antes de comenzar con este curso:
+
+        Desarrollo web online: Esto implica tener familiaridad y fortaleza en el uso de HTML y CSS.
+        Javascript: React es Javascript. Es importante saber usar Javascript en el navegador. Es deseable conocer JQuery y saber sobre promesas, clases y tener conocimientos sobre asincronía.
+        Terminal: La línea de comandos es indispensable para instalar herramientas, correr servidores y hacer diversas tareas.
+
+
+*Herramientas que usaremos
+    Estas son las herramientas que usaremos en el curso:
+
+        Navegador: Especialmente Chrome ya que cuenta con óptimas herramientas de desarrollo.
+        React Developer Tools: Es una herramienta Open Source creada por Facebook y tiene instalación para Chrome o Firefox. Nos dejará ver el código de React inspeccionando elementos.
+        Editor de texto: Puedes usar cualquiera, en este curso sugerimos Visual Studio Code. Tiene muchos plugins útiles para el desarrollo.
+        Prettier: Es un plugin que hace que el código se vea bien sin importar cómo esta escrito.
+
+*Create-react-app
+    Create-react-app es una aplicación moderna que se usa desde una línea de comando. Antes de ella se configuraba todo el entorno manualmente lo cual tomaba mucho tiempo.
+
+    Pasos para obtenerlo:
+    Se debe instalar desde la línea de comando usando
+    npm install -g create-react-app
+
+    Una vez instalado se crea la carpeta del proyecto con
+    create-react-app -nombre del proyecto-
+
+    En este punto se estará instalando React y otras herramientas, también se configurará el entorno usando Webpack.
+
+    Una vez se instala todo entra a la carpeta src donde estará todo el código fuente de la aplicación, siendo el más importante index.js que es el punto de entrada a la aplicación.
+
+    Finalmente para correr la aplicación se usa el comando
+    npm run start
+
+    Otras herramientas:
+
+        Babel: Traduce Javascript moderno (JSX) a un Javascript que todos los navegadores puedan interpretar.
+        Eslint: Lee el código y avisa de errores.
+
+
+        comandos
+        Para poder crear aplicaciones en react y que nos cree la estructura
+            npm install -g create-react-app
+        Crear proyecto  
+            create-react-app hello-react
+
+2. Fundamentos
+
+*Clonar el código de GitHub
+    Clonar el código de GitHub
+
+    En esta clase vamos a comenzar clonando el código del proyecto del repositorio en GitHub.
+
+    Es importante que tú y yo tengamos un punto de partida en común. Así vamos a poder asegurarnos que cada cambio que yo haga en el código, tú también lo recibas.
+
+    Para hacer esto, en la terminal ve a una carpeta donde quieras que exista el proyecto. Entonces escribes lo siguiente:
+    $ git clone https://github.com/Sparragus/platzi-badges.git
+    Eso va a clonar el repositorio del curso a una carpeta llamada platzi-badges.
+
+    Ahora es necesario que te muevas a esa carpeta.
+
+    $ cd platzi-badges
+
+    Ahora necesitamos instalar todas las dependencias necesarias para poder correr el proyecto. Lo haremos utilizando npm.
+
+    $ npm install
+
+    Este proceso puede tardar un poco. Lo que esta haciendo es descargando todas las bibliotecas de código que el proyecto necesita.
+
+    Una vez haya concluido, estamos listos para echar a correr el servidor. Lo hacemos con el comando
+
+    $ npm run start
+
+    Cuando el servidor comience, automáticamente va a abrir una pantalla en el navegador con la aplicación.
+
+    Si todo salió bien, vas a ver una pantalla que dice “Hello, Platzi Badges”.
+
+    En la próxima clase vas a aprender como fue que “Hello, Platzi Badges” llegó desde el código hasta la pantalla de tu navegador.
+
+    Aquí encuentras el repositorio.
+    
+    git reset --hard ba74f3a //Reseteamos al commit inicial
+
+
+*ReactDOM.render
+
+    React y ReactDOM trabajarán en conjunto.
+        React como análogo a createElement
+        ReactDOM a appendChild
+
+    ReactDOM.render() toma dos argumentos: Qué queremos renderizar y dónde lo queremos renderizar.
+ReactDOM.render(El que,Donde);
+    Siempre que escribas JSX es requisito importar React.
+
+
+*JSX
+    JSX es una extensión de JavaScript creada por Facebook para el uso con la biblioteca React. Sirve de preprocesador (como Sass o Stylus a CSS) y transforma el código generado con React a JavaScript.
+
+    JSX tiene su alternativa que es React.createElement pero es preferible JSX porque es mucho más legible y expresivo. Ambos tienen el mismo poder y la misma capacidad.
+
+    React.createElement recibe 3 argumentos:
+
+        El tipo de elemento que estamos creando
+        sus atributos o props
+        y el children que es el contenido.
+
+    Ejemplo:
+    React.createElement(‘a’, { href: ‘https://platzi.com’ }, ‘Ir a Platzi’);
+
+    En JSX se utilizan las llaves para introducir variables o expresiones de Javascript. Lo que sea que esté adentro se va a evaluar y su resultado se mostrará en pantalla.
+
+    Las expresiones pueden ser llamadas a otras funciones, cálculos matemáticos, etc. Si las expresiones son false, 0, null, undefined, entre otros, no se verán.
+
+    const jsx=<h1>Hola soy {Expressiones}</h1>
+    Si las expresiones terminan siendo falso no se van a ver 
+
+*¿Qué es un componente?
+    Los componentes en React son bloques de construcción.
+    Las aplicaciones hechas con React son como figuras de Lego. Junta varias piezas (componentes) y puedes construir un website tan pequeño o tan grande como quieras.
+    Los componentes serán barras de búsquedas, enlaces, encabezados, el header, etc.
+
+    ”Componente” vs “elemento
+    Un elemento es a un objeto como un componente es a una clase. Si el elemento fuera una casa, el componente serían los planos para hacer esa casa.
+
+    Identificación de componentes
+    Para identificarlos debes hacerte las siguientes preguntas:
+
+        ¿Qué elementos se repiten? Estos son los elementos en una lista o los que comparten aspecto visual y su funcionalidad
+        ¿Qué elementos cumplen una función muy específica? Estos sirven para encapsular la lógica y permiten juntar muchos comportamientos y aspectos visuales en un solo lugar.
+
+    Identificar componentes es una habilidad esencial para poder desarrollar aplicaciones de React.
+    Un componentes es nuestra unidad básica de desarrollo
+
+*Qué es y cómo funciona un componente en React.js
+        En esta clase aprenderás acerca del ciclo de vida de los componentes en React para crear aplicaciones dinámicas. Desde la importancia del montaje cuando los usuarios llegan por primera vez a nuestra aplicación, hasta la actualización y desaparición de los componentes.
+
+*Nuestro primer componente
+    Es una buena práctica que los componentes vivan en su propio archivo y para ello se les crea una carpeta.
+    Todos los componentes requieren por lo menos el método render que define cuál será el resultado que aparecerá en pantalla.
+    El source de las imágenes en React puede contener direcciones en la web o se le puede hacer una referencia directa importándola. Si se importa deben usarse llaves para que sea evaluado.
+
+*Cómo aplicar estilos
+
+    Para los estilos crearemos una carpeta llamada Styles y allí vivirán todos los archivos de estilos que tienen que ver con los componentes.
+    Para usar los estilos es necesario importarlos con import
+    React funciona ligeramente diferente y para los atributos de clases no se utiliza class sino className
+    Es posible utilizar Bootstrap con React, sólo debe ser instalado con npm install bootstrap y debe ser importado en el index.js
+    Existen estilos que son usados de manera global o en varios componentes, así que deben ser importados en el index.js
