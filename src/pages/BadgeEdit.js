@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/BadgeNew.css';
+import './styles/BadgeEdit.css';
 import header from '../images/platziconf-logo.svg'
 
 import BadgeForm from '../components/BadgeForm';
@@ -7,10 +7,10 @@ import Badge from '../components/Badge';
 import api from '../api';
 import PageLoading from '../components/PageLoading';
 import PageError from '../components/PageError';
-class BadgeNew extends React.Component {
+class BadgeEdit extends React.Component {
     state = {
-        loading:false,
-        error:null,
+        loading: true,
+        error: null,
         form: {
             firstName: "",
             lastName: "",
@@ -20,6 +20,23 @@ class BadgeNew extends React.Component {
         }
     }
 
+    componentDidMount() {
+        this.fetchData();
+    }
+
+    fetchData = async e => {
+        this.setState({ loading: true, error: null })
+        try {
+            const data = await api.badges.read(
+                this.props.match.params.badgeId
+            );
+
+            this.setState({ loading: false, form: data })
+
+        } catch (error) {
+            this.setState({ loading: false, error: error })
+        }
+    }
     handleChange = e => {
 
         //Esto para evitar que cuando otro input genere el evento se remplace el valor del esetado
@@ -46,19 +63,19 @@ class BadgeNew extends React.Component {
         e.preventDefault();
         this.setState({ loading: true, error: null });
         try {
-            await api.badges.create(this.state.form);
+            await api.badges.update(this.props.match.params.badgeId,this.state.form);
             this.setState({ loading: false, error: null });
 
             //Para hacer la redirección de badges
             this.props.history.push('/badges');
         } catch (error) {
-            this.setState({ loading: false, error:error });
+            this.setState({ loading: false, error: error });
         }
     }
 
     render() {
         if (this.state.loading === true) {
-            return <PageLoading/>
+            return <PageLoading />
         }
 
         // if (this.state.error) {
@@ -66,8 +83,8 @@ class BadgeNew extends React.Component {
         // }
         return (
             <React.Fragment>
-                <div className="BadgeNew__hero">
-                    <img className="BadgeNew__hero-image img-fluid" src={header} alt="Logo"></img>
+                <div className="BadgeEdit__hero">
+                    <img className="BadgeEdit__hero-image img-fluid" src={header} alt="Logo"></img>
                 </div>
 
                 <div className="container">
@@ -83,12 +100,12 @@ class BadgeNew extends React.Component {
                         </div>
 
                         <div className="col-6">
-                        <h1>New Attendant</h1>
-                            <BadgeForm 
-                            onChange={this.handleChange} 
-                            formValue={this.state.form} 
-                            onSubmit={this.handleSubmit} 
-                            error={this.state.error}
+                        <h1>Edit Attendant</h1>
+                            <BadgeForm
+                                onChange={this.handleChange}
+                                formValue={this.state.form}
+                                onSubmit={this.handleSubmit}
+                                error={this.state.error}
                             />
                         </div>
                     </div>
@@ -98,4 +115,4 @@ class BadgeNew extends React.Component {
     }
 }
 
-export default BadgeNew;
+export default BadgeEdit;

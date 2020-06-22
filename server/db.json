@@ -2,7 +2,7 @@
   "badges": [
     {
       "id": "2de30c42-9deb-40fc-a41f-05e62b5939a7",
-      "firstName": "Freda",
+      "firstName": "Fredas",
       "lastName": "Grady",
       "email": "Leann_Berge@gmail.com",
       "jobTitle": "Legacy Brand Director",
@@ -38,7 +38,7 @@
     },
     {
       "id": "1921a734-cc05-4f71-a677-ffe38dda6958",
-      "firstName": "Maude",
+      "firstName": "Maudes",
       "lastName": "Effertz",
       "email": "Dan_Weimann0@yahoo.com",
       "jobTitle": "Product Solutions Analyst",
@@ -440,6 +440,46 @@
       "jobTitle": "Lawyer",
       "twitter": "ckaufmanpr",
       "id": "npaYZKI"
+    },
+    {
+      "firstName": "byron",
+      "lastName": "lopez",
+      "email": "blu.urizar@gmail.com",
+      "jobTitle": "Ingeniero de desarrollo de software",
+      "twitter": "blu.urizar",
+      "id": "77VLICV"
+    },
+    {
+      "firstName": "Oneida",
+      "lastName": "Martinez",
+      "email": "one@gmail.com",
+      "jobTitle": "Administradora ",
+      "twitter": "onemartinez",
+      "id": "3IPMfq2"
+    },
+    {
+      "firstName": "Alice",
+      "lastName": "Valeria",
+      "email": "alice@gmail.com",
+      "jobTitle": "Analista de Sistemas",
+      "twitter": "Alice",
+      "id": "92Gaxeq"
+    },
+    {
+      "firstName": "Nuevo",
+      "lastName": "ss",
+      "email": "demo@gmail.com",
+      "jobTitle": "sss",
+      "twitter": "sss",
+      "id": "ImqWMQs"
+    },
+    {
+      "firstName": "Byron",
+      "lastName": "López",
+      "email": "blu.urizar@gmail.com",
+      "jobTitle": "Desarrollador",
+      "twitter": "nuevo",
+      "id": "E9ED4Vt"
     }
   ]
 }
