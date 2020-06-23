@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import api from '../api';
 import PageLoading from '../components/PageLoading';
 import PageError from '../components/PageError';
+import MiniLoader from '../components/MiniLoader';
 class Bagdes extends React.Component {
     state = {
         loading: true,
@@ -15,15 +16,19 @@ class Bagdes extends React.Component {
     }
 
     componentDidMount() {
-         this.fechData();
-        setInterval( this.fechData,5000);
+        this.fechData();
+        this.intervalId = setInterval(this.fechData, 5000);
     }
 
-    fechData =async () => {
+    componentWillUnmount() {
+        clearInterval(this.intervalId);
+    }
+
+    fechData = async () => {
         this.setState({ loading: true, error: null });
 
         try {
-            const data =await api.badges.list();
+            const data = await api.badges.list();
             this.setState({ loading: false, data: data })
         } catch (error) {
             this.setState({ loading: false, error: error })
@@ -101,11 +106,11 @@ class Bagdes extends React.Component {
 
     render() {
         if (this.state.loading === true && !this.state.data) {
-            return <PageLoading/>
+            return <PageLoading />
         }
 
         if (this.state.error) {
-            return <PageError error={this.state.error}/>
+            return <PageError error={this.state.error} />
         }
 
         //  console.log("2/4. Render()");
@@ -130,7 +135,7 @@ class Bagdes extends React.Component {
                     <div className="Badges__list">
                         <div className="Badges__container">
                             <BadgesList badges={this.state.data} />
-                            {this.state.loading && 'Loading...'}
+                            {this.state.loading && <MiniLoader />}
                         </div>
                     </div>
                 </div>

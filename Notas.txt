@@ -323,3 +323,5 @@ La información por default se guarda en el state y tambien en el input ya que e
 *Actualizando datos (PUT)
 *Actualizaciones automáticas
     Polling consiste en que cada cierto tiempo que es definido por nosotros se buscan los datos y se actualizan automáticamente. Esto se hará constantemente hasta que el usuario se vaya de la página.
+
+7. Mejorando la UI
