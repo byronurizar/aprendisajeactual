@@ -1,15 +1,6 @@
 {
   "badges": [
     {
-      "id": "2de30c42-9deb-40fc-a41f-05e62b5939a7",
-      "firstName": "Fredas",
-      "lastName": "Grady",
-      "email": "Leann_Berge@gmail.com",
-      "jobTitle": "Legacy Brand Director",
-      "twitter": "FredaGrady22221-7573",
-      "avatarUrl": "https://www.gravatar.com/avatar/f63a9c45aca0e7e7de0782a6b1dff40b?d=identicon"
-    },
-    {
       "id": "d00d3614-101a-44ca-b6c2-0be075aeed3d",
       "firstName": "Major",
       "lastName": "Rodriguez",
@@ -152,15 +143,6 @@
       "jobTitle": "Internal Response Architect",
       "twitter": "OdessaWatsica41585-3744",
       "avatarUrl": "https://www.gravatar.com/avatar/5c087ff01757d13eb9c4a5254ab775a9?d=identicon"
-    },
-    {
-      "id": "6ffbc836-772b-430d-9576-74826557d073",
-      "firstName": "Jamil",
-      "lastName": "Fay",
-      "email": "Guillermo_Murazik@yahoo.com",
-      "jobTitle": "Central Quality Strategist",
-      "twitter": "JamilFay04425",
-      "avatarUrl": "https://www.gravatar.com/avatar/575212144322f08e35ba9ab0b43089da?d=identicon"
     },
     {
       "id": "925952de-f43d-49c3-8e04-98f1c6b9e3e6",
@@ -442,14 +424,6 @@
       "id": "npaYZKI"
     },
     {
-      "firstName": "byron",
-      "lastName": "lopez",
-      "email": "blu.urizar@gmail.com",
-      "jobTitle": "Ingeniero de desarrollo de software",
-      "twitter": "blu.urizar",
-      "id": "77VLICV"
-    },
-    {
       "firstName": "Oneida",
       "lastName": "Martinez",
       "email": "one@gmail.com",
@@ -464,14 +438,6 @@
       "jobTitle": "Analista de Sistemas",
       "twitter": "Alice",
       "id": "92Gaxeq"
-    },
-    {
-      "firstName": "Nuevo",
-      "lastName": "ss",
-      "email": "demo@gmail.com",
-      "jobTitle": "sss",
-      "twitter": "sss",
-      "id": "ImqWMQs"
     },
     {
       "firstName": "Byron",

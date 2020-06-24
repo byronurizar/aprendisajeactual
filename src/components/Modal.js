@@ -9,7 +9,6 @@ const Modal = (props) => {
       <div className="Modal">
           <div className="Modal__container">
             <button onClick={props.onClose} className="Modal__close-button">X</button>
-
             {props.children}
           </div>
       </div>,
@@ -18,4 +17,4 @@ const Modal = (props) => {
     
 }
 
-export default Modal
+export default Modal;
