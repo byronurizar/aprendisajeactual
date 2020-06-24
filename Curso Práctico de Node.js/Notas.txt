@@ -7,4 +7,21 @@ Devemos de crear la estructura como se va a relacionar las entidades
 
 2. Creando la estructura principal
 *Estructura inicial del proyecto: API y rutas
+    Instalamos express 
+    npm install express
 
+*Aislar el código de la base de datos
+*Rutas para usuarios
+*Documentación de nuestra API
+    npm install body-parser
+    Utilizamos nanoid para la generación de ids
+    npm install nanoid
+
+    https://insomnia.rest/blog/open-source-announcement
+    http://editor.swagger.io/
+    https://www.npmjs.com/package/swagger-ui-express
+    Instalamos swagger
+    npm i swagger-ui-express
+
+3. Autenticación basada en tokens
+*JWT: Gestión de acceso
