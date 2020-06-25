@@ -14,6 +14,11 @@ const get=async (tabla,id)=>{
 }
 
 const upsert=async (tabla,data)=>{
+    if(!db[tabla]){
+        db[tabla]=[];
+    }
+
+    console.log(db);
    return db[tabla].push(data);
 }
 
