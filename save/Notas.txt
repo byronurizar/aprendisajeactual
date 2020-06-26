@@ -1,0 +1,69 @@
+Curso Práctico de Node.js
+1. Introducción al proyecto del curso y su arquitectura
+*Arquitectura de un backend complejo
+Desarrollo de backend con microservicios
+*Estructuras de datos para nuestro proyecto
+Devemos de crear la estructura como se va a relacionar las entidades
+
+2. Creando la estructura principal
+*Estructura inicial del proyecto: API y rutas
+    Instalamos express 
+    npm install express
+
+*Aislar el código de la base de datos
+*Rutas para usuarios
+*Documentación de nuestra API
+    npm install body-parser
+    Utilizamos nanoid para la generación de ids
+    npm install nanoid
+
+    https://insomnia.rest/blog/open-source-announcement
+    http://editor.swagger.io/
+    https://www.npmjs.com/package/swagger-ui-express
+    Instalamos swagger
+    npm i swagger-ui-express
+
+3. Autenticación basada en tokens
+*JWT: Gestión de acceso
+    https://jwt.io/
+    Anatomía de un JWT
+
+    JWT es un estándar de la industria que nos permite manejar demandas de información entre dos clientes.
+    .
+    Un JSON Web Token es un estandar que nos permite generar demandas entre 2 clientes de manera segura.
+    Un JWT está encriptado, pero tiene 3 partes principales divididas por “.” (punto)
+
+        Header: Contiene los archivos de configuración (el tipo y el algoritmo de encriptación)
+        Payload: Guarda la información de nuestros usuarios
+        Signature: es la firma que contiene el header códificado más el payload códificado, para poder dar acceso a un contenido, éste deberá de ser firmado con un secret, que es la clave secreta con la que se firman los tokens, misma que sólo la deberá de conocer el backend.
+
+    Dentro del payload tenemos información que puede ser relevante para la autorización tal como:
+
+        La expiración
+        Id’s
+        Nombres
+        etc
+        .
+        Es importante saber que los JWT acabarán firmando mucha parte de la comunicación, por lo que no es recomendable que mucha información viaje, ésto puede acabar alentando tu aplicación
+
+*Autenticación: registro
+*Autenticación: login
+    npm i jsonwebtoken //para el manejo de token
+ *Autenticación: cifrar contraseñas para evitar problemas de seguridad
+    Instalamos bcrypt
+    npm install bcrypt
+
+    bcrypt recibe dos parametros
+    await bcrypt.hash(data.password,5); //El primero es el valor a encriptar y el segundo el número de veces que se ejecutará el algoritmo mientras mas alto sea, la contraseña sera más segura
+
+*Autenticación: gestión de permisos
+*Comprobar verificación con token
+*Gestión avanzada de errores: Throw
+  Agregamos el nuevo middelware de errors este se debe de agregar de ultimo
+
+4. Almacenando datos: MySql
+*Base de datos real: MySQL
+    https://remotemysql.com/ //nos brinda una base de datos de pruebas
+    instalamos el modulo
+    npm i mysql
+*Completando la base de datos
