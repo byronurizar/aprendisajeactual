@@ -10,6 +10,7 @@ router.post('/login',(req,res)=>{
             response.success(req,res,token,200);
         })
         .catch(error=>{
+            console.log(error);
             response.error(req,res,'Información inválida',400);
         })
 });

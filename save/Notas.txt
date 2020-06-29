@@ -67,3 +67,11 @@ Devemos de crear la estructura como se va a relacionar las entidades
     instalamos el modulo
     npm i mysql
 *Completando la base de datos
+*Relacionando entidades: follow
+*Posts y likes
+
+
+5. Microservicios en Node
+*Microservicios: pros y contras
+*Separando la base de datos a un microservicio
+*Conectando con nuestro microservicio de datos

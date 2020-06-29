@@ -7,9 +7,11 @@ const router=express.Router();
 
 //Routes
 router.get('/',list);
+router.post('/follow/:id',secure('follow'),follow);
 router.get('/:id',get);
 router.post('/',upsert);
 router.put('/',secure('update'),upsert);
+router.get('/following/:id',following);
 
 function list(req, res,next) {
     Controller.list()
@@ -46,6 +48,23 @@ function upsert(req, res,next) {
         //     response.error(req, res, err.message, 500);
         // });
     
+}
+
+function follow(req,res,next){
+    //Asta este momenot ya tenemos en el request la información descifrada el token, esto se hizo en la parte de secure
+    Controller.follow(req.user.data.id,req.params.id)
+        .then((data)=>{
+            response.success(req,res,data,201);
+        })
+        .catch(next);
+}
+
+function following(req,res,next){
+    Controller.follwoing(req.params.id)
+        .then((data)=>{
+            response.success(req,res,data,201);
+        })
+        .catch(next);
 }
 
 

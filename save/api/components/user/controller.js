@@ -11,9 +11,11 @@ module.exports=(injectedStore)=>{
     const list=()=>{
         return store.list(TABLA);
     }
+
     const get=(id)=>{
         return store.get(TABLA,id);
     }
+
     const upsert=async (body)=>{
         console.log({body});
         const user={
@@ -37,13 +39,31 @@ module.exports=(injectedStore)=>{
 
         return store.upsert(TABLA,user);
     }
+
     const remove=(id)=>{
         return store.remove(TABLA,id)
     }
+
+    const follow=(from,to)=>{
+       return store.upsert(TABLA+'_follow',{
+            user_from:from,
+            user_to:to
+        });
+    }
+
+    const follwoing=async (user)=>{
+        const join={};
+        join[TABLA]='user_to';
+        const query={user_to:user}
+        return  await store.query(TABLA+'_follow',query,join);
+    }
+
     return {
         list,
         get,
         upsert,
-        remove
+        remove,
+        follow,
+        follwoing
     }
 }

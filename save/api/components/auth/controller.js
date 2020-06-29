@@ -12,7 +12,6 @@ module.exports=(injectedStore)=>{
         const data=await store.query(TABLA,{username:username});
         return bcrypt.compare(password,data.password)
                 .then(sonIguales=>{
-                    console.log({sonIguales});
                     if(sonIguales===true){
                         //Generar Token
                         return auth.sign(data);
