@@ -1,0 +1,20 @@
+const express=require('express');
+const bodyParser=require('body-parser');
+require("../store/db");
+const config=require('../config');
+const errors=require('../network/errors');
+
+
+const estado=require('./components/estado/network');
+
+const app=express();
+app.use(bodyParser.json());
+
+app.use('/api/estado',estado);
+
+//Es muy importante que sea el ultimo middelware
+app.use(errors);
+
+app.listen(config.api.port,()=>{
+    console.log('Api escuchando en el puerto ',config.api.port);
+})

@@ -5,7 +5,7 @@ module.exports = app => {
 
     const hsIntento = app.db.models.hsIntento;
     const hsEntidad = app.db.models.hsEntidad;
-    
+
     var watson = require('watson-developer-cloud');
     const AssistantV1 = require('watson-developer-cloud/assistant/v1');
     const bodyParser = require('body-parser');
@@ -17,7 +17,7 @@ module.exports = app => {
     let urlApi = "https://gateway.watsonplatform.net/assistant/api";
     // let workspace_idApi = "18477be7-1d01-4492-9bce-8419b8623458";
     let workspace_idApi = "8db43e6f-0f48-412a-90da-12534aa88656";
-    
+
 
     let jsonSolicitud = "";
     let jsonRespuesta = "";
@@ -48,9 +48,9 @@ module.exports = app => {
                 codigoConversacion = result.id;
 
                 console.log('Código de Conversacion ' + codigoConversacion);
-                const { text, context = { conversation_id: '0c32623a-a042-48bb-9216-3d4e65bafbb7', codigoConversacion: codigoConversacion,monto_solicitado_2:45000} } = req.body;
+                const { text, context = { conversation_id: '0c32623a-a042-48bb-9216-3d4e65bafbb7', codigoConversacion: codigoConversacion, monto_solicitado_2: 45000 } } = req.body;
                 jsonSolicitud = req.body;
-               
+
                 const params = {
                     input: { text },
                     workspace_id: workspace_idApi,
@@ -63,8 +63,8 @@ module.exports = app => {
                     jsonRespuesta = response;
                     idConversacion = jsonRespuesta.context.conversation_id;
                     _fechaFin = new Date();
-console.log("Respuesta Api");
-console.log(response);
+                    console.log("Respuesta Api");
+                    console.log(response);
                     if (escribirBitacoraPeticiones) {
                         let mensajeBitacora = { codigoEmpresa: _codigoEmpresa, jsonSolicitud: JSON.stringify(jsonSolicitud), jsonRespuesta: JSON.stringify(jsonRespuesta), conversacionID: idConversacion, fechaInicio: _fechaInicio, fechaFin: _fechaFin, origenPeticion: _origenPeticion }
                         escrbirBitacoraPeticion(mensajeBitacora);
@@ -79,7 +79,7 @@ console.log(response);
                         hsConversacion.update({ conversacionId: idConversacion }, { where: { id: codigoConversacion } })
                             .then(result => { console.log('Actualización correcta') })
                             .catch(error => { console.log('Ocurrió un error al intentar actualizar') });
-                            registrarInteno(response);
+                        registrarInteno(response);
                         res.json(response);
                     }
                 });

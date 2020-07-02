@@ -1,0 +1,66 @@
+module.exports = (sequelize, type) => {
+    return sequelize.define(
+        "bitacora_cambios",
+        {
+            bitacora_cambiosId: {
+                type: type.INTEGER,
+                primaryKey: true,
+                autoIncrement: true,
+            },
+            tabla: {
+                type: type.STRING(150),
+                allowNull: false,
+                validate: {
+                    notEmpty: true
+                }
+            },
+            campo: {
+                type: type.STRING(150),
+                allowNull: false,
+                validate: {
+                    notEmpty: true
+                }
+            },
+            modificadoId: {
+                type: type.INTEGER,
+                allowNull: false,
+                validate: {
+                    notEmpty: true
+                }
+            },
+            tipo_datoId: {
+                type: type.INTEGER,
+                references: {
+                    model: "cat_tipo_dato",
+                    key: "tipo_datoId",
+                }
+            },
+            valor_anterior: {
+                type: type.STRING(1000),
+                allowNull: false,
+                validate: {
+                    notEmpty: true
+                }
+            },
+            valor_nuevo: {
+                type: type.STRING(1000),
+                allowNull: false,
+                validate: {
+                    notEmpty: true
+                }
+            },
+            usuario_crea: {
+                type: type.INTEGER
+            },
+            fecha_crea: {
+                type: type.DATEONLY,
+                allowNull: false,
+                defaultValue: type.NOW
+            }
+        },
+        {
+            timestamps: false,
+            freezeTableName: true,
+        }
+    );
+};
