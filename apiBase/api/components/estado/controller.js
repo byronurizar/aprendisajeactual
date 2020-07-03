@@ -3,7 +3,7 @@ const { QueryTypes } = require('sequelize');
 const {registrarBitacora}=require('../../../utils/bitacora_cambios');
 
 const get = async () => {
-    const estados = await bd.query("SELECT * from cat_estado", {
+    const estados = await bd.query("SELECT a.descripcion as Genero,b.descripcion as Estado from cat_genero a inner join cat_estado b on a.estadoId=b.estadoId", {
         type: QueryTypes.SELECT
     });
     return estados;
@@ -25,41 +25,12 @@ const update = async (req) => {
         }
     });
     if(resultado>0){
-
-    let a= await registrarBitacora('cat_estado',estadoId,infoAnterior.dataValues,req.body);
-
-        // let dataActual=infoAnterior.dataValues;
-        // // let options=dataActual.cat_estado._options;
-        // // console.log({options});
-        // console.log({dataActual:infoAnterior});
-        // let dataNueva=req.body;
-        // let keys=Object.keys(dataActual);
-        // // let keys2=Object.keys(dataNueva);
-        // let tabla='cat_estado';
-        // let modificadoId=estadoId;
-        // for(let campo of keys){
-        //     let valor_anterior=dataActual[campo];
-        //     let valor_nuevo=dataNueva[campo];
-        //     if(valor_anterior!=valor_nuevo){
-        //         console.log({dato:valor_anterior});
-        //         let tipoDato=typeof(valor_anterior);
-        //         console.log({tipoDato});
-        //         let data={
-        //             tabla,
-        //             campo,
-        //             modificadoId,
-        //             valor_anterior,
-        //             valor_nuevo
-        //         }
-        //         const estado = await BitacoraCambios.create(data);
-        //         // console.log({estado});
-        //         console.log('La información cambio');
-        //     }
-        // }
-        return a;
+        await registrarBitacora('cat_estado',estadoId,infoAnterior.dataValues,req.body);
         return 'Estado Actualizado exitosamente';
+    }else{
+        return 'No existen cambios para aplicar';
     }
-   // return estado;
+   
 };
 module.exports = {
     get,

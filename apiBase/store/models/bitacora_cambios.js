@@ -28,12 +28,8 @@ module.exports = (sequelize, type) => {
                     notEmpty: true
                 }
             },
-            tipo_datoId: {
-                type: type.INTEGER,
-                references: {
-                    model: "cat_tipo_dato",
-                    key: "tipo_datoId",
-                }
+            tipo_dato: {
+                type: type.STRING(150)
             },
             valor_anterior: {
                 type: type.STRING(1000),

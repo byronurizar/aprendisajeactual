@@ -4,8 +4,7 @@ module.exports = (sequelize, type) => {
         {
             departamentoId: {
                 type: type.INTEGER,
-                primaryKey: true,
-                autoIncrement: true,
+                primaryKey: true
             },
             paisId: {
                 type: type.INTEGER,
@@ -17,6 +16,7 @@ module.exports = (sequelize, type) => {
             descripcion: {
                 type: type.STRING(50),
                 allowNull: false,
+                unique: true,
                 validate: {
                     notEmpty: true
                 }
@@ -37,6 +37,8 @@ module.exports = (sequelize, type) => {
             },
             estadoId: {
                 type: type.INTEGER,
+                allowNull: false,
+                defaultValue: 1,
                 references: {
                     model: "cat_estado",
                     key: "estadoId",

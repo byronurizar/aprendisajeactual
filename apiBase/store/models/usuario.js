@@ -17,6 +17,7 @@ module.exports = (sequelize, type) => {
             user_name: {
                 type: type.STRING(50),
                 allowNull: false,
+                unique: true,
                 validate: {
                     notEmpty: true
                 }
@@ -36,6 +37,21 @@ module.exports = (sequelize, type) => {
                     isEmail: true
                 }
             },
+            forzar_cambio_password:{
+                type: type.BOOLEAN,
+                allowNull: false,
+                defaultValue: true,
+            },
+            fecha_cambio_password: {
+                type: type.DATE
+            },
+            dias_cambio_password:{
+                type: type.INTEGER
+            },
+            intentos_fallidos:{
+                type: type.INTEGER,
+                defaultValue: 0
+            },
             usuario_crea: {
                 type: type.INTEGER
             },
@@ -52,6 +68,8 @@ module.exports = (sequelize, type) => {
             },
             estadoId: {
                 type: type.INTEGER,
+                allowNull: false,
+                defaultValue: 1,
                 references: {
                     model: "cat_estado",
                     key: "estadoId",

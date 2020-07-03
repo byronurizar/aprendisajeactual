@@ -44,6 +44,8 @@ module.exports = (sequelize, type) => {
             },
             estadoId: {
                 type: type.INTEGER,
+                allowNull: false,
+                defaultValue: 1,
                 references: {
                     model: "cat_estado",
                     key: "estadoId",

@@ -5,12 +5,15 @@ const config=require('../config');
 const errors=require('../network/errors');
 
 
-const estado=require('./components/estado/network');
+const Estado=require('./components/estado/network');
+const Rol=require('./components/rol/network');
+
 
 const app=express();
 app.use(bodyParser.json());
 
-app.use('/api/estado',estado);
+app.use('/api/estado',Estado);
+app.use('/api/rol',Rol);
 
 //Es muy importante que sea el ultimo middelware
 app.use(errors);

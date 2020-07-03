@@ -6,11 +6,12 @@ module.exports = {
       secret: process.env.JWT_SECRET || "llave",
     },
     bd: {
-      database: "demoBase",
+      database: "demobase",
       username: "root",
       password: "Blopez$1991",
       host: "localhost",
       dialect: "mysql",
+      port:3307,
       pool: {
         max: 5,
         min: 0,

@@ -7,12 +7,16 @@ module.exports = (sequelize, type) => {
                 primaryKey: true,
                 autoIncrement: true,
             },
-            descripcion: {
+            nombre: {
                 type: type.STRING(50),
                 allowNull: false,
+                unique: true,
                 validate: {
                     notEmpty: true
                 }
+            },
+            descripcion: {
+                type: type.STRING(300)
             },
             usuario_crea: {
                 type: type.INTEGER
@@ -30,6 +34,8 @@ module.exports = (sequelize, type) => {
             },
             estadoId: {
                 type: type.INTEGER,
+                allowNull: false,
+                defaultValue: 1,
                 references: {
                     model: "cat_estado",
                     key: "estadoId",

@@ -10,8 +10,11 @@ module.exports = (sequelize, type) => {
             descripcion: {
                 type: type.STRING(50),
                 allowNull: false,
+                unique: true,
                 validate: {
-                    notEmpty: true
+                    notEmpty:{
+                        msg:"El vampo no puede ser vacio"
+                    }
                 }
             },
             activo: {
