@@ -1,39 +1,55 @@
-const { Estado, bd,BitacoraCambios } = require('../../../store/db');
-const { QueryTypes } = require('sequelize');
-const {registrarBitacora}=require('../../../utils/bitacora_cambios');
+const { Estado } = require('../../../store/db');
+const { registrarBitacora } = require('../../../utils/bitacora_cambios');
 
-const get = async () => {
-    const estados = await bd.query("SELECT a.descripcion as Genero,b.descripcion as Estado from cat_genero a inner join cat_estado b on a.estadoId=b.estadoId", {
-        type: QueryTypes.SELECT
-    });
-    return estados;
-}
+const Modelo = Estado;
+const tabla = 'cat_estado';
+let response = {};
+
 const insert = async (req) => {
-    const estado = await Estado.create(req.body);
-    return estado;
+    const result = await Modelo.create(req.body);
+    response.code = 0;
+    response.data = result;
+    return response;
+}
+
+const list = async (req) => {
+    response.code = 0;
+    response.data = await Modelo.findAll({ where: { activo: true } });
+    return response;
 }
 
 const update = async (req) => {
     const { estadoId } = req.body;
-    const infoAnterior = await Estado.findOne({
+    const dataAnterior = await Modelo.findOne({
         where: { estadoId }
     });
 
-    const resultado = await Estado.update(req.body, {
-        where: {
-            estadoId
+
+    if (dataAnterior) {
+        const resultado = await Modelo.update(req.body, {
+            where: {
+                estadoId
+            }
+        });
+        if (resultado > 0) {
+            await registrarBitacora(tabla, estadoId, dataAnterior.dataValues, req.body);
+            response.code = 0;
+            response.data = "Información Actualizado exitosamente";
+            return response;
+        } else {
+            response.code = -1;
+            response.data = "No existen cambios para aplicar";
+            return response;
         }
-    });
-    if(resultado>0){
-        await registrarBitacora('cat_estado',estadoId,infoAnterior.dataValues,req.body);
-        return 'Estado Actualizado exitosamente';
-    }else{
-        return 'No existen cambios para aplicar';
+    } else {
+        response.code = -1;
+        response.data = "No existe información para actualizar con los parametros especificados";
+        return response;
     }
-   
 };
+
 module.exports = {
-    get,
+    list,
     insert,
     update
 }

@@ -3,15 +3,8 @@ const response = require('../../../network/response');
 const controller = require('./controller');
 const router = express.Router();
 
-const prueba = (req, res) => {
-    try {
-        response.success(req, res, 'Prueba', 200);
-    } catch (err) {
-        response.error(req, res, 'Prueba', 500);
-    }
-};
 
-const post = (req, res, next) => {
+const registrar = (req, res, next) => {
     controller.insert(req)
         .then((data) => {
             response.success(req, res, data, 200);
@@ -19,25 +12,26 @@ const post = (req, res, next) => {
         .catch(next);
 }
 
-const put = (req, res, next) => {
-    controller.update(req)
-        .then((data) => {
-            response.success(req, res, data, 200);
-        })
-        .catch(next);
-}
-const get=(req,res,next)=>{
-    controller.get()
+const listar=(req,res,next)=>{
+    controller.list(req)
     .then((data) => {
         response.success(req, res, data, 200);
     })
     .catch(next);
 }
 
+const actualizar = (req, res, next) => {
+    controller.update(req)
+        .then((data) => {
+            response.success(req, res, data, 200);
+        })
+        .catch(next);
+}
 
-router.get('/', prueba);
-router.get('/demo', get);
-router.post('/',post);
-router.put('/',put);
+
+
+router.post('/',registrar);
+router.get('/', listar);
+router.put('/',actualizar);
 
 module.exports = router;

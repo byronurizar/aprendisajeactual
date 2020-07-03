@@ -1,6 +1,7 @@
 module.exports = {
     api: {
       port: process.env.API_PORT || 3000,
+      bitacora_cambios:process.env.BITACORA_CAMBIOS || true
     },
     jwt: {
       secret: process.env.JWT_SECRET || "llave",
@@ -11,7 +12,7 @@ module.exports = {
       password: "Blopez$1991",
       host: "localhost",
       dialect: "mysql",
-      port:3307,
+      port:3306,
       pool: {
         max: 5,
         min: 0,

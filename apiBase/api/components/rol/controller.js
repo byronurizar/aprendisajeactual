@@ -1,46 +1,52 @@
 const { Rol } = require('../../../store/db');
 const { registrarBitacora } = require('../../../utils/bitacora_cambios');
-const { Op, json, JSON } = require("sequelize");
 
 const Modelo = Rol;
 const tabla = 'cat_rol';
+let response = {};
 
 const insert = async (req) => {
     const result = await Modelo.create(req.body);
-    return result;
+    response.code = 0;
+    response.data = result;
+    return response;
 }
 
-const get = async (req) => {
-    let result;
-    
-    let parametro = req.params.query;
-    parametro=parametro.replace("[","").replace("]","");
-    parametro=parametro.replace("[","").replace("]","");
-    let de=parametro.indexOf('||');
-    if(de>0){
-        console.log({de});
-        let pam=parametro.substring(0,de);
-        console.log(pam);
-        let operador=pam.indexOf('=');
-        console.log(pam.substring(operador,operador+1));
-        let equ=new Array();
-        
-        console.log({obj});
-        let nuevoQuery={
-            [Op.or]:[]
-        }
-    
+const list = async (req) => {
+
+    if (!req.query.id && !req.query.estadoId) {
+        response.code = 0;
+        response.data = await Modelo.findAll();
+        return response;
     }
-    
-    console.log({parametro});
-    const query = { [Op.or]: [{ rolId: { [Op.gt]: 0 } }, { estadoId: 1 }] };
-    if (req.params.query) {
-        //let id=req.params.id;
-        result = await Modelo.findAll({ where: query });
+
+    const { id, estadoId } = req.query;
+    let query = {};
+    if (estadoId) {
+        let estados = estadoId.split(';');
+        let arrayEstado = new Array();
+        estados.map((item) => {
+            arrayEstado.push(Number(item));
+        });
+        query.estadoId = arrayEstado;
+    }
+
+    if (!id) {
+        response.code = 0;
+        response.data = await Modelo.findAll({ where: query });
+        return response;
     } else {
-        result = await Modelo.findAll();
+        if (Number(id) > 0) {
+            query.rolId = Number(id);
+            response.code = 0;
+            response.data = await Modelo.findOne({ where: query });
+            return response;
+        } else {
+            response.code = -1;
+            response.data = "Debe de especificar un codigo";
+            return response;
+        }
     }
-    return result;
 }
 
 const update = async (req) => {
@@ -49,21 +55,32 @@ const update = async (req) => {
         where: { rolId }
     });
 
-    const resultado = await Modelo.update(req.body, {
-        where: {
-            rolId
-        }
-    });
-    if (resultado > 0) {
-        await registrarBitacora(tabla, rolId, dataAnterior.dataValues, req.body);
-        return 'Información Actualizado exitosamente';
-    } else {
-        return 'No existen cambios para aplicar';
-    }
 
+    if (dataAnterior) {
+        const resultado = await Modelo.update(req.body, {
+            where: {
+                rolId
+            }
+        });
+        if (resultado > 0) {
+            await registrarBitacora(tabla, rolId, dataAnterior.dataValues, req.body);
+            response.code = 0;
+            response.data = "Información Actualizado exitosamente";
+            return response;
+        } else {
+            response.code = -1;
+            response.data = "No existen cambios para aplicar";
+            return response;
+        }
+    } else {
+        response.code = -1;
+        response.data = "No existe información para actualizar con los parametros especificados";
+        return response;
+    }
 };
+
 module.exports = {
-    get,
+    list,
     insert,
     update
 }

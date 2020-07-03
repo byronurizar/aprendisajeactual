@@ -21,3 +21,10 @@ app.use(errors);
 app.listen(config.api.port,()=>{
     console.log('Api escuchando en el puerto ',config.api.port);
 })
+
+
+/*
+let response = {};
+response.code = 0; "0 registro exitoso"|"-1 Alerta"|"-2 Error"
+response.message ="";
+*/

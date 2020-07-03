@@ -12,7 +12,7 @@ const registrar = (req, res, next) => {
 }
 
 const listar=(req,res,next)=>{
-    controller.get(req)
+    controller.list(req)
     .then((data) => {
         response.success(req, res, data, 200);
     })
@@ -30,7 +30,7 @@ const actualizar = (req, res, next) => {
 
 
 router.post('/',registrar);
-router.get('/:query', listar);
+router.get('/', listar);
 router.put('/',actualizar);
 
 module.exports = router;
