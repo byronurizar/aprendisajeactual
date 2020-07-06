@@ -7,13 +7,14 @@ const errors=require('../network/errors');
 
 const Estado=require('./components/estado/network');
 const Rol=require('./components/rol/network');
-
+const Usuario=require('./components/usuario/network');
 
 const app=express();
 app.use(bodyParser.json());
 
 app.use('/api/estado',Estado);
 app.use('/api/rol',Rol);
+app.use('/api/usuario',Usuario);
 
 //Es muy importante que sea el ultimo middelware
 app.use(errors);

@@ -4,7 +4,7 @@ module.exports = {
       bitacora_cambios:process.env.BITACORA_CAMBIOS || true
     },
     jwt: {
-      secret: process.env.JWT_SECRET || "llave",
+      secret: process.env.JWT_SECRET || "Yahk9Lev5lBdANo6UPQuIgCVHinXsm8M",
     },
     bd: {
       database: "demobase",
@@ -12,7 +12,7 @@ module.exports = {
       password: "Blopez$1991",
       host: "localhost",
       dialect: "mysql",
-      port:3306,
+      port:3307,
       pool: {
         max: 5,
         min: 0,
