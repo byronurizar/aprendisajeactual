@@ -18,7 +18,6 @@ const insert = async (req) => {
 }
 
 const list = async (req) => {
-
     if (!req.query.id && !req.query.estadoId) {
         response.code = 0;
         response.data = await Modelo.findAll();

@@ -3,6 +3,7 @@ const response = require('../../../network/response');
 const controller = require('./controller');
 const router = express.Router();
 
+
 const registrar = (req, res, next) => {
     controller.insert(req)
         .then((data) => {
@@ -12,6 +13,7 @@ const registrar = (req, res, next) => {
 }
 
 const listar=(req,res,next)=>{
+    console.log("Info",req.user.dataValues);
     controller.list(req)
     .then((data) => {
         response.success(req, res, data, 200);
