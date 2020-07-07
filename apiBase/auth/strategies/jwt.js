@@ -13,11 +13,12 @@ passport.use(
         try {
             const user = await Usuario.findOne({ where: { usuarioId:tokenPayload.data.usuarioId } });
             if (!user) {
-                return cb('Usuario no autorizado', false);
+                return cb(new Error('Usuario no autorizado'), false);
             }
             
+            const userInfo=user.dataValues;
             delete user.password;
-            return cb(null, user);
+            return cb(null, userInfo);
         } catch (error) {
             cb(error);
         }

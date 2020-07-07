@@ -57,7 +57,7 @@ module.exports = (sequelize, type) => {
                 type: type.INTEGER
             },
             fecha_crea: {
-                type: type.DATEONLY,
+                type: type.DATE,
                 allowNull: false,
                 defaultValue: type.NOW
             },

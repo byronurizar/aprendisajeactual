@@ -1,10 +1,11 @@
-const { Rol } = require('../../../store/db');
+const { Municipio } = require('../../../store/db');
 const { registrarBitacora } = require('../../../utils/bitacora_cambios');
 const moment = require('moment');
-const Modelo = Rol;
-const tabla = 'cat_rol';
+const Modelo = Municipio;
+const tabla = 'cat_municipio';
 let response = {};
 
+/*
 const insert = async (req) => {
     let { usuarioId } = req.user;
     req.body.usuario_crea = usuarioId;
@@ -13,15 +14,16 @@ const insert = async (req) => {
     response.data = result;
     return response;
 }
+*/
 
 const list = async (req) => {
-    if (!req.query.id && !req.query.estadoId) {
+    if (!req.query.id && !req.query.estadoId && !req.query.departamentoId) {
         response.code = 0;
         response.data = await Modelo.findAll();
         return response;
     }
 
-    const { id, estadoId } = req.query;
+    const { id, estadoId,departamentoId } = req.query;
     let query = {};
     if (estadoId) {
         let estados = estadoId.split(';');
@@ -32,13 +34,18 @@ const list = async (req) => {
         query.estadoId = arrayEstado;
     }
 
+    if(departamentoId){
+        query.departamentoId=departamentoId;
+    }
+
+
     if (!id) {
         response.code = 0;
-        response.data = await Modelo.findAll({ where: query });
+        response.data = await Modelo.findAll({ where: query});
         return response;
     } else {
         if (Number(id) > 0) {
-            query.rolId = Number(id);
+            query.municipioId = Number(id);
             response.code = 0;
             response.data = await Modelo.findOne({ where: query });
             return response;
@@ -51,9 +58,9 @@ const list = async (req) => {
 }
 
 const update = async (req) => {
-    const { rolId } = req.body;
+    const { municipioId } = req.body;
     const dataAnterior = await Modelo.findOne({
-        where: { rolId }
+        where: { municipioId }
     });
 
 
@@ -62,11 +69,11 @@ const update = async (req) => {
         req.body.usuario_ult_mod = usuarioId;
         const resultado = await Modelo.update(req.body, {
             where: {
-                rolId
+                municipioId
             }
         });
         if (resultado > 0) {
-            await registrarBitacora(tabla, rolId, dataAnterior.dataValues, req.body);
+            await registrarBitacora(tabla, municipioId, dataAnterior.dataValues, req.body);
 
             //Actualizar fecha de ultima modificacion
             let fecha_ult_mod = moment(new Date()).format('YYYY/MM/DD HH:mm');
@@ -75,7 +82,7 @@ const update = async (req) => {
             }
             const resultadoUpdateFecha = await Modelo.update(data, {
                 where: {
-                    rolId
+                    municipioId
                 }
             });
 
@@ -96,6 +103,5 @@ const update = async (req) => {
 
 module.exports = {
     list,
-    insert,
     update
 }

@@ -4,7 +4,8 @@ module.exports = (sequelize, type) => {
         {
             municipioId: {
                 type: type.INTEGER,
-                primaryKey: true
+                primaryKey: true,
+                autoIncrement: true,
             },
             departamentoId: {
                 type: type.INTEGER,
@@ -12,6 +13,9 @@ module.exports = (sequelize, type) => {
                     model: "cat_departamento",
                     key: "departamentoId",
                 }
+            },
+            municipioId_depto: {
+                type: type.INTEGER
             },
             descripcion: {
                 type: type.STRING(50),
@@ -25,7 +29,7 @@ module.exports = (sequelize, type) => {
                 type: type.INTEGER
             },
             fecha_crea: {
-                type: type.DATEONLY,
+                type: type.DATE,
                 allowNull: false,
                 defaultValue: type.NOW
             },

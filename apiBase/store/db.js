@@ -40,6 +40,7 @@ const UsuarioRolModel = require('./models/usuario_rol');
 const FotoUsuarioModel = require('./models/foto_usuario');
 const TelefonoPersonaModel = require('./models/telefono_persona');
 
+
 const Estado = EstadoModel(confiBd, Sequelize);
 const Genero = GeneroModel(confiBd, Sequelize);
 const TipoSangre = TipoSangreModel(confiBd, Sequelize);
@@ -70,8 +71,7 @@ try {
     force: false,
     logging: false, //Evitamos que nos muestre lo que hace con la bd
   }).then(() => {
-
-
+    const { Departamentos, Municipios } = require('./data');
 
     confiBd.query("select count(*) as total from cat_estado", {
       type: QueryTypes.SELECT
@@ -149,19 +149,23 @@ try {
               nacionalidad: "GUATEMALTECO",
               usuario_crea: 1
             }).then((data) => {
-              Departamento.create({
-                departamentoId: 1,
-                paisId: 502,
-                descripcion: "GUATEMALA",
-                usuario_crea: 1
+              Departamento.bulkCreate(Departamentos, {
+                returning: true
               }).then((data) => {
-                Municipio.create({
-                  municipioId: 1,
-                  departamentoId: 1,
-                  descripcion: "GUATEMALA",
-                  usuario_crea: 1
+                Municipio.bulkCreate(Municipios, {
+                  returning: true
+                }).then((data2) => {
+                  // console.log({ data2 });
                 })
+                  .catch(error => {
+                    console.log({ error });
+                  });
+
               })
+                .catch(error => {
+                  console.log({ error });
+                });
+
             });
           }
         });
