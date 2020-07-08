@@ -13,6 +13,7 @@ const registrar = (req, res, next) => {
 }
 
 const listar=(req,res,next)=>{
+    console.log("data",req.user);
     controller.list(req)
     .then((data) => {
         response.success(req, res, data, 200);
