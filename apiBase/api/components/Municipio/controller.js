@@ -5,7 +5,7 @@ const Modelo = Municipio;
 const tabla = 'cat_municipio';
 let response = {};
 
-/*
+
 const insert = async (req) => {
     let { usuarioId } = req.user;
     req.body.usuario_crea = usuarioId;
@@ -14,7 +14,7 @@ const insert = async (req) => {
     response.data = result;
     return response;
 }
-*/
+
 
 const list = async (req) => {
     if (!req.query.id && !req.query.estadoId && !req.query.departamentoId) {
@@ -103,5 +103,6 @@ const update = async (req) => {
 
 module.exports = {
     list,
-    update
+    update,
+    insert
 }

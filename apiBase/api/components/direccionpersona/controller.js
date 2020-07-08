@@ -1,8 +1,8 @@
-const { Genero } = require('../../../store/db');
+const { DireccionPersona } = require('../../../store/db');
 const { registrarBitacora } = require('../../../utils/bitacora_cambios');
 const moment = require('moment');
-const Modelo = Genero;
-const tabla = 'cat_genero';
+const Modelo = DireccionPersona;
+const tabla = 'direccion_persona';
 let response = {};
 
 
@@ -17,13 +17,13 @@ const insert = async (req) => {
 
 
 const list = async (req) => {
-    if (!req.query.id && !req.query.estadoId) {
+    if (!req.query.id && !req.query.estadoId && !req.query.personaId && !req.query.municipioId) {
         response.code = 0;
         response.data = await Modelo.findAll();
         return response;
     }
 
-    const { id, estadoId} = req.query;
+    const { id, estadoId,personaId,municipioId} = req.query;
     let query = {};
     if (estadoId) {
         let estados = estadoId.split(';');
@@ -33,6 +33,14 @@ const list = async (req) => {
         });
         query.estadoId = arrayEstado;
     }
+    if(personaId){
+        query.personaId=personaId;
+    }
+
+    if(municipioId){
+        query.municipioId=municipioId;
+    }
+
 
     if (!id) {
         response.code = 0;
@@ -40,7 +48,7 @@ const list = async (req) => {
         return response;
     } else {
         if (Number(id) > 0) {
-            query.generoId = Number(id);
+            query.direccion_personaId = Number(id);
             response.code = 0;
             response.data = await Modelo.findOne({ where: query });
             return response;
@@ -53,9 +61,9 @@ const list = async (req) => {
 }
 
 const update = async (req) => {
-    const { generoId } = req.body;
+    const { direccion_personaId } = req.body;
     const dataAnterior = await Modelo.findOne({
-        where: { generoId }
+        where: { direccion_personaId }
     });
 
 
@@ -64,11 +72,11 @@ const update = async (req) => {
         req.body.usuario_ult_mod = usuarioId;
         const resultado = await Modelo.update(req.body, {
             where: {
-                generoId
+                direccion_personaId
             }
         });
         if (resultado > 0) {
-            await registrarBitacora(tabla, generoId, dataAnterior.dataValues, req.body);
+            await registrarBitacora(tabla, direccion_personaId, dataAnterior.dataValues, req.body);
 
             //Actualizar fecha de ultima modificacion
             let fecha_ult_mod = moment(new Date()).format('YYYY/MM/DD HH:mm');
@@ -77,7 +85,7 @@ const update = async (req) => {
             }
             const resultadoUpdateFecha = await Modelo.update(data, {
                 where: {
-                    generoId
+                    personaId
                 }
             });
 

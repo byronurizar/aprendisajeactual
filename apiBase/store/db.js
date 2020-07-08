@@ -71,7 +71,7 @@ try {
     force: false,
     logging: false, //Evitamos que nos muestre lo que hace con la bd
   }).then(() => {
-    const { Departamentos, Municipios } = require('./data');
+    const { Departamentos, Municipios, Menus, MenuAccesos, MenuAccesosRol } = require('./data');
 
     confiBd.query("select count(*) as total from cat_estado", {
       type: QueryTypes.SELECT
@@ -170,6 +170,41 @@ try {
           }
         });
 
+
+
+
+        confiBd.query("select count(*) as total from cat_menu", {
+          type: QueryTypes.SELECT
+        }).then(resultado => {
+          if (resultado[0].total === 0) {
+            Menu.bulkCreate(Menus, {
+              returning: true
+            }).then((data) => {
+              console.log("Registro de Menus");
+            })
+              .catch(error => {
+                console.log("Error al registrar los menus", error);
+
+              })
+          }
+        });
+
+        confiBd.query("select count(*) as total from menu_acceso", {
+          type: QueryTypes.SELECT
+        }).then(resultado => {
+          if (resultado[0].total === 0) {
+            MenuAcceso.bulkCreate(MenuAccesos, {
+              returning: true
+            }).then((data) => {
+              console.log("Registro de accesos de menu");
+            })
+              .catch(error => {
+                console.log("Error al registrar los accesos de los menus", error);
+              })
+          }
+        });
+
+        
         confiBd.query("select count(*) as total from cat_tipo_documento", {
           type: QueryTypes.SELECT
         }).then(resultado => {
@@ -236,6 +271,38 @@ try {
             });
           }
         });
+
+        confiBd.query("select count(*) as total from rol_menu_acceso", {
+          type: QueryTypes.SELECT
+        }).then(resultado => {
+          if (resultado[0].total === 0) {
+            RolMenuAcceso.bulkCreate(MenuAccesosRol, {
+              returning: true
+            }).then((data) => {
+              console.log("Registro de accesos menu a rol");
+            })
+              .catch(error => {
+                console.log("Error al registro de menus acceso a rol", error);
+              })
+          }
+        });
+
+
+        confiBd.query("select count(*) as total from usuario_rol", {
+          type: QueryTypes.SELECT
+        }).then(resultado => {
+          if (resultado[0].total === 0) {
+            UsuarioRol.create({
+              usuarioId: 1,
+              rolId: 1,
+              usuario_crea: 1
+            });
+            
+          }
+        });
+
+
+
 
         confiBd.query("select count(*) as total from cat_tipo_telefono", {
           type: QueryTypes.SELECT

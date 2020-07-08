@@ -1,8 +1,8 @@
-const { Genero } = require('../../../store/db');
+const { EstadoCivil } = require('../../../store/db');
 const { registrarBitacora } = require('../../../utils/bitacora_cambios');
 const moment = require('moment');
-const Modelo = Genero;
-const tabla = 'cat_genero';
+const Modelo = EstadoCivil;
+const tabla = 'cat_estado_civil';
 let response = {};
 
 
@@ -14,7 +14,6 @@ const insert = async (req) => {
     response.data = result;
     return response;
 }
-
 
 const list = async (req) => {
     if (!req.query.id && !req.query.estadoId) {
@@ -40,7 +39,7 @@ const list = async (req) => {
         return response;
     } else {
         if (Number(id) > 0) {
-            query.generoId = Number(id);
+            query.estado_civilId = Number(id);
             response.code = 0;
             response.data = await Modelo.findOne({ where: query });
             return response;
@@ -53,9 +52,9 @@ const list = async (req) => {
 }
 
 const update = async (req) => {
-    const { generoId } = req.body;
+    const { estado_civilId } = req.body;
     const dataAnterior = await Modelo.findOne({
-        where: { generoId }
+        where: { estado_civilId }
     });
 
 
@@ -64,11 +63,11 @@ const update = async (req) => {
         req.body.usuario_ult_mod = usuarioId;
         const resultado = await Modelo.update(req.body, {
             where: {
-                generoId
+                estado_civilId
             }
         });
         if (resultado > 0) {
-            await registrarBitacora(tabla, generoId, dataAnterior.dataValues, req.body);
+             await registrarBitacora(tabla, estado_civilId, dataAnterior.dataValues, req.body);
 
             //Actualizar fecha de ultima modificacion
             let fecha_ult_mod = moment(new Date()).format('YYYY/MM/DD HH:mm');
@@ -77,7 +76,7 @@ const update = async (req) => {
             }
             const resultadoUpdateFecha = await Modelo.update(data, {
                 where: {
-                    generoId
+                    estado_civilId
                 }
             });
 

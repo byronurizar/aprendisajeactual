@@ -2,7 +2,7 @@ const express = require('express');
 const response = require('../../../network/response');
 const controller = require('./controller');
 const router = express.Router();
-/*
+
 const registrar = (req, res, next) => {
     controller.insert(req)
         .then((data) => {
@@ -10,7 +10,7 @@ const registrar = (req, res, next) => {
         })
         .catch(next);
 }
-*/
+
 const listar=(req,res,next)=>{
     controller.list(req)
     .then((data) => {
@@ -29,7 +29,7 @@ const actualizar = (req, res, next) => {
 
 
 
-//router.post('/',registrar);
+router.post('/',registrar);
 router.get('/', listar);
 router.put('/',actualizar);
 

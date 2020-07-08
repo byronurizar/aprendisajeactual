@@ -49,7 +49,5 @@ const update = async (req) => {
 };
 
 module.exports = {
-    list,
-    insert,
-    update
+    list
 }

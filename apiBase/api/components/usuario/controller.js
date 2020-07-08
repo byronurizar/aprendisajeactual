@@ -8,23 +8,25 @@ let response = {};
 
 const insert = async (req) => {
     const dataUsuario=req.body;
+    let { usuarioId } = req.user;
+    dataUsuario.usuario_crea = usuarioId;
     const password=dataUsuario.password;
     dataUsuario.password= bcrypt.hashSync(password, 10);
     const result = await Modelo.create(dataUsuario);
-    console.log({dataUsuario});
     response.code = 0;
     response.data = result;
     return response;
 }
 
 const list = async (req) => {
-    if (!req.query.id && !req.query.estadoId) {
+   // console.log("data",req.user);
+    if (!req.query.id && !req.query.estadoId && !req.query.personaId && !req.query.email) {
         response.code = 0;
         response.data = await Modelo.findAll();
         return response;
     }
 
-    const { id, estadoId } = req.query;
+    const { id, estadoId,personaId,email } = req.query;
     let query = {};
     if (estadoId) {
         let estados = estadoId.split(';');
@@ -33,6 +35,14 @@ const list = async (req) => {
             arrayEstado.push(Number(item));
         });
         query.estadoId = arrayEstado;
+    }
+
+    if(personaId){
+        query.personaId=personaId;
+    }
+
+    if(email){
+        query.email=email;
     }
 
     if (!id) {
@@ -68,6 +78,17 @@ const update = async (req) => {
         });
         if (resultado > 0) {
             await registrarBitacora(tabla, usuarioId, dataAnterior.dataValues, req.body);
+            //Actualizar fecha de ultima modificacion
+            let fecha_ult_mod = moment(new Date()).format('YYYY/MM/DD HH:mm');
+            const data = {
+                fecha_ult_mod
+            }
+            const resultadoUpdateFecha = await Modelo.update(data, {
+                where: {
+                    usuarioId
+                }
+            });
+
             response.code = 0;
             response.data = "Información Actualizado exitosamente";
             return response;

@@ -1,8 +1,8 @@
-const { Genero } = require('../../../store/db');
+const { Pais } = require('../../../store/db');
 const { registrarBitacora } = require('../../../utils/bitacora_cambios');
 const moment = require('moment');
-const Modelo = Genero;
-const tabla = 'cat_genero';
+const Modelo = Pais;
+const tabla = 'cat_pais';
 let response = {};
 
 
@@ -40,7 +40,7 @@ const list = async (req) => {
         return response;
     } else {
         if (Number(id) > 0) {
-            query.generoId = Number(id);
+            query.paisId = Number(id);
             response.code = 0;
             response.data = await Modelo.findOne({ where: query });
             return response;
@@ -53,9 +53,9 @@ const list = async (req) => {
 }
 
 const update = async (req) => {
-    const { generoId } = req.body;
+    const { paisId } = req.body;
     const dataAnterior = await Modelo.findOne({
-        where: { generoId }
+        where: { paisId }
     });
 
 
@@ -64,11 +64,11 @@ const update = async (req) => {
         req.body.usuario_ult_mod = usuarioId;
         const resultado = await Modelo.update(req.body, {
             where: {
-                generoId
+                paisId
             }
         });
         if (resultado > 0) {
-            await registrarBitacora(tabla, generoId, dataAnterior.dataValues, req.body);
+            await registrarBitacora(tabla, paisId, dataAnterior.dataValues, req.body);
 
             //Actualizar fecha de ultima modificacion
             let fecha_ult_mod = moment(new Date()).format('YYYY/MM/DD HH:mm');
@@ -77,7 +77,7 @@ const update = async (req) => {
             }
             const resultadoUpdateFecha = await Modelo.update(data, {
                 where: {
-                    generoId
+                    paisId
                 }
             });
 

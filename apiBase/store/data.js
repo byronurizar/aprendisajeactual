@@ -363,7 +363,405 @@ const Municipios = [
     { municipioId_depto: 17, departamentoId: 22, descripcion: "QUESADA", usuario_crea: 1 }
 ];
 
+const Menus = [
+    {
+        posicion: 1,
+        descripcion: "Catálogos",
+        href: "",
+        icono: "",
+        menu_padreId: 0,
+        usuario_crea: 1
+    },
+    {
+        posicion: 2,
+        descripcion: "Estados",
+        href: "",
+        icono: "",
+        menu_padreId: 1,
+        usuario_crea: 1
+    },
+    {
+        posicion: 3,
+        descripcion: "Generos",
+        href: "",
+        icono: "",
+        menu_padreId: 1,
+        usuario_crea: 1
+    },
+    {
+        posicion: 4,
+        descripcion: "Estado Civil",
+        href: "",
+        icono: "",
+        menu_padreId: 1,
+        usuario_crea: 1
+    },
+    {
+        posicion: 5,
+        descripcion: "Tipo documento",
+        href: "",
+        icono: "",
+        menu_padreId: 1,
+        usuario_crea: 1
+    },
+    {
+        posicion: 6,
+        descripcion: "Tipo de Sangre",
+        href: "",
+        icono: "",
+        menu_padreId: 1,
+        usuario_crea: 1
+    }, {
+        posicion: 7,
+        descripcion: "Tipo de Teléfono",
+        href: "",
+        icono: "",
+        menu_padreId: 1,
+        usuario_crea: 1
+    },
+    {
+        posicion: 8,
+        descripcion: "Pais",
+        href: "",
+        icono: "",
+        menu_padreId: 1,
+        usuario_crea: 1
+    },
+    {
+        posicion: 9,
+        descripcion: "Departamento",
+        href: "",
+        icono: "",
+        menu_padreId: 1,
+        usuario_crea: 1
+    },
+    {
+        posicion: 10,
+        descripcion: "Municipio",
+        href: "",
+        icono: "",
+        menu_padreId: 1,
+        usuario_crea: 1
+    },
+    {
+        posicion: 11,
+        descripcion: "Rol",
+        href: "",
+        icono: "",
+        menu_padreId: 1,
+        usuario_crea: 1
+    }
+];
+
+const MenuAccesos = [
+    {
+        menuId: 2,
+        accesoId: 1,
+        usuario_crea: 1
+    },
+    {
+        menuId: 2,
+        accesoId: 2,
+        usuario_crea: 1
+    },
+    {
+        menuId: 2,
+        accesoId: 3,
+        usuario_crea: 1
+    },
+    {
+        menuId: 3,
+        accesoId: 1,
+        usuario_crea: 1
+    },
+    {
+        menuId: 3,
+        accesoId: 2,
+        usuario_crea: 1
+    },
+    {
+        menuId: 3,
+        accesoId: 3,
+        usuario_crea: 1
+    },
+    {
+        menuId: 4,
+        accesoId: 1,
+        usuario_crea: 1
+    },
+    {
+        menuId: 4,
+        accesoId: 2,
+        usuario_crea: 1
+    },
+    {
+        menuId: 4,
+        accesoId: 3,
+        usuario_crea: 1
+    }, {
+        menuId: 5,
+        accesoId: 1,
+        usuario_crea: 1
+    },
+    {
+        menuId: 5,
+        accesoId: 2,
+        usuario_crea: 1
+    },
+    {
+        menuId: 5,
+        accesoId: 3,
+        usuario_crea: 1
+    },
+    {
+        menuId: 6,
+        accesoId: 1,
+        usuario_crea: 1
+    },
+    {
+        menuId: 6,
+        accesoId: 2,
+        usuario_crea: 1
+    },
+    {
+        menuId: 6,
+        accesoId: 3,
+        usuario_crea: 1
+    },
+    {
+        menuId: 7,
+        accesoId: 1,
+        usuario_crea: 1
+    },
+    {
+        menuId: 7,
+        accesoId: 2,
+        usuario_crea: 1
+    },
+    {
+        menuId: 7,
+        accesoId: 3,
+        usuario_crea: 1
+    },
+    {
+        menuId: 8,
+        accesoId: 1,
+        usuario_crea: 1
+    },
+    {
+        menuId: 8,
+        accesoId: 2,
+        usuario_crea: 1
+    },
+    {
+        menuId: 8,
+        accesoId: 3,
+        usuario_crea: 1
+    },
+    {
+        menuId: 9,
+        accesoId: 1,
+        usuario_crea: 1
+    },
+    {
+        menuId: 9,
+        accesoId: 2,
+        usuario_crea: 1
+    },
+    {
+        menuId: 9,
+        accesoId: 3,
+        usuario_crea: 1
+    },
+    {
+        menuId: 10,
+        accesoId: 1,
+        usuario_crea: 1
+    },
+    {
+        menuId: 10,
+        accesoId: 2,
+        usuario_crea: 1
+    },
+    {
+        menuId: 10,
+        accesoId: 3,
+        usuario_crea: 1
+    },
+    {
+        menuId: 11,
+        accesoId: 1,
+        usuario_crea: 1
+    },
+    {
+        menuId: 11,
+        accesoId: 2,
+        usuario_crea: 1
+    },
+    {
+        menuId: 11,
+        accesoId: 3,
+        usuario_crea: 1
+    }
+];
+
+const MenuAccesosRol=[
+        {
+          rolId: 1,
+          menu_accesoId: 1,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 2,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 3,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 4,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 5,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 6,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 7,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 8,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 9,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 10,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 11,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 12,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 13,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 14,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 15,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 16,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 17,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 18,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 19,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 20,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 21,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 22,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 23,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 24,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 25,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 26,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 27,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 28,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 29,
+          usuario_crea: 1
+        },
+        {
+          rolId: 1,
+          menu_accesoId: 30,
+          usuario_crea: 1
+        }
+];
+
 module.exports = {
     Departamentos,
-    Municipios
+    Municipios,
+    Menus,
+    MenuAccesos,
+    MenuAccesosRol
 }
