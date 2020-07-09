@@ -1,12 +1,19 @@
 const { IdentificacionPersona } = require('../../../store/db');
 const { registrarBitacora } = require('../../../utils/bitacora_cambios');
 const moment = require('moment');
+const { validarpermiso } = require('../../../auth');
+const MenuId=13;
 const Modelo = IdentificacionPersona;
 const tabla = 'identificacion_persona';
 let response = {};
 
 
 const insert = async (req) => {
+    let autorizado=await validarpermiso(req,MenuId,1);
+    if(autorizado!==true){
+        return autorizado;
+    }
+    
     let { usuarioId } = req.user;
     req.body.usuario_crea = usuarioId;
     const result = await Modelo.create(req.body);
@@ -16,7 +23,12 @@ const insert = async (req) => {
 }
 
 
-const list = async (req) => {
+list = async (req) => {
+    let autorizado=await validarpermiso(req,MenuId,3);
+    if(autorizado!==true){
+        return autorizado;
+    }
+    
     if (!req.query.id && !req.query.estadoId && !req.query.personaId && !req.query.tipodocumentoId) {
         response.code = 0;
         response.data = await Modelo.findAll();
@@ -61,6 +73,10 @@ const list = async (req) => {
 }
 
 const update = async (req) => {
+    let autorizado=await validarpermiso(req,MenuId,2);
+    if(autorizado!==true){
+        return autorizado;
+    }
     const { identificacion_personaId } = req.body;
     const dataAnterior = await Modelo.findOne({
         where: { identificacion_personaId }

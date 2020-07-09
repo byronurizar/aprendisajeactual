@@ -35,7 +35,7 @@ const validacionPermisos=require('../auth/middleware/permisos');
 const app=express();
 app.use(bodyParser.json());
 
-app.use('/api/estado',Estado);
+app.use('/api/estado',passport.authenticate('jwt',{session:false}),Estado);
 app.use('/api/municipio',passport.authenticate('jwt',{session:false}),Municipio);
 app.use('/api/pais',Pais);
 app.use('/api/departamento',Departamento);

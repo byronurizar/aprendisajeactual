@@ -1,11 +1,18 @@
 const { UsuarioRol } = require('../../../store/db');
 const { registrarBitacora } = require('../../../utils/bitacora_cambios');
 const moment = require('moment');
+const { validarpermiso } = require('../../../auth');
+const MenuId=18;
 const Modelo = UsuarioRol;
 const tabla = 'usuario_rol';
 let response = {};
 
 const insert = async (req) => {
+    let autorizado=await validarpermiso(req,MenuId,1);
+    if(autorizado!==true){
+        return autorizado;
+    }
+    
     let { usuarioId } = req.user;
     req.body.usuario_crea = usuarioId;
     const result = await Modelo.create(req.body);
@@ -14,7 +21,12 @@ const insert = async (req) => {
     return response;
 }
 
-const list = async (req) => {
+list = async (req) => {
+    let autorizado=await validarpermiso(req,MenuId,3);
+    if(autorizado!==true){
+        return autorizado;
+    }
+    
     if (!req.query.id && !req.query.estadoId && !req.query.usuarioId && !req.query.rolId) {
         response.code = 0;
         response.data = await Modelo.findAll();
@@ -59,6 +71,10 @@ const list = async (req) => {
 }
 
 const update = async (req) => {
+    let autorizado=await validarpermiso(req,MenuId,2);
+    if(autorizado!==true){
+        return autorizado;
+    }
     const { usuario_rolId } = req.body;
     const dataAnterior = await Modelo.findOne({
         where: { usuario_rolId }

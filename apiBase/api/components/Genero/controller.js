@@ -1,12 +1,19 @@
 const { Genero } = require('../../../store/db');
 const { registrarBitacora } = require('../../../utils/bitacora_cambios');
+const { validarpermiso } = require('../../../auth');
 const moment = require('moment');
+const MenuId=3;
 const Modelo = Genero;
 const tabla = 'cat_genero';
 let response = {};
 
 
 const insert = async (req) => {
+    let autorizado=await validarpermiso(req,MenuId,1);
+    if(autorizado!==true){
+        return autorizado;
+    }
+
     let { usuarioId } = req.user;
     req.body.usuario_crea = usuarioId;
     const result = await Modelo.create(req.body);
@@ -16,7 +23,12 @@ const insert = async (req) => {
 }
 
 
-const list = async (req) => {
+list = async (req) => {
+    let autorizado=await validarpermiso(req,MenuId,3);
+    if(autorizado!==true){
+        return autorizado;
+    }
+    
     if (!req.query.id && !req.query.estadoId) {
         response.code = 0;
         response.data = await Modelo.findAll();
@@ -53,6 +65,10 @@ const list = async (req) => {
 }
 
 const update = async (req) => {
+    let autorizado=await validarpermiso(req,MenuId,2);
+    if(autorizado!==true){
+        return autorizado;
+    }
     const { generoId } = req.body;
     const dataAnterior = await Modelo.findOne({
         where: { generoId }

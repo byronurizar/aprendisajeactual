@@ -1,24 +1,41 @@
 const { Estado } = require('../../../store/db');
 const { registrarBitacora } = require('../../../utils/bitacora_cambios');
+const { validarpermiso } = require('../../../auth');
+const MenuId=2;
 
 const Modelo = Estado;
 const tabla = 'cat_estado';
 let response = {};
 
 const insert = async (req) => {
+    let autorizado=await validarpermiso(req,MenuId,1);
+    if(autorizado!==true){
+        return autorizado;
+    }
+
     const result = await Modelo.create(req.body);
     response.code = 0;
     response.data = result;
     return response;
 }
 
-const list = async (req) => {
+list = async (req) => {
+    let autorizado=await validarpermiso(req,MenuId,3);
+    if(autorizado!==true){
+        return autorizado;
+    }
+       
     response.code = 0;
     response.data = await Modelo.findAll({ where: { activo: true } });
     return response;
 }
 
 const update = async (req) => {
+    let autorizado=await validarpermiso(req,MenuId,2);
+    if(autorizado!==true){
+        return autorizado;
+    }
+
     const { estadoId } = req.body;
     const dataAnterior = await Modelo.findOne({
         where: { estadoId }
@@ -49,5 +66,7 @@ const update = async (req) => {
 };
 
 module.exports = {
-    list
+    list,
+    insert,
+    update
 }
