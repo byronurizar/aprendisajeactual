@@ -23,3 +23,4 @@ module.exports = {
     sign,
     validarpermiso
 }
+// "start": "node api/index.js"
