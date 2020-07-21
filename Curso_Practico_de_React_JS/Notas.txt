@@ -74,7 +74,7 @@ Curso Práctico de React JS
 
     export default Stateless;
 
-JSX: JavaScript + HTML
+--JSX: JavaScript + HTML
 
 Estamos acostumbrados a escribir código HTML en archivos .html y la lógica de JavaScript en archivos .js.
 
@@ -100,3 +100,32 @@ const HolaMundo = () => {
 export default HolaMundo;
 
 
+
+--Props: Comunicación entre Componentes
+Las Props son la forma de enviar y recibir información en nuestros componentes. Son la forma de comunicar cada componente con el resto de la aplicación. Son muy parecidas a los parámetros y argumentos de las funciones en cualquier lenguaje de programación.
+
+// Button.jsx
+import React from 'react';
+
+const Button = props => {
+  return (
+    <div>
+      <button type="button">{props.text}button>
+    div>
+  );
+};
+
+export default Button;
+
+// index.jsx
+import React from 'react';
+import Button from './components/Button';
+
+ReactDOM.render(
+  <Button text="¡Hola!" />,
+  document.getElementByid('root'),
+);
+
+Crear la importación automatica escribiendo rfc o rafc
+
+ --¿Qué son los métodos del ciclo vida? 
