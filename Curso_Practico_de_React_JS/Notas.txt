@@ -388,3 +388,5 @@ Crear la importación automatica escribiendo rfc o rafc
   Vamos a usar el Proyecto Final del Curso de Frontend Developer para dividir la aplicación en componentes y agregar interactividad con React.
 
 --Estilos del Header
+
+--Estructura y Estilos del Buscador
