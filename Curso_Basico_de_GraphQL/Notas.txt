@@ -54,3 +54,31 @@ https://graphql.org/learn/queries/
     npm i express express-graphql
     Para evitar el proceso de detener nuestro servidor cada que ejecutamos un nuevo cambio vamos a utilizar la dependencia de desarrollo Nodemon:
     npm i nodemon -D
+    Creamos el script
+    npm run dev
+
+--Custom Types
+    Para este proyecto vamos a seguir el estándar de estilos Standard, para instalarlo corremos el siguiente comando:
+    npm i standard -D
+
+    GraphQL nos permite configurar nuestros propios tipos de datos, estos deben tener la siguientes sintaxis:
+    type <Nombre del tipo> {
+    propiedad: Tipo de dato
+    }
+
+    Dentro de nuestros tipos de datos podemos configurar un campo de un tipo como obligatorio con el signo “!”, quedando por ejemplo:
+    type Course {
+    title: String!
+    }
+
+--Argumentos
+    Vamos a instalar una nueva dependencia para facilitar el trabajo con GraphQL, vamos a correr el siguiente comando:
+    npm i graphql-tools
+    Podemos pasar argumentos con distintos tipos de información dentro de las peticiones que hagamos en GraphQL, su sintaxis quedaría de la siguiente manera:
+    nombreQuery(campo: tipo): tipo
+    Dentro del resolver los argumentos de la petición pasarían como segundo parámetro, el primero es root y el segundo es args.
+
+--Configuración de base de datos
+    Por el momento nuestra API maneja pura información estática, vamos a cambiar esto pasando la información a una base de datos, en este caso usaremos MongoDB.
+    Es recomendable almacenar las credenciales de conexión a la base de datos como variables de entorno del sistema y utilizar dotenv para la lectura de dichas credenciales. Para su instalación vamos a correr el comando
+    npm i dotenv
