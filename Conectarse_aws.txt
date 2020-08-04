@@ -1,0 +1,2 @@
+Utilizar git bash
+ ssh -i ecomerce-prueba-llave.pem ubuntu@3.128.246.86

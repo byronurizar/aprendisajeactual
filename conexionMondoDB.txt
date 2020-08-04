@@ -1,0 +1,1 @@
+mongodb+srv://db_user_plazi:pDiO4pteqhSUbzeJ@cluster0-dk17h.mongodb.net/db_user_plazi?retryWrites=true&w=majority
