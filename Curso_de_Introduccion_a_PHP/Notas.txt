@@ -185,3 +185,71 @@
     La estructura de arreglos en PHP es conocida como mapa, lo que quiere decir que tiene una composición de llave valor. Además, un arreglo puede contener más arreglos y cada uno de ellos seguirá la misma estructura.
 
     Algo que debes saber es que en PHP podrás almacenar diferentes tipos de datos en un mismo arreglo.
+
+*Condicionales y Ciclos
+    Las condiciones nos permiten tomar decisiones en el código, si se cumple la condición entonces se ejecutarán ciertas instrucciones sino se cumple se ejecutarán otras. Estas se denotan por la instrucción if else.
+
+    Los ciclos funcionan de la mano con las condiciones, en este caso si se cumple la instrucción se estará ejecutando repetidas veces una instrucción dada.
+
+    Hemos agregado los jobs de forma manual accediendo al arreglo a través de sus índices, hacer esto podría traer errores y no podríamos controlarlo si tuviéramos muchos jobs. Ahora veamos una mejor forma de hacerlo con ciclos.
+        El primero que tenemos es do while que va a involucrar la inicialización de variables y condiciones.
+        El segundo que veremos es for que es una forma más simplificada de usar todos los elementos que componen los ciclos.
+
+*While vs. Do While
+    http://php.net/manual/es/control-structures.while.php
+    http://php.net/manual/es/control-structures.do.while.php
+    http://php.net/manual/es/control-structures.foreach.php
+
+*Operadores, Condicionales, Continue y Break
+    En PHP existen cuatro tipos principales de operadores:
+
+        Aritméticos.
+        Asignación.
+        Condicionales.
+        Incremento.
+
+    Aprovechemos para practicar y veamos más sobre condiciones, en PHP tenemos el operador de comparación (==) y diferente de (!=).
+
+    Tenemos la sentencia continue la cuál al ejecutarse hará que se itere a la siguiente línea del arreglo. Y la sentencia break que hará que el ciclo se termine.
+
+*Operadores
+    http://php.net/manual/es/language.operators.precedence.php
+    http://php.net/manual/es/language.operators.arithmetic.php
+    http://php.net/manual/es/language.operators.assignment.php
+    http://php.net/manual/es/language.operators.comparison.php
+    http://php.net/manual/es/language.operators.increment.php
+    http://php.net/manual/es/language.operators.logical.php
+    http://php.net/manual/es/language.operators.array.php
+    $a += $b
+    $a = $a + $b
+
+    $a -= $b
+    $a = $a - $b
+
+    $a *= $b
+    $a = $a * $b
+
+    $a /= $b
+    $a = $a / $b
+
+    $a %= $b
+    $a = $a % $b
+
+    $a .= $b
+    $a = $a . $b
+
+    Operadores de incremento/decremento
+    $a = 1;
+    echo $a++;
+    echo $a;
+    echo ++$a;
+    echo $a;
+    imprime
+
+    1
+    2
+    3
+    3
+
+*Ejercicios Operadores 
+*Funciones

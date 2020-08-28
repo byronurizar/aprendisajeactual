@@ -1,7 +1,7 @@
 <?php
-$lastName='Lopez Urizar';
+$lastName='de Prueba';
 //$name='Byron ' . $lastName; //El . se utiliza para concatenar
-$name="Byron $lastName"; //Hace la sustitución del valor de la variable dentro de las comillas dobles
+$name="Desarrollador $lastName"; //Hace la sustitución del valor de la variable dentro de las comillas dobles
 // var_dump($name);
 // $jobs=[
 //   0=>'PHP Developer',
@@ -15,15 +15,52 @@ $name="Byron $lastName"; //Hace la sustitución del valor de la variable dentro 
 //   2=>'Devops'
 // ]; //Para hacceder a title $jobs['title]
 
+$limitMonths=12;
 $jobs=[
-['title'=>'PHP Developer',
-'descripcion'=>'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sapiente sed pariatur sint exercitationem eos expedita eveniet veniam ullam, quia neque facilis dicta voluptatibus. Eveniet doloremque ipsum itaque obcaecati nihil.'],
-['title'=>'Python Dev'],
-['title'=>'Devops']
+[
+'title'=>'PHP Developer',
+'descripcion'=>'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sapiente sed pariatur sint exercitationem eos expedita eveniet veniam ullam, quia neque facilis dicta voluptatibus. Eveniet doloremque ipsum itaque obcaecati nihil.',
+'visible'=>true,
+'months'=> 6
+],
+[
+  'title'=>'Python Dev',
+  'descripcion'=>'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sapiente sed pariatur sint exercitationem eos expedita eveniet veniam ullam, quia neque facilis dicta voluptatibus. Eveniet doloremque ipsum itaque obcaecati nihil.',
+  'visible'=>true,
+  'months'=> 4
+],
+[
+  'title'=>'Devops',
+  'descripcion'=>'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sapiente sed pariatur sint exercitationem eos expedita eveniet veniam ullam, quia neque facilis dicta voluptatibus. Eveniet doloremque ipsum itaque obcaecati nihil.',
+  'visible'=>true,
+  'months'=> 2
+],
+[
+  'title'=>'Nodejs Dev',
+  'descripcion'=>'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sapiente sed pariatur sint exercitationem eos expedita eveniet veniam ullam, quia neque facilis dicta voluptatibus. Eveniet doloremque ipsum itaque obcaecati nihil.',
+  'visible'=>true,
+  'months'=> 5
+],[
+  'title'=>'Frontend Dev',
+  'descripcion'=>'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sapiente sed pariatur sint exercitationem eos expedita eveniet veniam ullam, quia neque facilis dicta voluptatibus. Eveniet doloremque ipsum itaque obcaecati nihil.',
+  'visible'=>true,
+  'months'=> 6
+]
 ]; //Se pueden agregar arreglos dentro de los arrelgos
 
 
 // var_dump($jobs)
+
+//Condicional
+/*
+$var1=1;
+if($var1 > 2){
+echo 'Es mayor que dos';
+} else{
+  echo 'el número no es mayor a dos';
+}
+
+*/
 ?>
 
 <!doctype html>
@@ -75,36 +112,51 @@ $jobs=[
         <div>
           <h3 class="border-bottom-gray" >Work Experience</h3>
           <ul>
-            <li class="work-position">
-              <h5><?php echo $jobs[0]['title']?></h5>
-              <p><?php echo $jobs[0]['descripcion']?></p>
-              <strong>Achievements:</strong>
-              <ul>
-                <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-              </ul>
-            </li>
-            <li class="work-position">
-                <h5><?php echo $jobs[1]['title']?></h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sapiente sed pariatur sint exercitationem eos expedita eveniet veniam ullam, quia neque facilis dicta voluptatibus. Eveniet doloremque ipsum itaque obcaecati nihil.</p>
-                <strong>Achievements:</strong>
-                <ul>
-                  <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                  <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                  <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                </ul>
-              </li>
-              <li class="work-position">
-                  <h5><?php echo $jobs[2]['title']?></h5>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sapiente sed pariatur sint exercitationem eos expedita eveniet veniam ullam, quia neque facilis dicta voluptatibus. Eveniet doloremque ipsum itaque obcaecati nihil.</p>
-                  <strong>Achievements:</strong>
-                  <ul>
-                    <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                  </ul>
-                </li>
+
+          <!-- do while -->
+ <!--
+          <?php
+              $idx=0;
+              do {
+               echo '<li class="work-position">';
+               echo '<h5>' . $jobs[$idx]['title'] . '</h5>';
+               echo '<p>'  . $jobs[$idx]['descripcion'] . '</p>';
+               echo '<strong>Achievements:</strong>';
+               echo '<ul>';
+               echo '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
+               echo '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
+               echo '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
+               echo '</ul>';
+               echo '</li>';
+                $idx+=1;
+              } while($idx<3);
+              ?>
+-->
+              <?php
+              $total=count($jobs);
+              $totalMont=0;
+              for($index=0;$index < $total;$index++){
+                $totalMont+=$jobs[$idx]['months'];
+                if($jobs[$index]['visible']==false){
+                  continue;
+                }
+
+                if($totalMont>$limitMonths){
+                break;
+                }
+                echo '<li class="work-position">';
+                echo '<h5>' . $jobs[$index]['title'] . '</h5>';
+                echo '<p>'  . $jobs[$index]['descripcion'] . '</p>';
+                echo '<p>'  . $totalMont . '</p>';
+                echo '<strong>Achievements:</strong>';
+                echo '<ul>';
+                echo '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
+                echo '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
+                echo '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
+                echo '</ul>';
+                echo '</li>';
+              }
+              ?>
           </ul>
         </div>
         <div>
