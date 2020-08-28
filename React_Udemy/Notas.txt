@@ -1,0 +1,65 @@
+https://create-react-app.dev/
+https://create-react-app.dev/docs/available-scripts/
+https://developers.google.com/web/ilt/pwa
+https://support.google.com/webmasters/answer/6062608?hl=es
+https://es.reactjs.org/docs/events.html
+
+*Que es React?
+    Libreria
+    Declarativa
+    Eficiente
+    Predecible
+    Componentes
+
+JSX= JS + XML
+
+
+*8. Primeros pasos en React
+Cuando no estemos seguros si se dicho elemento existe en un arreglo al momento de hacerle un length
+se debe de utilizar el ? antes del punto length
+Ejemplo
+    const resApi={
+        personajes:["Goku","Vegeta"];
+    }
+    console.log(resApi.personajes.length);
+
+    const resApi={
+        //personajes:["Goku","Vegeta"];
+    }
+    console.log(resApi.personajes.length);
+    Nos lanzaria un error 
+    pero si lo hacemos asi
+    console.log(resApi.personajes?.length);
+    Nos daria undefine
+
+
+Sección 3:Introducción a JavaScript moderno
+    Crear proyecto en React
+    create-react-app intro-javascript
+
+https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/map
+El método map() crea un nuevo array con los resultados de la llamada a la función indicada aplicados a cada uno de sus elementos.
+
+
+Sección 3:Introducción a JavaScript moderno
+18. Desestructruación de Objetos
+https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Destructuring_assignment
+
+
+20. Import, export y funciones comunes de arreglos
+https://gist.github.com/Klerith/4aeb99d31aedbc29ff4d54bbb77d2d7f
+https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/find
+
+
+
+--Sección 4:Primeros pasos en React--
+30. ¿Qué son los componentes?
+    
+    Es una pequeña pieza de código encapsulada re-utilizable que puede tener estado o no.
+
+    Es recomendable utilizar Upper Camel Case //ejemplo MenuItem, también conocido como capitalizado
+
+35. Nuestro primer Componente
+    Cuando se crea un componente utilizando una función se llamana funcional components
+
+Los estilos se deben de agregar alfabeticamente

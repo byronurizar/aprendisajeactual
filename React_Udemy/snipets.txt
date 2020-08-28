@@ -1,0 +1,12 @@
+SNIPETS
+para hacer Import
+imp
+
+rafc
+Nos crear un una funcion utilizando react
+
+imr para importar react
+
+rafcp crear un funcional component con proptypes
+
+rafce Hace la exportación por default.
