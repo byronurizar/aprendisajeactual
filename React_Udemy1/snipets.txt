@@ -10,3 +10,11 @@ imr para importar react
 rafcp crear un funcional component con proptypes
 
 rafce Hace la exportación por default.
+
+utilizar useSate
+spinet useState
+
+para llegar a un comopenente se espera que aparesca la linea debajo del mismo y presionamos click
+
+//Animaciones css
+https://animate.style/
