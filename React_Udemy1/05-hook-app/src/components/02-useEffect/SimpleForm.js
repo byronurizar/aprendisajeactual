@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from 'react'
+import { Message } from './Message';
 import './effects.css'
 export const SimpleForm = () => {
 
+
+    //No es posible utilizar hooks de manera condicionada
+    // if(true){
+    //     const [preuba, setpreuba] = useState(0)
+    // }
+
+    //Siempre deben de estar al inicio
     const [formState, setFormState] = useState({
         name: '',
         email: ''
@@ -9,16 +17,17 @@ export const SimpleForm = () => {
 
     const { name, email } = formState;
     useEffect(() => {
-        console.log("hey");
+        //console.log("hey");
     },[]);
 
 
+    //useEffect retorna una funcion y esta es utilizada para limpiar al momento de desmontar
     useEffect(() => {
-        console.log("formSateCa");
+        //console.log("formSateCa");
     },[formState]);
 
     useEffect(() => {
-        console.log("El correo Cambio");
+        //console.log("El correo Cambio");
     },[email]);
 
     // [target.name]: target.value estamos computando el input
@@ -60,6 +69,8 @@ export const SimpleForm = () => {
                 </input>
             </div>
 
+
+                {name==='123' && <Message/>}
             
         </>
     )

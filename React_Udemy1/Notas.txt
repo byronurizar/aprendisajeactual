@@ -76,3 +76,9 @@ todos los hooks deben de empezar en use
 //HACER BUILD DE DE LA APLICACION React
 npm run build
 
+
+No es posible utilizar hooks de manera condicionada
+
+
+//Api
+https://breakingbadapi.com/
