@@ -82,3 +82,7 @@ No es posible utilizar hooks de manera condicionada
 
 //Api
 https://breakingbadapi.com/
+
+
+//useLayoutEffect
+https://es.reactjs.org/docs/hooks-reference.html#uselayouteffect
