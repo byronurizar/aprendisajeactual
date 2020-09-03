@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Layout } from './components/05-useLayoutEffect/Layout';
+//import { Memorize } from './components/06-memos/Memorize';
+//import { MemoHook } from './components/06-memos/MemoHook';
+//import { CallBackHook } from './components/06-memos/CallBackHook';
+import { Padre } from './components/07-tarea-memo/Padre';
+//import { Layout } from './components/05-useLayoutEffect/Layout';
 //import { ReactExampleRef } from './components/04-useRef/ReactExampleRef';
 //import { FocusScreen } from './components/04-useRef/FocusScreen';
 //import { FormWithCustomHook } from './components/02-useEffect/FormWithCustomHook';
@@ -12,7 +16,7 @@ import { Layout } from './components/05-useLayoutEffect/Layout';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Layout />
+    <Padre />
   </React.StrictMode>,
   document.getElementById('root')
 );
