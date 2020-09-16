@@ -1,0 +1,12 @@
+ Agregar css de bootstrap
+ instalar react-router-dom
+    npm install react-router-dom
+
+
+Se crearon dos routers 
+    Siendo el principal el AppRouter.js el cual contiene el componente de login y este no utiliza el navbar
+    el DashboardRoutes es el que contiene el navbar y utiliza todos los componentes depues hacer  login
+
+Al revisar el arbol de componentes dentro del react developers tools
+    podemos ver en las props del componente login   
+        history => El cual nos ayuda a utilizar las funciones del navegador ya sea ir para adelante o para atras

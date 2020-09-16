@@ -86,3 +86,26 @@ https://breakingbadapi.com/
 
 //useLayoutEffect
 https://es.reactjs.org/docs/hooks-reference.html#uselayouteffect
+
+
+**¿QUE ES UN REDUCER?
+https://es.reactjs.org/docs/hooks-reference.html#usereducer
+1. Es una función comun y corriente no puede ser asincrona
+2. Debe de ser una función pura => 
+    a. no debe de tener efectos secundarios 
+    b. no debe de tener tareas asincronas
+    c. Debe de retornar siempre un estado nuevo 
+    d. NO debe de llamar localStore o session Storage
+    e. para modificar el state no debe de requerir más que una acción que puede tener argumentos
+3. Debe de retornar un nuevo estado
+4. Usualmente recibe dos argumentos
+    El valor inicial(initialState ) y la acción a ejecutar
+    Funcionamiento
+     0 estado inicial
+
+NO SE DEBE UTILIZAR PUSH EN REACT POR QUE MODIFICA O MUTA EL OBJETO
+
+**Sección 11 Profundizando Hooks -useContext
+    Instalación de react router
+    https://reactrouter.com/web/api/NavLink
+    npm install react-router-dom
