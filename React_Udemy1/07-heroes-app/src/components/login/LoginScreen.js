@@ -8,7 +8,7 @@ export const LoginScreen = ({ history }) => {
     const handleLgoin = () => {
         //history.push('/'); //Al momento de hacer push el navegaro mostrara esa ruta
         // history.replace('/'); //Haciendo el replace el navegador hace de cuentas que fue esta ruta con la que inicio
-
+        const lastPath=localStorage.getItem('lastPath') || '/';
         const action = {};
         action.payload = {
             name: 'Byron López Urizar'
@@ -16,7 +16,7 @@ export const LoginScreen = ({ history }) => {
         action.type = types.login;
 
         dispatch(action);
-        history.replace('/'); 
+        history.replace(lastPath); 
     }
     return (
         <div className="container mt-g">
