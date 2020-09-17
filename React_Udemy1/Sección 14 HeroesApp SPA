@@ -10,3 +10,7 @@ Se crearon dos routers
 Al revisar el arbol de componentes dentro del react developers tools
     podemos ver en las props del componente login   
         history => El cual nos ayuda a utilizar las funciones del navegador ya sea ir para adelante o para atras
+
+Al realizar el formulario para el search necesitamos tomar los parametros de la url y necesitamos instalar el siguiente paquetes
+    https://www.npmjs.com/package/query-string
+    npm install query-string

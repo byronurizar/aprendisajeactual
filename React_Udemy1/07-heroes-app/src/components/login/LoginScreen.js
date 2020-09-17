@@ -1,20 +1,32 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import { AutContext } from '../../auth/AuthContext';
+import { types } from '../../types/types';
 
-export const LoginScreen = ({history}) => {
+export const LoginScreen = ({ history }) => {
 
-    const handleLgoin=()=>{
+    const { dispatch } = useContext(AutContext)
+    const handleLgoin = () => {
         //history.push('/'); //Al momento de hacer push el navegaro mostrara esa ruta
-        history.replace('/'); //Haciendo el replace el navegador hace de cuentas que fue esta ruta con la que inicio
+        // history.replace('/'); //Haciendo el replace el navegador hace de cuentas que fue esta ruta con la que inicio
+
+        const action = {};
+        action.payload = {
+            name: 'Byron López Urizar'
+        };
+        action.type = types.login;
+
+        dispatch(action);
+        history.replace('/'); 
     }
     return (
         <div className="container mt-g">
             <h1>Login</h1>
-            <hr/>
+            <hr />
 
             <button
                 className="btn btn-primary" onClick={handleLgoin}
-                >
-                    Login
+            >
+                Login
             </button>
         </div>
     )
