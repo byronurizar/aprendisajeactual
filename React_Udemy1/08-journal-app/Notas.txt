@@ -1,0 +1,5 @@
+Para poder trabajar con sass necesitamos instalarlo
+npm install node-sass
+
+Instalamos react router
+npm install react-router-dom
