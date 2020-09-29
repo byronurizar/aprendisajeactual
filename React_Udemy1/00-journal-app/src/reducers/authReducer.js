@@ -6,8 +6,15 @@ import { types } from "../types/types";
     }
 */
 
+// const initialStete={
+//     uid:12345,
+//     name:'Byron',
+//     dir:{
+//         b:12
+//     }
+// }
 
-export const authReducer = (state = {}, action) => {
+export const authReducer = (state={}, action) => {
     switch (action.type) {
         case types.login:
             return {

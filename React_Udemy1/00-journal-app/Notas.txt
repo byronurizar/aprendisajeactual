@@ -1,3 +1,22 @@
 Instalación de Redux
 npm install react-redux redux
+https://github.com/zalmoxisus/redux-devtools-extension#usage
 
+Configurar redux para mostrarlo en redux devtools
+https://github.com/zalmoxisus/redux-devtools-extension#usage
+
+
+//Configuramos firebase 
+
+y instalamos el paquete 
+npm install firebase
+
+
+Para poder utilizar peticiones tenemos que instalar redux-thunk
+https://www.npmjs.com/package/redux-thunk
+ npm  redux-thunk
+
+
+para validar formularios podemos utilizar 
+https://www.npmjs.com/package/validator
+npm install validator
