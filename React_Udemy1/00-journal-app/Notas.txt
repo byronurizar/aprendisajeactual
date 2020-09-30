@@ -20,3 +20,7 @@ https://www.npmjs.com/package/redux-thunk
 para validar formularios podemos utilizar 
 https://www.npmjs.com/package/validator
 npm install validator
+
+Instalmos sweettalert2
+npm install sweetalert2
+https://sweetalert2.github.io/#download
