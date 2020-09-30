@@ -14,7 +14,7 @@ npm install firebase
 
 Para poder utilizar peticiones tenemos que instalar redux-thunk
 https://www.npmjs.com/package/redux-thunk
- npm  redux-thunk
+ npm  i redux-thunk
 
 
 para validar formularios podemos utilizar 
