@@ -1,0 +1,44 @@
+Busqueda de victimas
+	dos tipos de identificados
+	>=Encontrado
+	
+
+Los osteologicos no hace prueba de adn
+en los smit si se hace prueba de adn
+
+ambos tienen osamenta (Es un conjunto de huesos, pueda ser no completo)
+osamente aplica para los dos 
+fosa en donde lo contraron
+XY MUJER
+XX HOMBRE
+
+
+Agregar osamenta es información de los huesos
+
+
+Victimas
+son las personas que vas a identificar de quien son los huesos
+ aplica para osteologico y smit
+
+
+Identificado osteologico no lleva adn
+
+IDENTIFICADOS OSTEOLOGICOS
+no se uso adn a pura recolección de datos se encontro toda la info
+
+
+
+IDENTIFICADO SMIT 
+tiene una coincidencia con adn
+estas las crea el departamento de adn
+pueden tener varias osamentas que puedan ser las coincidencias
+
+	Concidencia
+
+
+al momento de confirmar la identificación nos crea el identificado smith
+
+
+
+coincidencias
+se agregan los donantes
