@@ -1,0 +1,355 @@
+Clase Variables: Strings
+
+    Interpolación de texto:
+        comilla invertida
+        var nombreCompleto = `${nombre} ${apellido.toUpperCase()}`
+
+Clase Variables: numeros
+
+    - Operadores avanzados son aceptados
+        edad++
+    - La manera de almacenar decimal no es precisa, para solucinarlo:
+        Math.round(precio * 100 * 3) / 100
+        total.toFixed(3)
+        total.parseFloat(2)
+
+Diferencia entre var, let y const
+    - var:
+        - Las variables se crea de forma global por asi llamarlo
+    - let:
+        - El alcance de la variable se reduce al bloque donde es creada y
+            utilizada
+    - const: 
+        - Su funcionamiento es igual a let, en relación al scope, pero
+            no se puede modificar su valor (reasignar), se vuelve constante
+
+Memoria en JS
+    - Se puede apoyar utilizando el cache para no volver a requerir
+        operaciones costosas
+
+Clousures JS:
+    - Una función que recuerda el estado de las cosas cuando fue invocada
+
+Estructuras de datos inmutables:
+    - Para evitar el SideEffect
+    - SideEffect modifica objetos fuera de su scope
+    -
+        const cumpleaniosInmutable = persona =>({
+            ...persona,
+            edad: persona.edad + 1
+        })
+    - Desventaja: creación de nuevas variables/objetos
+
+
+Clase Funciones:
+
+    var nombre = 'jose', edad = 33
+    function imprimirEdad(){
+        console.log(`${nombre} tiene ${edad} año`)
+    }
+
+Clase el alcance de las funciones:
+
+    El objeto global es: Window
+    SideEffect: va a modifica variables que no estan definidas en su scope
+    Los parametros solo tienen alcance dentro de la funcion (alcance local)
+
+¿Cuándo se utiliza el punto y coma?
+    - Si despues de un console.log se agrega un array
+    - si despues de un console.log se agrega un mensaje ``
+    - despues de un return no se puede dar un enter porque lo toma como ;
+
+Clase Objetos
+    crear objeto:
+        var jose { //nombre
+            clave: valor
+            nombre: '',
+            edad: 
+        }
+    desglozar objeto:
+    funcion imprimirNombreMayuscula({ nombre})
+    {
+        console.log(nombre.toUpperCase())
+    }
+
+Desestructurar un objeto:
+    //var nombre = persona.nombre equivalente con la linea de abajo
+    var { nombre } = persona
+
+Parámetros como referencia o como valor
+    // valor por referencia
+        function cumpleanos(persona){
+            persona.edad + 1 
+        }
+    // valor como parametro: se recomienda retornar un nuevo objeto
+        function cumpleanos2(persona){
+            return{
+                ...persona, //copia todo el objeta persona
+                edad: persona.edad + 1
+            }
+        }
+Comparaciones JavaScript
+    - Se recomienda el triple = para compar valor y tipo de dato
+    - cuidado al apuntar a las mismas ubicaciones en memoria
+
+Condicionales:
+    - if
+    - if - else
+
+Funciones que retornan valores:
+    - Una funcion sin nombre se le conoce como función anonima
+    - const MAYORIA_DE_EDAD = 18
+
+        function imprimirSiEsMayorEdad(persona){
+            if(esMayorDeEdad(persona))
+            {
+                console.log(`${persona.nombre} es mayor de edad`)
+            }
+            else{
+                console.log(`${persona.nombre} es menor de edad`)
+            }
+        }
+
+        function esMayorDeEdad(persona){
+            return persona.edad >= MAYORIA_DE_EDAD
+        }
+
+Arrow Functions:
+    1. function esMayorDeEdad(persona){
+            return persona.edad >= MAYORIA_DE_EDAD
+        }
+    2. var esMayorDeEdad = function (persona){
+            return persona.edad >= MAYORIA_DE_EDAD
+        }
+    3. const esMayorDeEdad = function (persona){
+            return persona.edad >= MAYORIA_DE_EDAD
+        }
+    4. const esMayorDeEdad = (persona) => {
+            return persona.edad >= MAYORIA_DE_EDAD
+        }
+    5. //con un solo parametro se pueden obviar los parentesis
+        const esMayorDeEdad = persona => {
+            return persona.edad >= MAYORIA_DE_EDAD
+        }
+    6. //cuando la funcion retorna un solo valor se puede obviar el return y las llaves
+        const esMayorDeEdad = persona => persona.edad >= MAYORIA_DE_EDAD
+    7. //Desestructurar respuesta
+        // se tienen que volver a colocar parentesis y dentro de llaves
+        // el valor a Desestructurar
+        // se quita el nombre del objeto dentro de la función
+        const esMayorDeEdad = ({ edad }) => edad >= MAYORIA_DE_EDAD
+
+Estructuras repetitivas:
+    - For
+    - While
+    - Do while
+
+Condicional multiple: 
+    - Switch
+    
+
+Prompt:
+    Para realizar preguntas al usuario
+
+Arrays:
+    - se declara:
+        var nombre = []
+    - se puede inicializar:
+        var nombre = [ objeto1, objeto2, ... , objeton ]
+    - Acceder a un elemento especifico:
+        persona[0]
+    - acceder a propiedad
+        persona[0].altura
+        persona[0].['altura']
+
+Filtrar un Array
+    - Se necesita un array y una condicion
+    - Filter
+        //const esAlta = (persona) => {
+        //    return persona.altura > 1.8
+        //}
+        //const esAlta = persona => persona.altura > 1.8
+        const esAlta = ({ persona }) => altura > 1.8
+
+        var persona = [ persona1, persona1, ... , personan ]
+        var personasAltas = personas.filter(esAlta)
+
+Transformar un Array
+    - funcion MAP: a diferencia de filter devuelve un nuevo array
+        que va a modificar cada uno de los elementos que le pasamos
+        del array original
+    -   
+        //const pasarAlturaACms = () => {
+        //}
+        /* Esta forma modifica el objeto original
+            const pasarAlturaACms = persona => {
+            persona.altura *= 100
+            return persona
+        }*/
+        // esta forma devuelve un nuevo objeto modificado
+        const pasarAlturaACms = persona => {
+            return {
+                ...persona,
+                altura: persona.altura *= 100
+            }
+        }
+        // reduciendo la misma forma anterior
+        const pasarAlturaACms = persona => ({
+                ...persona,
+                altura: persona.altura *= 100
+            })
+        var personasCmd = personas.map(pasarAlturaACms)
+
+Reducir un array a un valor
+    - REDUCE: reduce un array original a un único valor
+    - ejemplo tomar valores total de un atributo
+        /*var acum = 0
+        for(var i = 0; i < personas.Length; i++){
+            acum = acum + personas[i].cantidadDeLibros
+        }*/
+                    //nombre de la funcion (nuevo nombre en ese momento)
+                    // valor inicial del acumulador
+        
+        /*const reducer = (acum, persona) => {
+            return acum + persona.cantidadDeLibros
+        }*/
+        
+        //const reducer = (acum, persona) => acum + persona.cantidadDeLibros
+        const reducer = (acum, { cantidadDeLibros } ) => acum + cantidadDeLibros
+        var totalDeLibros = personas.reduce(reducer, 0)
+
+        console.log(`En totla todos tienen ${totalDeLibros} libros`)
+
+Cómo funcionan las clases en JavaScript
+Herencia Prototipal:
+    - se llama un prototipo base, y si no lo encuentra lo busca en  
+        el padre
+    - funcion para crear la herencia
+    function heredaDe(prototipoHijo, prototipoPadre){
+            var fn = function () {
+                fn.prototype = prototipoPadre.prototype
+                prototipoHijo.prototype = new fn
+                prototipoHijo.prototype.constructor = prototipoHijo
+            }
+        }
+Clases JavaScript:
+    - Las clases se crean igual que en otro lenguaje
+    * importante: no son clases siguen siendo prototipos
+    - class Persona{
+            constructor(nombre, apellido, altura){
+                this.nombre = nombre;
+                this.apellido = apellido
+                this.altura = altura
+            }
+            saludar(){
+                console.log(`Hola me llamo ${this.nombre} ${this.apellido}`)
+            }
+        }
+    - Para heredar se agrega extendes y la clase padre
+        class Desarrollador extends Persona{
+            constructor(nombre, apellido, altura){
+                //super hereda el constructor de la clase padre
+                //sin super no funciona this
+                super(nombre, apellido, altura)
+            }
+            saludar(){
+                console.log(`Hola me llamo ${this.nombre} ${this.apellido} y soy desarrollador`)
+            }
+        }
+Pasar funciones como parametros:
+    - 
+Callbacks
+    - Son funciones que se puede ejecutar (o no) en el futuro
+    - ejemplo: al realizar una consulta GET cuando responde exitosamente se ejecuta la función
+Manejo de errores con Callbacks:
+    - Callbacks encadenados
+    - Se puede encadenar el llamado fail a los metodos get por ejemplo
+    - $.get(url, opts, callback).fail(function(){
+        console.log(`Sucedio un error. No se pudo obtener el personaje ${id}`)
+        })
+        }
+    - ordenando el manejo de errores para mejor presentación y entendimiento:
+        $
+        .get(url, opts, callback)
+        .fail(function() {
+            console.log(`Sucedio un error. No se pudo obtener el personaje ${id}`)
+        })
+        }
+    - cambiandola por arrow function
+        $
+        .get(url, opts, callback)
+        .fail(()=> {
+            console.log(`Sucedio un error. No se pudo obtener el personaje ${id}`)
+        })
+        }
+Promesas:
+    - Ayudan a eliminar el callback hell
+    - Pensamos en promesas como valores que aún no conocemos
+    - Las promesas manejan estados:
+        - Estado PENDING: cuando se crea una promesa se crea con este estado
+        - Estado FULFILLED: Resolve, pasa a este estado cuando la promesa se resuelve correctamente
+            - .then(val => ...) para FULFILLED
+        - Estado REJECTED: Reject, pasa a este estado cuando ocurre algún error
+            - .catch(err => ...)  para REJECTED
+        - Para obtener los valores de las respuestas utilizamos, pasandole funciones para leer los valores:
+            - .then(val => ...) para FULFILLED
+            - .catch(err => ...)  para REJECTED
+
+    - Estructura de una promesa:
+        new Promise(function(resolve, reject){
+            ...
+        }).then(valor => {
+            ...
+        }).catch(err => {
+            ...
+        })
+Promesas encadenadas:
+    - En el metodo la promesa debe retornar la siguiente promesa,
+        el resultado se lee en otro nuevo .then
+    - 
+        
+        function onError(id)
+        {
+            console.log(`Sucedio un error. No se pudo obtener el personaje ${id}`)
+        }
+        obtenerPersonaje(1)
+        .then(personaje1 => {
+            console.log(`El personaje 1 es ${personaje1.name}`)
+            return obtenerPersonaje(2)
+        })
+        .then(personaje2 => {
+            console.log(`El personaje 2 es ${personaje2.name}`)
+            return obtenerPersonaje(3)
+        })
+        .then ... asi con todas las promesas
+        .catch(onError) //mismo error para todas las promesas
+    
+Múltiples Promesas en paralelo:
+    - Se crea un array para tener todas la promesas que queremos ejecutar paralelamente
+    - 
+        var ids = [1, 2, 3, 4, 5, 6, 7]
+        /*var promesas = ids.map(function(id){
+            return obtenerPersonaje(id)
+        })*/ //lo reducimos utilizando arrow functions
+        var promesas = ids.map(id => obtenerPersonaje(id))
+
+        Promise
+            .all(promesas)
+            .then(personajes => console.log(personajes))
+            .catch(onError)
+
+Async-await para asincronismo:
+    - Se utiliza otra forma de ejecutar varias promesas simultaneamente
+    - Se utilizan palabras reservadas Asyn y await
+    - Se coloca dentro de un bloque try - catch
+        asyn function obtenerPersonajes(){
+            var ids = [1, 2, 3, 4, 5, 6, 7]
+            var promesas = ids.map(id => obtenerPersonaje(id))
+            try{
+                var personajes = await Promise.all(promesas)
+            }
+            catch (id){
+                onError(id)
+            }
+        }
+        obtenerPersonajes()
