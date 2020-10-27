@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import googleIcon from '../assets/static/google-icon.png';
 import twitterIcon from '../assets/static/twitter-icon.png';
@@ -11,21 +11,27 @@ const Login = (props) => {
         password: ''
     });
 
-    const handleOnchange = (event) => {
-        setValues({ ...value, [event.target.name]: event.target.value })
+    const handleInputChange = ({ target }) => {
+        setValues({
+            ...values,
+            [target.name]: target.value
+        });
     }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         props.loginRequest(values);
+        console.log({ values });
         props.history.push("/");
     }
+
     return (
         <section className="login">
             <section className="login__container">
                 <h2>Inicia sesión</h2>
                 <form className="login__container--form" onSubmit={handleSubmit}>
-                    <input className="input" name="email" type="text" placeholder="Correo" value={values.email} onChange={handleOnchange} />
-                    <input className="input" name="password" type="password" placeholder="Contraseña" value={values.password} onChange={handleOnchange} />
+                    <input className="input" name="email" id="email" type="text" placeholder="Correo" value={values.email} onChange={handleInputChange} />
+                    <input className="input" name="password" id="password" type="password" placeholder="Contraseña" value={values.password} onChange={handleInputChange} />
                     <button className="button" type="submit">Iniciar sesión</button>
                     <div className="login__container--remember-me">
                         <label>
@@ -48,5 +54,5 @@ const Login = (props) => {
 }
 const mapDispatchToProps = {
     loginRequest
-  }
-export default connect(null,mapDispatchToProps)(Login)
+}
+export default connect(null, mapDispatchToProps)(Login)

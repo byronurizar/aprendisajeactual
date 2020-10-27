@@ -115,3 +115,35 @@ Debuggeando nuestro proyecto (agregando validaciones a nuestro componente card)
 
 Crear Formulario de Login
 Formulario de Login con Redux
+
+
+Creando un Servicio para Gravatar
+    Muchas veces la mejor opción no es descargar un paquete de npm ya que podemos ver la documentación, entender cómo funciona y nosotros implementar el código necesario para nuestro caso, ya que instalar todo el paquete puede volver más pesado nuestro proyecto.
+
+    Para nuestro servicio que llamará a Gravatar vamos a crear la carpeta utils y dentro añadir el archivo gravatar.js.
+
+    Instalacmos md5
+    npm i md5 --save
+
+Uso de gravatar en nuestro proyecto
+
+Validación para LogIn LogOut
+
+Register
+
+Register con Redux
+Vista general del player
+Arreglando la funcionalidad del player
+    Al momento de recargar la pagina estando en el player no muestra una pagina en blanco y la solución fue agregar en la configuración de webpack
+    en la sección output
+     publicPath:'/'
+     esto para que encuentre el bundle.js
+
+
+Terminando de detallar nuestro player
+
+Validaciones
+    Instalamos classnames
+    npm install classnames
+    el cual nos permite crear logica para crear validaciones
+
