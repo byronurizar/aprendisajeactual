@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import '../assets/styles/components/Register.scss';
 import { registerRequest } from '../actions';
+import Header from '../components/Header';
 const Register = (props) => {
     const [values, setValues] = useState({
         name: '',
@@ -25,6 +26,8 @@ const Register = (props) => {
     }
 
     return (
+        <>
+        <Header isRegister/>
         <section className="register">
             <section className="register__container">
                 <h2>Regístrate</h2>
@@ -54,6 +57,7 @@ const Register = (props) => {
                 <Link to="/login">Iniciar sesión</Link>
             </section>
         </section>
+        </>
     );
 }
 

@@ -8,6 +8,7 @@ const initState = {
     "user": {},
     "playing": {},
     "mylist": [],
+    "filterSearch": [],
     "trends": [
         {
             "id": 2,

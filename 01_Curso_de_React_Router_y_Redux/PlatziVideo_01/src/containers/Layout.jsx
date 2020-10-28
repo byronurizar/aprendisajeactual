@@ -4,7 +4,6 @@ import Header from '../components/Header'
 
 const Layout = ({ children }) => (
     <div className="App">
-        <Header />
         {children}
         <Footer />
     </div>

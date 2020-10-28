@@ -34,6 +34,14 @@ const reducer = (state = {}, action) => {
                     || state.original.find(item => item.id === Number(action.payload))
                     || []
             }
+        case "GET_FILTER_VIDEOS":
+            return {
+                ...state,
+                filterSearch: state.trends.filter(({title})=>{
+                    return title.toLowerCase().match(`${action.payload.toLowerCase()}`)
+                }) || []
+            }
+
         default:
             return state;
     }

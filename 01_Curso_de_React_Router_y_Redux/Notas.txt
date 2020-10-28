@@ -147,3 +147,26 @@ Validaciones
     npm install classnames
     el cual nos permite crear logica para crear validaciones
 
+Validaciones de UI
+
+Debug con Redux Devtools
+    Redux Dev Tools nos va a servir mucho para entender mejor el flujo de nuestra información en nuestra aplicación y poder realizar debugging de manera sencilla.
+
+    Solamente necesitas instalar la extensión según el navegador que tengas:
+
+    Chrome
+    Firefox
+    Una vez instalado dentro de nuestro index.js vamos a añadir el siguiente código:
+        import { createStore, compose } from ‘redux’;  
+        ...  
+
+
+        const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose  
+
+        const store = createStore(reducer, initialState, composeEnhancers  
+
+5. Cierre del curso
+    Cierre del Proyecto
+    ¡Felicitaciones por terminar el Curso de React Router y Redux
+    Ahora ya sabes cómo crear rutas con React Router y controlar el flujo de tu aplicación con Redux. Para continuar con la escuela de JavaScript ve al Curso de Server Side Render con Express y después el de Curso de Backend con Node.js.
+    Sabemos que ha sido un largo camino, pero estamos seguros de que valió la pena. Y recuerda, ¡nunca pares de aprender!
