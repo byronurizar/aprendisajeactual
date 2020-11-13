@@ -23,6 +23,14 @@ module.exports = (sequelize, type) => {
                     key: "cursoId",
                 }
             },
+            gradoId: {
+                type: type.INTEGER,
+                allowNull: false,
+                references: {
+                    model: "cat_grado",
+                    key: "gradoId",
+                }
+            },
             usuario_crea: {
                 type: type.INTEGER
             },

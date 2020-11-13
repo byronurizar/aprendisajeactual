@@ -57,7 +57,6 @@ const CursoModel=require('./models/colegio/cat_curso');
 const SalonModel=require('./models/colegio/cat_salon');
 const HorarioModel=require('./models/colegio/cat_horario');
 const CicloEscolarModel=require('./models/colegio/cat_ciclo_escolar');
-const CarreraGradoModel=require('./models/colegio/carrera_grado');
 const CarreraPensumModel=require('./models/colegio/carrera_pensum');
 const PensumCursoModel=require('./models/colegio/pensum_curso');
 const GradoSeccionModel=require('./models/colegio/grado_seccion');
@@ -103,7 +102,6 @@ const Curso=CursoModel(confiBd, Sequelize);
 const Salon=SalonModel(confiBd, Sequelize);
 const Horario=HorarioModel(confiBd, Sequelize);
 const CicloEscolar=CicloEscolarModel(confiBd, Sequelize);
-const CarreraGrado=CarreraGradoModel(confiBd, Sequelize);
 const CarreraPensum=CarreraPensumModel(confiBd, Sequelize);
 const PensumCurso=PensumCursoModel(confiBd, Sequelize);
 const GradoSeccion=GradoSeccionModel(confiBd, Sequelize);
@@ -387,7 +385,7 @@ try {
       }
     });
 
-    const { listCarrera, listPensum, listCarreraPensum, listGrado, listCarreraGrado, listSeccion, listSalon, listHorario, listCurso, listPensumCurso } = require('./dataColegio');
+    const { listCarrera, listPensum, listCarreraPensum, listGrado, listSeccion, listSalon, listHorario, listCurso, listPensumCurso } = require('./dataColegio');
     confiBd.query("select count(*) as total from cat_carrera", {
       type: QueryTypes.SELECT
     }).then(async (resultado) => {
@@ -396,7 +394,6 @@ try {
         await Pensum.bulkCreate(listPensum);
         await CarreraPensum.bulkCreate(listCarreraPensum);
         await Grado.bulkCreate(listGrado);
-        await CarreraGrado.bulkCreate(listCarreraGrado);
         await Seccion.bulkCreate(listSeccion);
         await Salon.bulkCreate(listSalon);
         await Horario.bulkCreate(listHorario);

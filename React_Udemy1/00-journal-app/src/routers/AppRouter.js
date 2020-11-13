@@ -13,6 +13,7 @@ import { useState } from 'react';
 import { PrivateRoute } from '../routers/PrivateRoute';
 import { PublicRoute } from '../routers/PublicRoute';
 import { AuthRouter } from './AuthRouter';
+import { getUser } from '../helpers/getUser';
 export const AppRouter = () => {
     const dispatch = useDispatch();
     const [checking, setChecking] = useState(true);
@@ -23,6 +24,8 @@ export const AppRouter = () => {
             if (user?.uid) {
                 dispatch(login(user.uid, user.displayName));
                 setIsLoggedIn(true);
+
+                const usuarios=getUser();
             } else {
                 setIsLoggedIn(false);
             }

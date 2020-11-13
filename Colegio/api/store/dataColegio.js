@@ -133,88 +133,6 @@ const listGrado = [
     usuario_crea: 1
   }
 ];
-const listCarreraGrado = [
-  {
-    carreraId: 1,
-    gradoId: 1,
-    usuario_crea: 1
-  },
-  {
-    carreraId: 1,
-    gradoId: 2,
-    usuario_crea: 1
-  },
-  {
-    carreraId: 1,
-    gradoId: 3,
-    usuario_crea: 1
-  },
-  {
-    carreraId: 2,
-    gradoId: 4,
-    usuario_crea: 1
-  },
-  {
-    carreraId: 2,
-    gradoId: 5,
-    usuario_crea: 1
-  },
-  {
-    carreraId: 3,
-    gradoId: 4,
-    usuario_crea: 1
-  },
-  {
-    carreraId: 3,
-    gradoId: 5,
-    usuario_crea: 1
-  },
-  {
-    carreraId: 3,
-    gradoId: 6,
-    usuario_crea: 1
-  },
-  {
-    carreraId: 4,
-    gradoId: 4,
-    usuario_crea: 1
-  },
-  {
-    carreraId: 4,
-    gradoId: 5,
-    usuario_crea: 1
-  },
-  {
-    carreraId: 4,
-    gradoId: 6,
-    usuario_crea: 1
-  },
-  {
-    carreraId: 5,
-    gradoId: 4,
-    usuario_crea: 1
-  },
-  {
-    carreraId: 5,
-    gradoId: 5,
-    usuario_crea: 1
-  },
-  {
-    carreraId: 5,
-    gradoId: 6,
-    usuario_crea: 1
-  },
-  {
-    carreraId: 6,
-    gradoId: 4,
-    usuario_crea: 1
-  },
-  {
-    carreraId: 6,
-    gradoId: 5,
-    usuario_crea: 1
-  }
-]
 const listSeccion = [
   {
     nombre: 'A',
@@ -342,176 +260,253 @@ const listPensumCurso = [
   {
     pensumId: 1,
     cursoId: 1,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 1,
     cursoId: 2,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 1,
     cursoId: 3,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 1,
     cursoId: 4,
+    gradoId:1,
     usuario_crea: 1
   },
   {
-    pensumId: 2,
+    pensumId: 1,
     cursoId: 1,
+    gradoId:2,
+    usuario_crea: 1
+  },
+  {
+    pensumId: 1,
+    cursoId: 2,
+    gradoId:2,
+    usuario_crea: 1
+  },
+  {
+    pensumId: 1,
+    cursoId: 3,
+    gradoId:2,
+    usuario_crea: 1
+  },
+  {
+    pensumId: 1,
+    cursoId: 4,
+    gradoId:2,
+    usuario_crea: 1
+  },
+  {
+    pensumId: 1,
+    cursoId: 1,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 2,
     cursoId: 2,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 2,
     cursoId: 3,
+    gradoId:2,
+    usuario_crea: 1
+  },
+  {
+    pensumId: 2,
+    cursoId: 1,
+    gradoId:2,
+    usuario_crea: 1
+  },
+  {
+    pensumId: 2,
+    cursoId: 2,
+    gradoId:2,
+    usuario_crea: 1
+  },
+  {
+    pensumId: 2,
+    cursoId: 3,
+    gradoId:2,
     usuario_crea: 1
   },
   {
     pensumId: 2,
     cursoId: 4,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 2,
     cursoId: 5,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 3,
     cursoId: 1,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 3,
     cursoId: 2,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 3,
     cursoId: 3,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 3,
     cursoId: 4,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 3,
     cursoId: 5,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 3,
     cursoId: 6,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 3,
     cursoId: 7,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 4,
     cursoId: 1,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 4,
     cursoId: 2,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 4,
     cursoId: 3,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 4,
     cursoId: 4,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 4,
     cursoId: 5,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 4,
     cursoId: 6,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 4,
     cursoId: 7,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 5,
     cursoId: 1,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 5,
     cursoId: 2,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 5,
     cursoId: 3,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 5,
     cursoId: 4,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 5,
     cursoId: 5,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 5,
     cursoId: 6,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 5,
     cursoId: 7,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 6,
     cursoId: 1,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 6,
     cursoId: 2,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 6,
     cursoId: 3,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 6,
     cursoId: 4,
+    gradoId:1,
     usuario_crea: 1
   },
   {
     pensumId: 6,
     cursoId: 5,
+    gradoId:1,
     usuario_crea: 1
   }
 ];
@@ -520,7 +515,6 @@ module.exports = {
   listPensum,
   listCarreraPensum,
   listGrado,
-  listCarreraGrado,
   listSeccion,
   listSalon,
   listHorario,
