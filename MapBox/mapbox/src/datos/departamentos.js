@@ -1,4 +1,4 @@
-export var datos={
+export const departamentos={
     "type": "FeatureCollection",
     "features": [
         {

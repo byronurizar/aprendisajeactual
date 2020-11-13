@@ -43,7 +43,7 @@ width: 10px;
 }
 
 .nivel1{
-  background-color: #723122
+  background-color: #723122;
 }
 .nivel2{
   background-color: #8b4225
@@ -70,6 +70,9 @@ width: 10px;
   background-color: #f2f12d
 }
 
+.texto{
+  font-size: large;
+}
 
 
 

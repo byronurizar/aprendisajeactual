@@ -1,4 +1,5 @@
 import React from 'react'
+import { departamentos } from '../datos/departamentos';
 import { useMapbox } from '../hooks/useMapbox';
 const puntoInicial = {
     lng: -89.9832,
@@ -12,7 +13,7 @@ const puntoInicial = {
 //     zoom: 13.5
 // }
 export const MapaPage = () => {
-    const { setRef, coords } = useMapbox(puntoInicial);
+    const { setRef, coords, deptoSelected,mostrarTodosLosDeptos } = useMapbox(puntoInicial);
     // const mapaDiv = useRef();
     // // const [mapa, setMapa] = useState();
     // const mapa = useRef();
@@ -43,38 +44,41 @@ export const MapaPage = () => {
     return (
 
         <>
-            <div className="info">
-                Lng:{coords.lng} | Lat:{coords.lat} | zoom:{coords.zoom}
-            </div>
+            
+            {
+                deptoSelected &&
+                <button className="info" onClick={()=>{mostrarTodosLosDeptos();}}>Mostrar todos los departamentos</button>
+            }
             <div
                 ref={setRef}
                 className="mapContainer" />
 
-            <div id="state-legend" className="legend">
-                <h4>Cantidad</h4>
-                <div><span className="nivel1"></span>200</div>
-                <div><span className="nivel2"></span>100</div>
-                <div><span className="nivel3"></span>86</div>
-                <div><span className="nivel4"></span>61</div>
-                <div><span className="nivel5"></span>40</div>
-                <div><span className="nivel6"></span>30</div>
-                <div><span className="nivel7"></span>15</div>
-                <div><span className="nivel8"></span>11</div>
-                <div><span className="nivel9"></span>0</div>
-            </div>
-
-            <div id="county-legend" className="legend" style={{ display: "none" }}>
-                <h4>Cantidad</h4>
-                <div><span className="nivel1"></span>35</div>
-                <div><span className="nivel2"></span>30</div>
-                <div><span className="nivel3"></span>25</div>
-                <div><span className="nivel4"></span>20</div>
-                <div><span className="nivel5"></span>15</div>
-                <div><span className="nivel6"></span>10</div>
-                <div><span className="nivel7"></span>8</div>
-                <div><span className="nivel8"></span>5</div>
-                <div><span className="nivel0"></span>0</div>
-            </div>
+                    <div id="state-legend" className="legend">
+                        <h4>Cantidad en Departamentos</h4>
+                        <div className="texto"><span className="nivel1"></span>Mayor a 110</div>
+                        <div className="texto"><span className="nivel2"></span>81 a 110</div>
+                        <div className="texto"><span className="nivel3"></span>51 a 80</div>
+                        <div className="texto"><span className="nivel4"></span>41 a 50</div>
+                        <div className="texto"><span className="nivel5"></span>31 a 40</div>
+                        <div className="texto"><span className="nivel6"></span>21 a 30</div>
+                        <div className="texto"><span className="nivel7"></span>11 a 20</div>
+                        <div className="texto"><span className="nivel8"></span>1 a 10</div>
+                        <div className="texto"><span className="nivel9"></span>0</div>
+                    </div>
+                    
+                    {/* // <div id="county-legend" className="legend">
+                    //     <h4>Cantidad en Municipios</h4>
+                    //     <div className="texto"><span className="nivel1"></span>Mayor a 28</div>
+                    //     <div className="texto"><span className="nivel2"></span>21 a 28</div>
+                    //     <div className="texto"><span className="nivel3"></span>16 a 20</div>
+                    //     <div className="texto"><span className="nivel4"></span>13 a 15</div>
+                    //     <div className="texto"><span className="nivel5"></span>10 a 12</div>
+                    //     <div className="texto"><span className="nivel6"></span>7 a 9</div>
+                    //     <div className="texto"><span className="nivel7"></span>4 a 6</div>
+                    //     <div className="texto"><span className="nivel8"></span>1 a 3</div>
+                    //     <div className="texto"><span className="nivel0"></span>0</div>
+                    // </div> */}
+            
         </>
 
     )
