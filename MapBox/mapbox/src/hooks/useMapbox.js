@@ -156,7 +156,7 @@ export const useMapbox = (puntoInicial) => {
                         lng: lng.toFixed(4),
                         lat: lat.toFixed(4),
                         minZoom:6.5,
-                        zoom: 9
+                        zoom: nombre==='Petén' ? 8 :8.8,
                     });
                     setDeptoSelected(true);
                    // mapa.current?.getSource('mapa_guatemala').setData(nuevo);
@@ -194,11 +194,11 @@ export const useMapbox = (puntoInicial) => {
                     });
 
 
-                    mapa.current?.on('zoom', function () {
-                        if (mapa.current?.getZoom() <10) {
-                        mostrarTodosLosDeptos();
-                        }
-                        });
+                    // mapa.current?.on('zoom', function () {
+                    //     if (mapa.current?.getZoom() <10) {
+                    //     mostrarTodosLosDeptos();
+                    //     }
+                    //     });
 
         });
 

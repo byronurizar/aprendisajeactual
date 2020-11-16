@@ -54,7 +54,7 @@ export const MapaPage = () => {
                 className="mapContainer" />
 
                     <div id="state-legend" className="legend">
-                        <h4>Cantidad en Departamentos</h4>
+                        <h4>Cantidad</h4>
                         <div className="texto"><span className="nivel1"></span>Mayor a 110</div>
                         <div className="texto"><span className="nivel2"></span>81 a 110</div>
                         <div className="texto"><span className="nivel3"></span>51 a 80</div>
