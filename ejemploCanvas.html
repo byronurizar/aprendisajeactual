@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        canvas {
+            border: 1px solid rgb(128, 128, 128)
+        }
+    </style>
 </head>
 <script>
     window.onload = function () {
@@ -12,42 +18,376 @@
         if (canvas && canvas.getContext) {
             var ctx = canvas.getContext("2d");
             if (ctx) {
-                ctx.lineWidth = 2;
-                ctx.strokeStyle = "black";
+
                 ctx.beginPath();
-                ctx.moveTo(280, 110);
-                ctx.lineTo(280, 140);
-                ctx.stroke();
-
                 ctx.lineWidth = 2;
-                ctx.strokeStyle = "black";
-                // ctx.fillStyle = "#ff0";
-                // ctx.fillRect(250, 50, 60, 60);
-                ctx.strokeRect(250, 50, 60, 60);
+                ctx.strokeStyle = "gray";
+                ctx.fillStyle = "white";
+                ctx.fillRect(260, 50, 50, 50);
+                ctx.strokeRect(260, 50, 50, 50);
+                ctx.closePath();
 
+                ctx.beginPath();
                 ctx.textAlign = "center";
-                ctx.font = "10pt Verdana";
+                ctx.font = "8pt Verdana";
                 ctx.fillStyle = "black";
-                ctx.fillText("Raul L.", 280, 40);
+                ctx.fillText("Esposo D.", 285, 115);
                 ctx.stroke();
+                ctx.closePath();
 
-                ctx.strokeStyle = "black";
+                ctx.beginPath();
+                ctx.strokeStyle = "gray";
                 ctx.fillStyle = "white";
                 ctx.lineWidth = 2;
-                ctx.arc(280, 120, 35, 0, 2 * Math.PI);
+                ctx.arc(410, 80, 25, 0, 2 * Math.PI);
+                ctx.closePath();
                 ctx.fill();
                 ctx.stroke();
 
-            }
+                ctx.beginPath();
+                ctx.textAlign = "center";
+                ctx.font = "8pt Verdana";
+                ctx.fillStyle = "black";
+                ctx.closePath();
+                ctx.fillText("Esposa M.", 410, 115);
+                ctx.stroke();
 
+
+
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "#008CA2";
+                ctx.beginPath();
+                ctx.moveTo(310, 80);
+                ctx.lineTo(385, 80);
+                ctx.stroke();
+                ctx.closePath();
+
+
+
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "#5A5E5E";
+                ctx.beginPath();
+                ctx.moveTo(350, 80);
+                ctx.lineTo(350, 150);
+                ctx.stroke();
+                ctx.closePath();
+
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "#5A5E5E";
+                ctx.beginPath();
+                ctx.moveTo(150, 150);
+                ctx.lineTo(550, 150);
+                ctx.stroke();
+                ctx.closePath();
+
+                ctx.beginPath();
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "gray";
+                ctx.fillStyle = "white";
+                ctx.closePath();
+                ctx.fillRect(125, 200, 50, 50);
+                ctx.strokeRect(125, 200, 50, 50);
+
+
+                ctx.beginPath();
+                ctx.textAlign = "center";
+                ctx.font = "8pt Verdana";
+                ctx.fillStyle = "black";
+                ctx.closePath();
+                ctx.fillText("Hijo Uno.", 150, 265);
+                ctx.stroke();
+
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "#5A5E5E";
+                ctx.beginPath();
+                ctx.moveTo(150, 150);
+                ctx.lineTo(150, 200);
+                ctx.stroke();
+                ctx.closePath();
+
+
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "#008CA2";
+                ctx.beginPath();
+                ctx.moveTo(175, 225);
+                ctx.lineTo(225, 225);
+                ctx.stroke();
+                ctx.closePath();
+
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "#5A5E5E";
+                ctx.beginPath();
+                ctx.moveTo(200, 225);
+                ctx.lineTo(200, 300);
+                ctx.stroke();
+                ctx.closePath();
+
+
+
+
+                ctx.beginPath();
+                ctx.strokeStyle = "gray";
+                ctx.fillStyle = "white";
+                ctx.lineWidth = 2;
+                ctx.arc(250, 225, 25, 0, 2 * Math.PI);
+                ctx.closePath();
+                ctx.fill();
+                ctx.stroke();
+
+                ctx.textAlign = "center";
+                ctx.font = "8pt Verdana";
+                ctx.fillStyle = "black";
+                ctx.fillText("Esposa Hijo.", 250, 265);
+                ctx.closePath();
+                ctx.stroke();
+
+
+
+                // ctx.lineWidth = 2;
+                // ctx.strokeStyle = "black";
+                // ctx.beginPath();
+                // ctx.moveTo(250, 150);
+                // ctx.lineTo(250, 200);
+                // ctx.stroke();
+                // ctx.closePath();
+
+
+                ctx.beginPath();
+                ctx.strokeStyle = "gray";
+                ctx.fillStyle = "white";
+                ctx.lineWidth = 2;
+                ctx.arc(350, 225, 25, 0, 2 * Math.PI);
+                ctx.closePath();
+                ctx.fill();
+                ctx.stroke();
+
+                ctx.textAlign = "center";
+                ctx.font = "8pt Verdana";
+                ctx.fillStyle = "black";
+                ctx.fillText("Hija Uno.", 350, 265);
+                ctx.closePath();
+                ctx.stroke();
+
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "#5A5E5E";
+                ctx.beginPath();
+                ctx.moveTo(350, 150);
+                ctx.lineTo(350, 200);
+                ctx.stroke();
+                ctx.closePath();
+
+
+
+                ctx.beginPath();
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "gray";
+                ctx.fillStyle = "white";
+                ctx.closePath();
+                ctx.fillRect(425, 200, 50, 50);
+                ctx.strokeRect(425, 200, 50, 50);
+
+
+                ctx.beginPath();
+                ctx.textAlign = "center";
+                ctx.font = "8pt Verdana";
+                ctx.fillStyle = "black";
+                ctx.closePath();
+                ctx.fillText("Hijo dos.", 450, 265);
+                ctx.stroke();
+
+
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "#5A5E5E";
+                ctx.beginPath();
+                ctx.moveTo(450, 150);
+                ctx.lineTo(450, 200);
+                ctx.stroke();
+                ctx.closePath();
+
+
+                ctx.beginPath();
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "gray";
+                ctx.fillStyle = "white";
+                ctx.closePath();
+                ctx.fillRect(525, 200, 50, 50);
+                ctx.strokeRect(525, 200, 50, 50);
+
+
+                ctx.beginPath();
+                ctx.textAlign = "center";
+                ctx.font = "8pt Verdana";
+                ctx.fillStyle = "black";
+                ctx.closePath();
+                ctx.fillText("Hijo tres.", 550, 265);
+                ctx.stroke();
+
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "#5A5E5E";
+                ctx.beginPath();
+                ctx.moveTo(550, 150);
+                ctx.lineTo(550, 200);
+                ctx.stroke();
+                ctx.closePath();
+
+
+            }
+            //Largo de las lineas verticales sera de 70
+            //El radio sera de 25 y el cuadrado sera de 50*50
+            //Vertical para hijos seria de 50
 
         }
     }
 </script>
 
-<body>
-    <canvas id="linea1" width="1200" height="600">Su navegador no soporta canvas :( </canvas>
 
+<script>
+    const FONT_FAFG = "8pt Verdana";
+    const RECTANGULO_W = 50;
+    const RECTANGULO_H = 50;
+    const SEPARACION_EN_X_ESPOSOS = 150;
+    const arreglo = [
+        { id: 1, n: "Esposo D.", g: "M", p: null, m: null, w: 2 },
+        { id: 2, n: "Esposa M.", g: "F", p: null, m: null },
+        { id: 3, n: "Hijo Uno.", g: "M", p: 1, m: 2, e: null },
+        { id: 4, n: "Hija Uno.", g: "F", p: 1, m: 2, e: null },
+        { id: 5, n: "Hija Dos.", g: "F", p: 1, m: 2, e: null },
+        { id: 6, n: "Hijo Dos.", g: "M", p: 1, m: 2, w: 7 },
+        { id: 7, n: "Esposa Hijo.", g: "F", p: 1, m: 2},
+    ];
+
+    const pintarGenoGrama = () => {
+        var canvas = document.getElementById("genoFafg");
+        var genoFafg = [];
+        if (canvas && canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+            if (ctx) {
+                let w = canvas.clientWidth;
+                let h = canvas.clientHeight;
+                let valorX = (w / 2) - 100;
+                let valorY = 100;
+
+                let itemSinPadreYMadre = arreglo.filter(item => item.p === null && item.m === null);
+
+                itemSinPadreYMadre.map((item) => {
+                    if (item.g === "M") {
+                        let aux0 = {
+                            ...item, x: valorX, y: valorY
+                        };
+                        genoFafg.push(aux0);
+
+                        let esposa = arreglo.find(i => i.id === item.w);
+
+                        let aux = {
+                            ...esposa, x: valorX + SEPARACION_EN_X_ESPOSOS, y: valorY + 25
+                        };
+                        genoFafg.push(aux);
+
+                        let auxLinea = {
+                            t: true,
+                            x: aux0.x + 50,
+                            y: aux0.y + 25,
+                            x1: aux0.x + SEPARACION_EN_X_ESPOSOS - 25,
+                            y1: aux0.y + 25,
+                            c: '#008CA2'
+                        };
+
+                        genoFafg.push(auxLinea);
+                    };
+            
+            if (item.g === "F") {
+                let existe = genoFafg.find(i => i.id === item.id);
+                if (!existe) {
+                    let aux0 = {
+                        ...item, x: valorX, y: valorY
+                    }
+                    genoFafg.push(aux0);
+
+                    let esposos = arreglo.filter(i => i.e === item.id);
+                    let contador = 0;
+                    esposos.map(esposo => {
+                        if (contador <= 2) {
+                            let aux = {
+                                ...esposo, x: contador === 0 ? valorX - SEPARACION_EN_X_ESPOSOS : valorX + SEPARACION_EN_X_ESPOSOS, y: valorY - 25
+                            }
+                            genoFafg.push(aux);
+                            contador++;
+                        }
+                    });
+                }
+            }
+            valorX += 200;
+        });
+
+        // genoFafg = arreglo.map(item => {
+
+        //     return {
+        //         ...item,
+        //         x: 120, y: 180
+        //     }
+        // });
+
+        console.log({ genoFafg })
+        genoFafg.map(item => {
+            pintarNodo(ctx, item);
+        })
+    }
+        }
+    }
+
+    const pintarNodo = (ctx, { x, y, n, g, t, x1, y1, c }) => {
+        ctx.beginPath();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "gray";
+        ctx.fillStyle = "white";
+
+        if (t) {
+            console.log({ t, x1, y1, c });
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = c;
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(x1, y1);
+            ctx.stroke();
+            ctx.closePath();
+        } else {
+            if (g === "M") {
+                ctx.fillRect(x, y, RECTANGULO_W, RECTANGULO_H);
+                ctx.strokeRect(x, y, RECTANGULO_W, RECTANGULO_H);
+
+                ctx.textAlign = "center";
+                ctx.font = FONT_FAFG;
+                ctx.fillStyle = "black";
+                ctx.fillText(n, x + 25, y + 65);
+                ctx.stroke();
+                ctx.closePath();
+            }
+            if (g === "F") {
+                ctx.arc(x, y, RECTANGULO_H / 2, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.stroke();
+
+                ctx.textAlign = "center";
+                ctx.font = FONT_FAFG;
+                ctx.fillStyle = "black";
+                ctx.fillText(n, x, y + 40);
+                ctx.stroke();
+                ctx.closePath();
+
+            }
+        }
+    }
+    const button = () => {
+        pintarGenoGrama();
+    }
+
+</script>
+
+<body>
+    <button type="button" onclick="button();">Generar</button>
+    <canvas id="linea1" width="1000" height="600">Su navegador no soporta canvas :( </canvas>
+
+    <canvas id="genoFafg" width="1000" height="600">Su navegador no soporta canvas :( </canvas>
 </body>
 
 </html>
