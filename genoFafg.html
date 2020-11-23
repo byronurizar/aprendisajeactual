@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        canvas {
+            border: 2px solid rgb(0, 0, 0)
+        }
+    </style>
+</head>
+
+<script>
+    const FONT_FAFG = "8pt Verdana";
+    const RECTANGULO_W = 50;
+    const RECTANGULO_H = 50;
+    const SEPARACION_EN_X_ESPOSOS = 50;
+    const SERAPACION_ENTRE_HERMANOS=50;
+    const ALTURA_ENTRE_PADRE_E_HIJOS = 100;
+    const arreglo = [
+        { id: 1, n: "Esposo D.", g: "M", p: null, m: null, w: 2 },
+        { id: 2, n: "Esposa M.", g: "F", p: null, m: null, e: 1 },
+         { id: 3, n: "Hijo Uno.", g: "M", p: 1, m: 2, w: 7 },
+        { id: 4, n: "Hija Uno.", g: "M", p: 1, m: 2, e: null },
+        { id: 5, n: "Hija Dos.", g: "M", p: 1, m: 2, e: null },
+        { id: 6, n: "Hijo Dos.", g: "M", p: 1, m: 2, w: null },
+        { id: 7, n: "Esposa Hijo.", g: "F", p: null, m: null },
+        { id: 8, n: "Hijo del hijo", g: "M", p: 3, m: 7 },
+        { id: 9, n: "Hijo del hijo", g: "F", p: 3, m: 7 },
+    ];
+
+    const pintarGenoGrama = () => {
+        var canvas = document.getElementById("genoFafg");
+        var genoFafg = [];
+        if (canvas && canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+            if (ctx) {
+                let w = canvas.clientWidth;
+                let h = canvas.clientHeight;
+                let valorX = (w / 2) - 100;
+                let valorY = 100;
+
+                let itemSinPadreYMadre = arreglo.filter(item => item.p === null && item.m === null);
+
+                itemSinPadreYMadre.map((item) => {
+                    if (item.g === "M") {
+                        let aux0 = {
+                            ...item, x: valorX, y: valorY
+                        };
+                        genoFafg.push(aux0);
+
+                        let esposa = arreglo.find(i => i.id === item.w);
+
+                        let aux = {
+                            ...esposa, x: valorX + SEPARACION_EN_X_ESPOSOS+(RECTANGULO_W), y: valorY
+                        };
+
+                        let auxLinea = {
+                            t: true,
+                            x: aux0.x + 50,
+                            y: aux0.y + 25,
+                            x1: aux0.x + SEPARACION_EN_X_ESPOSOS+(RECTANGULO_W),
+                            y1: aux0.y + 25,
+                            c: '#008CA2'
+                        };
+
+                        genoFafg.push(aux);
+                        genoFafg.push(auxLinea);
+
+                        let hijos = arreglo.filter(i => i.p === item.id && i.m === item.w);
+
+                        pintarHijos(ctx, hijos, aux0);
+                        let xAux = 0;
+                        let yAux = 0;
+                        let hijoNum = 0;
+                    };
+                    valorX += 200;
+                });
+                genoFafg.map(item => {
+                    pintarNodo(ctx, item);
+                });
+            }
+        }
+    }
+
+    const pintarCuadricula = () => {
+        var canvas = document.getElementById("genoFafg");
+        if (canvas && canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+        for (let i = 0; i <= 24; i++) {
+            let lineaX = {
+                t: true,
+                x: i * 50,
+                y: 0,
+                x1: i * 50,
+                y1: 600,
+                c: 'red',
+                lineWidth: 0.5
+            };
+            pintarNodo(ctx, lineaX);
+        }
+
+        for(let i=0;i<=12;i++){
+            let lineay = {
+                t: true,
+                x: 0,
+                y: i*50,
+                x1: 1200,
+                y1: i*50,
+                c: 'red',
+                lineWidth: 0.5
+            };
+
+            pintarNodo(ctx, lineay);
+        }
+    }
+    }
+
+    const pintarHijos = (ctx, listHijos, itemPadre) => {
+        let total = listHijos.length;
+        let alturaPadreHijos = 100;
+        let espacioEntreHermanos = 50;
+        let { x, y, g: genero } = itemPadre;
+        let totalX = espacioEntreHermanos * total;
+        y += alturaPadreHijos;
+        totalX +=(total*RECTANGULO_W);
+        let xCentro =x;
+        xCentro+=RECTANGULO_W*2;
+        let xIzquierda = xCentro - (totalX / 2);
+        let xDerecha = xCentro + (totalX / 2);
+
+
+        if (total === 1) {
+            xIzquierda = xCentro;
+        }
+        let index = 0;
+        for (let hijo of listHijos) {
+            let { g, w, e } = hijo;
+
+            if (index > 0) {
+                console.log("Index",index)
+                let { g: generoAnterior,w:casado } = listHijos[index-1];
+                console.log({generoAnterior})
+                
+                if (generoAnterior === "M" && g === "M") {
+                    xIzquierda -= (RECTANGULO_H);
+                    console.log("Hermana Anterior es Mujere");
+                }
+                if(casado){
+                    xIzquierda += (RECTANGULO_H);
+                }
+            }
+            let aux = {
+                ...hijo, x: xIzquierda, y
+            };
+            xIzquierda+=RECTANGULO_W;
+            if (g === "M") {
+                if (Number(w) > 0) {
+                    let itemEsposa = arreglo.find(i => i.id === Number(w));
+                    if (itemEsposa) {
+                        xIzquierda += SEPARACION_EN_X_ESPOSOS;
+                        let esposa = {
+                            ...itemEsposa, x: xIzquierda, y
+                        };
+                        pintarNodo(ctx, esposa);
+                        let lineaEsposos = {
+                            t: true,
+                            x: aux.x + RECTANGULO_W,
+                            y: aux.y + (RECTANGULO_H / 2),
+                            x1: aux.x + SEPARACION_EN_X_ESPOSOS+(RECTANGULO_W),
+                            y1: aux.y + (RECTANGULO_H / 2),
+                            c: '#008CA2'
+                        };
+
+
+
+                        pintarNodo(ctx, lineaEsposos);
+                        let auxHijos = arreglo.filter(i => i.p === Number(hijo.id) && i.m === Number(hijo.w))
+                        if (auxHijos.length > 0) {
+                            let lineaHijos1 = {
+                                t: true,
+                                x: aux.x + (RECTANGULO_W) + (SEPARACION_EN_X_ESPOSOS / 2),
+                                y: esposa.y + (RECTANGULO_W / 2),
+                                x1: aux.x + (RECTANGULO_W) + (SEPARACION_EN_X_ESPOSOS / 2),
+                                y1: esposa.y + (alturaPadreHijos / 2)+(RECTANGULO_W/2),
+                                c: '#5A5E5E'
+                            };
+                            pintarNodo(ctx, lineaHijos1);
+                            let xPorLosDas=(RECTANGULO_W/2)+(SEPARACION_EN_X_ESPOSOS/2);
+                            let lineaHijos2 = {
+                                t: true,
+                                x: lineaHijos1.x-xPorLosDas,
+                                y: lineaHijos1.y1,
+                                x1: lineaHijos1.x+xPorLosDas,
+                                y1: lineaHijos1.y1,
+                                c: '#5A5E5E'
+                            };
+                            pintarNodo(ctx, lineaHijos2);
+
+                            pintarHijos(ctx, auxHijos, aux);
+                        }
+                    }
+                }
+                xIzquierda += RECTANGULO_W;
+            }
+
+            let lineaIndividual = {
+                t: true,
+                x: aux.x + (RECTANGULO_W / 2),
+                y: aux.y - (alturaPadreHijos / 2)+(RECTANGULO_H / 2),
+                x1: aux.x + (RECTANGULO_W / 2),
+                y1: aux.y,
+                c: '#5A5E5E'
+            };
+            pintarNodo(ctx, lineaIndividual);
+
+            xIzquierda += espacioEntreHermanos;
+            pintarNodo(ctx, aux);
+            index++;
+        }
+    }
+    const pintarNodo = (ctx, { x, y, n, g, t, x1, y1, c, lineWidth = 2 }) => {
+        ctx.beginPath();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "gray";
+        ctx.fillStyle = "white";
+
+        if (t) {
+            ctx.lineWidth = lineWidth;
+            ctx.strokeStyle = c;
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(x1, y1);
+            ctx.stroke();
+            ctx.closePath();
+        } else {
+            if (g === "M") {
+                ctx.fillRect(x, y, RECTANGULO_W, RECTANGULO_H);
+                ctx.strokeRect(x, y, RECTANGULO_W, RECTANGULO_H);
+
+                ctx.textAlign = "center";
+                ctx.font = FONT_FAFG;
+                ctx.fillStyle = "black";
+                ctx.fillText(n, x + 25, y + 65);
+                ctx.stroke();
+                ctx.closePath();
+            }
+            if (g === "F") {
+                ctx.arc(x + (RECTANGULO_H / 2), y + (RECTANGULO_H / 2), RECTANGULO_H / 2, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.stroke();
+
+                ctx.textAlign = "center";
+                ctx.font = FONT_FAFG;
+                ctx.fillStyle = "black";
+                ctx.fillText(n, x + (RECTANGULO_H/2), y + 40 + (RECTANGULO_H / 2));
+                ctx.stroke();
+                ctx.closePath();
+
+            }
+        }
+    }
+    const button = () => {
+        pintarGenoGrama();
+    }
+
+/*
+"data": [
+        {
+            "donanteId": 1,
+            "descripcion": "Especial"
+        },
+        {
+            "donanteId": 2,
+            "descripcion": "Madre"
+        },
+        {
+            "donanteId": 3,
+            "descripcion": "Hijo"
+        },
+        {
+            "donanteId": 4,
+            "descripcion": "Hija"
+        },
+        {
+            "donanteId": 5,
+            "descripcion": "Hermano"
+        },
+        {
+            "donanteId": 6,
+            "descripcion": "Hermana"
+        },
+        {
+            "donanteId": 7,
+            "descripcion": "1/2 hermano/a"
+        },
+        {
+            "donanteId": 8,
+            "descripcion": "Otro"
+        }
+    ]
+*/
+</script>
+
+<body onload="pintarCuadricula();">
+    <button type="button" onclick="button();">Generar</button>
+    <!-- <canvas id="linea1" width="1000" height="600">Su navegador no soporta canvas :( </canvas> -->
+
+    <canvas id="genoFafg" width="1200" height="600">Su navegador no soporta canvas :( </canvas>
+</body>
+
+</html>
+

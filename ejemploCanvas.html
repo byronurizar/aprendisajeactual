@@ -8,7 +8,7 @@
 
     <style>
         canvas {
-            border: 1px solid rgb(128, 128, 128)
+            border: 2px solid rgb(0, 0, 0)
         }
     </style>
 </head>
@@ -242,18 +242,24 @@
 
 
 <script>
+
     const FONT_FAFG = "8pt Verdana";
     const RECTANGULO_W = 50;
     const RECTANGULO_H = 50;
-    const SEPARACION_EN_X_ESPOSOS = 150;
+    const SEPARACION_EN_X_ESPOSOS = 50;
+    const SEPARACION_HIJOS = 75;
+    const SEPARACION_HIJOS_PADRE = 100;
+    const SEPARACION_LINEA_Y_PADRE = 50;
     const arreglo = [
         { id: 1, n: "Esposo D.", g: "M", p: null, m: null, w: 2 },
-        { id: 2, n: "Esposa M.", g: "F", p: null, m: null },
-        { id: 3, n: "Hijo Uno.", g: "M", p: 1, m: 2, e: null },
+        { id: 2, n: "Esposa M.", g: "F", p: null, m: null, e: 1 },
+        { id: 3, n: "Hijo Uno.", g: "M", p: 1, m: 2, w: 7 },
         { id: 4, n: "Hija Uno.", g: "F", p: 1, m: 2, e: null },
         { id: 5, n: "Hija Dos.", g: "F", p: 1, m: 2, e: null },
-        { id: 6, n: "Hijo Dos.", g: "M", p: 1, m: 2, w: 7 },
-        { id: 7, n: "Esposa Hijo.", g: "F", p: 1, m: 2},
+        { id: 6, n: "Hijo Dos.", g: "M", p: 1, m: 2, w: null },
+        { id: 7, n: "Esposa Hijo.", g: "F", p: null, m: null },
+        { id: 8, n: "Hijo del hijo", g: "M", p: 3, m: 7 },
+        { id: 9, n: "Hijo del hijo", g: "M", p: 3, m: 7 },
     ];
 
     const pintarGenoGrama = () => {
@@ -261,6 +267,7 @@
         var genoFafg = [];
         if (canvas && canvas.getContext) {
             var ctx = canvas.getContext("2d");
+            pintarCuadricula(ctx);
             if (ctx) {
                 let w = canvas.clientWidth;
                 let h = canvas.clientHeight;
@@ -279,71 +286,277 @@
                         let esposa = arreglo.find(i => i.id === item.w);
 
                         let aux = {
-                            ...esposa, x: valorX + SEPARACION_EN_X_ESPOSOS, y: valorY + 25
+                            ...esposa, x: valorX + SEPARACION_EN_X_ESPOSOS+(RECTANGULO_W), y: valorY
                         };
-                        genoFafg.push(aux);
 
                         let auxLinea = {
                             t: true,
                             x: aux0.x + 50,
                             y: aux0.y + 25,
-                            x1: aux0.x + SEPARACION_EN_X_ESPOSOS - 25,
+                            x1: aux0.x + SEPARACION_EN_X_ESPOSOS+(RECTANGULO_W),
                             y1: aux0.y + 25,
                             c: '#008CA2'
                         };
 
+                        genoFafg.push(aux);
                         genoFafg.push(auxLinea);
-                    };
-            
-            if (item.g === "F") {
-                let existe = genoFafg.find(i => i.id === item.id);
-                if (!existe) {
-                    let aux0 = {
-                        ...item, x: valorX, y: valorY
-                    }
-                    genoFafg.push(aux0);
 
-                    let esposos = arreglo.filter(i => i.e === item.id);
-                    let contador = 0;
-                    esposos.map(esposo => {
-                        if (contador <= 2) {
-                            let aux = {
-                                ...esposo, x: contador === 0 ? valorX - SEPARACION_EN_X_ESPOSOS : valorX + SEPARACION_EN_X_ESPOSOS, y: valorY - 25
+                        let hijos = arreglo.filter(i => i.p === item.id && i.m === item.w);
+
+                        pintarHijos(ctx, hijos, aux0);
+                        let xAux = 0;
+                        let yAux = 0;
+                        let hijoNum = 0;
+                        /*
+                        hijos.map(hijo => {
+                            if (hijoNum === 0) {
+                                let { x, y } = genoFafg.find(i => i.id === hijo.p);
+                                x += SEPARACION_EN_X_ESPOSOS / 2;
+                                y += SEPARACION_HIJOS_PADRE;
+                                let totalHijos = hijos.length;
+                                let totalX = (totalHijos * SEPARACION_HIJOS) + (totalHijos + RECTANGULO_W);
+                                let auxSeparacion = totalX / 2;
+                                xAux = x - auxSeparacion - RECTANGULO_W;
+                                yAux = y + SEPARACION_LINEA_Y_PADRE;
+
+                                let linea_h = {
+                                    t: true,
+                                    x: xAux + (RECTANGULO_W / 2),
+                                    y: y,
+                                    x1: xAux + totalX + 50 - 3,
+                                    y1: y,
+                                    c: '#5A5E5E'
+                                };
+
+                                let linea_v = {
+                                    t: true,
+                                    x: xAux + auxSeparacion + 60,
+                                    y: y - SEPARACION_LINEA_Y_PADRE - (RECTANGULO_W / 2),
+                                    x1: xAux + auxSeparacion + 60,
+                                    y1: y,
+                                    c: '#5A5E5E'
+                                };
+
+                                genoFafg.push(linea_h);
+                                genoFafg.push(linea_v);
+
+                            } else {
+                                xAux += SEPARACION_HIJOS + RECTANGULO_W;
                             }
-                            genoFafg.push(aux);
-                            contador++;
+                            let auxHijo = {
+                                ...hijo, x: xAux, y: yAux
+                            };
+
+
+                            let linea_v = {
+                                t: true,
+                                x: auxHijo.x + 25,
+                                y: yAux - SEPARACION_LINEA_Y_PADRE,
+                                x1: auxHijo.x + 25,
+                                y1: yAux,
+                                c: '#5A5E5E'
+                            };
+
+
+
+                            genoFafg.push(auxHijo);
+                            genoFafg.push(linea_v);
+                            if ((hijoNum + 1) < hijos.length) {
+                                // genoFafg.push(auxLineaHijo);
+                            }
+                            hijoNum++;
+                        });
+
+                        */
+                    };
+
+                    if (item.g === "F") {
+                        let existe = genoFafg.find(i => i.id === item.id);
+                        if (!existe) {
+                            let aux0 = {
+                                ...item, x: valorX, y: valorY
+                            }
+
+                            let esposo = arreglo.find(i => i.id === item.e);
+                            let aux = {
+                                ...esposo, x: valorX - SEPARACION_EN_X_ESPOSOS + ((RECTANGULO_H / 2)), y: valorY
+                            }
+
+                            if (esposo) {
+
+                                let auxLinea = {
+                                    t: true,
+                                    x: aux0.x - SEPARACION_EN_X_ESPOSOS + 50,
+                                    y: aux0.y + 25,
+                                    x1: aux0.x,
+                                    y1: aux0.y + 25,
+                                    c: '#008CA2'
+                                };
+                                genoFafg.push(aux0);
+                                genoFafg.push(auxLinea);
+                                genoFafg.push(aux);
+                            }
                         }
-                    });
-                }
+                    }
+                    valorX += 200;
+                });
+
+
+
+                // genoFafg = arreglo.map(item => {
+
+                //     return {
+                //         ...item,
+                //         x: 120, y: 180
+                //     }
+                // });
+
+                genoFafg.map(item => {
+                    pintarNodo(ctx, item);
+                });
             }
-            valorX += 200;
-        });
-
-        // genoFafg = arreglo.map(item => {
-
-        //     return {
-        //         ...item,
-        //         x: 120, y: 180
-        //     }
-        // });
-
-        console.log({ genoFafg })
-        genoFafg.map(item => {
-            pintarNodo(ctx, item);
-        })
-    }
         }
     }
 
-    const pintarNodo = (ctx, { x, y, n, g, t, x1, y1, c }) => {
+    const pintarCuadricula = (ctx) => {
+
+
+        for (let i = 0; i <= 24; i++) {
+            let lineaX = {
+                t: true,
+                x: i * 50,
+                y: 0,
+                x1: i * 50,
+                y1: 600,
+                c: 'red',
+                lineWidth: 0.5
+            };
+            pintarNodo(ctx, lineaX);
+        }
+
+        for(let i=0;i<=12;i++){
+            let lineay = {
+                t: true,
+                x: 0,
+                y: i*50,
+                x1: 1200,
+                y1: i*50,
+                c: 'red',
+                lineWidth: 0.5
+            };
+
+            pintarNodo(ctx, lineay);
+        }
+    }
+
+    const pintarHijos = (ctx, listHijos, itemPadre) => {
+        let total = listHijos.length;
+        let alturaPadreHijos = 100;
+        let espacioEntreHermanos = 50;
+        let { x, y, g: genero } = itemPadre;
+        let totalX = espacioEntreHermanos * total;
+        y += alturaPadreHijos;
+        totalX +=(total*RECTANGULO_W);
+        let xCentro =x;
+        xCentro+=RECTANGULO_W;
+        let xIzquierda = xCentro - (totalX / 2);
+        let xDerecha = xCentro + (totalX / 2);
+
+
+        if (total === 1) {
+            xIzquierda = xCentro;
+        }
+        let index = 0;
+        for (let hijo of listHijos) {
+            let { g, w, e } = hijo;
+
+            if (index > 0) {
+                console.log("Index",index)
+                let { g: generoAnterior } = listHijos[index-1];
+                console.log({generoAnterior})
+                
+                if (generoAnterior === "F" && g === "M") {
+                    xIzquierda -= (RECTANGULO_H / 2);
+                    console.log("Hermana Anterior es Mujere");
+                }
+            }
+            let aux = {
+                ...hijo, x: xIzquierda, y
+            };
+            xIzquierda+=RECTANGULO_W;
+            if (g === "M") {
+                if (Number(w) > 0) {
+                    let itemEsposa = arreglo.find(i => i.id === Number(w));
+                    if (itemEsposa) {
+                        xIzquierda += SEPARACION_EN_X_ESPOSOS;
+                        let esposa = {
+                            ...itemEsposa, x: xIzquierda, y
+                        };
+                        pintarNodo(ctx, esposa);
+                        let lineaEsposos = {
+                            t: true,
+                            x: aux.x + RECTANGULO_W,
+                            y: aux.y + (RECTANGULO_H / 2),
+                            x1: aux.x + SEPARACION_EN_X_ESPOSOS+(RECTANGULO_W),
+                            y1: aux.y + (RECTANGULO_H / 2),
+                            c: '#008CA2'
+                        };
+
+
+
+                        pintarNodo(ctx, lineaEsposos);
+                        let auxHijos = arreglo.filter(i => i.p === Number(hijo.id) && i.m === Number(hijo.w))
+                        if (auxHijos.length > 0) {
+                            let lineaHijos1 = {
+                                t: true,
+                                x: aux.x + (RECTANGULO_W) + (SEPARACION_EN_X_ESPOSOS / 2),
+                                y: esposa.y + (RECTANGULO_W / 2),
+                                x1: aux.x + (RECTANGULO_W) + (SEPARACION_EN_X_ESPOSOS / 2),
+                                y1: esposa.y + (alturaPadreHijos / 2)+(RECTANGULO_W/2),
+                                c: '#5A5E5E'
+                            };
+                            pintarNodo(ctx, lineaHijos1);
+                            let xPorLosDas=(RECTANGULO_W/2)+(SEPARACION_EN_X_ESPOSOS/2);
+                            let lineaHijos2 = {
+                                t: true,
+                                x: lineaHijos1.x-xPorLosDas,
+                                y: lineaHijos1.y1,
+                                x1: lineaHijos1.x+xPorLosDas,
+                                y1: lineaHijos1.y1,
+                                c: '#5A5E5E'
+                            };
+                            pintarNodo(ctx, lineaHijos2);
+
+                            pintarHijos(ctx, auxHijos, aux);
+                        }
+                    }
+                }
+                xIzquierda += RECTANGULO_W;
+            }
+
+            let lineaIndividual = {
+                t: true,
+                x: aux.x + (RECTANGULO_W / 2),
+                y: aux.y - (alturaPadreHijos / 2)+(RECTANGULO_H / 2),
+                x1: aux.x + (RECTANGULO_W / 2),
+                y1: aux.y,
+                c: '#5A5E5E'
+            };
+            pintarNodo(ctx, lineaIndividual);
+
+            xIzquierda += espacioEntreHermanos;
+            pintarNodo(ctx, aux);
+            index++;
+        }
+    }
+    const pintarNodo = (ctx, { x, y, n, g, t, x1, y1, c, lineWidth = 2 }) => {
         ctx.beginPath();
         ctx.lineWidth = 2;
         ctx.strokeStyle = "gray";
         ctx.fillStyle = "white";
 
         if (t) {
-            console.log({ t, x1, y1, c });
-            ctx.lineWidth = 2;
+            ctx.lineWidth = lineWidth;
             ctx.strokeStyle = c;
             ctx.beginPath();
             ctx.moveTo(x, y);
@@ -363,14 +576,14 @@
                 ctx.closePath();
             }
             if (g === "F") {
-                ctx.arc(x, y, RECTANGULO_H / 2, 0, 2 * Math.PI);
+                ctx.arc(x + (RECTANGULO_H / 2), y + (RECTANGULO_H / 2), RECTANGULO_H / 2, 0, 2 * Math.PI);
                 ctx.fill();
                 ctx.stroke();
 
                 ctx.textAlign = "center";
                 ctx.font = FONT_FAFG;
                 ctx.fillStyle = "black";
-                ctx.fillText(n, x, y + 40);
+                ctx.fillText(n, x + (RECTANGULO_H/2), y + 40 + (RECTANGULO_H / 2));
                 ctx.stroke();
                 ctx.closePath();
 
@@ -385,9 +598,9 @@
 
 <body>
     <button type="button" onclick="button();">Generar</button>
-    <canvas id="linea1" width="1000" height="600">Su navegador no soporta canvas :( </canvas>
+    <!-- <canvas id="linea1" width="1000" height="600">Su navegador no soporta canvas :( </canvas> -->
 
-    <canvas id="genoFafg" width="1000" height="600">Su navegador no soporta canvas :( </canvas>
+    <canvas id="genoFafg" width="1200" height="600">Su navegador no soporta canvas :( </canvas>
 </body>
 
 </html>
