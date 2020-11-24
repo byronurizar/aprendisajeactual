@@ -27,7 +27,7 @@
         { id: 1, n: "Pedro A.", g: "M", p: null, m: null, w: 2 },
         { id: 2, n: "Rosa M.", g: "F", p: null, m: null, e: 1 },
         { id: 3, n: "Ruben A.", g: "M", p: 1, m: 2, w: 7 },
-        { id: 4, n: "Maria A.", g: "F", p: 1, m: 2, e: null },
+        { id: 4, n: "Maria A.", g: "F", p: 1, m: 2, e: 5 },
         { id: 5, n: "Camilo O.", g: "M" },
         { id: 14, n: "Hija Uno.", g: "M", p: 1, m: 2, e: null },
         { id: 6, n: "Hijo Dos.", g: "M", p: 1, m: 2, w: null },
@@ -40,6 +40,9 @@
         // { id: 18, n: "Hijo Dos.", g: "F" },
         // { id: 19, n: "Hija Dos.", g: "M", p: 17, m: 18, e: null },
         // { id: 20, n: "Hijo Dos.", g: "M", p: 17, m: 18, w: null },
+
+        { id: 51, n: "Alejandra R.", g: "M", p: 5, m: 4 },
+        { id: 52, n: "Rosa A.", g: "F", p: 5, m: 4},
     ];
 
     const pintarGenoGrama = () => {
@@ -200,7 +203,44 @@
                 }
 
                 if(Number(e)>0){
-                     
+                     aux.x=aux.x+SEPARACION_EN_X_ESPOSOS+RECTANGULO_W;
+                     xIzquierda+=SEPARACION_EN_X_ESPOSOS+RECTANGULO_W;
+
+                     let itemEsposo = arreglo.find(i => i.id === Number(e));
+
+                     if(itemEsposo){
+                        let esposo = {
+                            ...itemEsposo, x: xIzquierda-(SEPARACION_EN_X_ESPOSOS+RECTANGULO_W), y
+                        };
+                        pintarNodo(ctx, esposo);
+
+                        let lineaEsposos = {
+                            t: true,
+                            x: aux.x  +RECTANGULO_W,
+                            y: aux.y + (RECTANGULO_H / 2),
+                            x1: aux.x - (SEPARACION_EN_X_ESPOSOS ),
+                            y1: aux.y + (RECTANGULO_H / 2),
+                            c: '#008CA2'
+                        };
+
+                        pintarNodo(ctx, lineaEsposos);
+                        
+                         let auxHijos = arreglo.filter(i => i.p === Number(e) && i.m === Number(hijo.id))
+                         console.log({auxHijos})
+                        if (auxHijos.length > 0) {
+                            let lineaHijos1 = {
+                                t: true,
+                                x: aux.x - (RECTANGULO_W) + (SEPARACION_EN_X_ESPOSOS / 2),
+                                y: esposo.y + (RECTANGULO_W / 2),
+                                x1: aux.x - (RECTANGULO_W) + (SEPARACION_EN_X_ESPOSOS / 2),
+                                y1: esposo.y + (alturaPadreHijos / 2) + (RECTANGULO_W / 2),
+                                c: '#5A5E5E'
+                            };
+                            pintarNodo(ctx, lineaHijos1);
+                           // pintarHijos(ctx, auxHijos, aux);
+                        }
+
+                     }
                 }
             
             let lineaIndividual = {
