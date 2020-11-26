@@ -20,6 +20,7 @@
     const SEPARACION_EN_X_ESPOSOS = 50;
     const SERAPACION_ENTRE_HERMANOS = 50;
     const ALTURA_ENTRE_PADRE_E_HIJOS = 100;
+    const nodosGenograma=[];
 
     let alturaPadreHijos = 100;
     let espacioEntreHermanos = 50;
@@ -100,6 +101,8 @@
                             pintarHijos(ctx, hijos, aux0);
                         }
 
+                        console.log({nodosGenograma});
+
                         let xAux = 0;
                         let yAux = 0;
                         let hijoNum = 0;
@@ -150,7 +153,8 @@
 
         let { x, y, g: genero } = itemPadre;
         y += alturaPadreHijos;
-        xIzquierda = 50;
+        x+=(SEPARACION_EN_X_ESPOSOS/2);
+        xIzquierda = x;
         let index = 0;
         for (let hijo of listHijos) {
             let { g, w=0, e=0 } = hijo;
@@ -176,6 +180,7 @@
                             ...itemEsposa, x: xIzquierda, y
                         };
                         pintarNodo(ctx, esposa);
+                        nodosGenograma.push(esposa);
                         let lineaEsposos = {
                             t: true,
                             x: aux.x + RECTANGULO_W,
@@ -186,6 +191,7 @@
                         };
 
                         pintarNodo(ctx, lineaEsposos);
+                        nodosGenograma.push(lineaEsposos);
                         let auxHijos = arreglo.filter(i => i.p === Number(hijo.id) && i.m === Number(hijo.w))
                         if (auxHijos.length > 0) {
                             let lineaHijos1 = {
@@ -198,6 +204,7 @@
                             };
                             pintarNodo(ctx, lineaHijos1);
                             pintarHijos(ctx, auxHijos, aux);
+                            nodosGenograma.push(lineaHijos1);
                         }
                     }
                 }
@@ -213,7 +220,7 @@
                             ...itemEsposo, x: xIzquierda-(SEPARACION_EN_X_ESPOSOS+RECTANGULO_W), y
                         };
                         pintarNodo(ctx, esposo);
-
+                        nodosGenograma.push(esposo);
                         let lineaEsposos = {
                             t: true,
                             x: aux.x  +RECTANGULO_W,
@@ -224,7 +231,7 @@
                         };
 
                         pintarNodo(ctx, lineaEsposos);
-                        
+                        nodosGenograma.push(lineaEsposos);
                          let auxHijos = arreglo.filter(i => i.p === Number(e) && i.m === Number(hijo.id))
                          console.log({auxHijos})
                         if (auxHijos.length > 0) {
@@ -237,6 +244,7 @@
                                 c: '#5A5E5E'
                             };
                             pintarNodo(ctx, lineaHijos1);
+                            nodosGenograma.push(lineaHijos1);
                            // pintarHijos(ctx, auxHijos, aux);
                         }
 
@@ -252,8 +260,10 @@
                 c: '#5A5E5E'
             };
             pintarNodo(ctx, lineaIndividual);
+            nodosGenograma.push(lineaIndividual);
             xIzquierda += espacioEntreHermanos;
             pintarNodo(ctx, aux);
+            nodosGenograma.push(aux);
             index++;
         }
     }
@@ -302,41 +312,145 @@
         pintarGenoGrama();
     }
 
+
     /*
-    "data": [
-            {
-                "donanteId": 1,
-                "descripcion": "Especial"
-            },
-            {
-                "donanteId": 2,
-                "descripcion": "Madre"
-            },
-            {
-                "donanteId": 3,
-                "descripcion": "Hijo"
-            },
-            {
-                "donanteId": 4,
-                "descripcion": "Hija"
-            },
-            {
-                "donanteId": 5,
-                "descripcion": "Hermano"
-            },
-            {
-                "donanteId": 6,
-                "descripcion": "Hermana"
-            },
-            {
-                "donanteId": 7,
-                "descripcion": "1/2 hermano/a"
-            },
-            {
-                "donanteId": 8,
-                "descripcion": "Otro"
-            }
-        ]
+const parentescos = [
+  {
+    descripcion: "Madre",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Padre",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Hija",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Hijo",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Hija Materna",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Hijo Materno",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Hija Paterna",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Hijo Paterno",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Hermana",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Hermano",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Hermana Materna",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Hermano Materno",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Hermana Paterna",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Hermano Paterno",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Abuela Materna",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Abuelo Materno",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Abuela Paterna",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Abuelo Paterno",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Tia Materna",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Tio Materno",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Tia Paterna",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Tio Paterno",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Esposa",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Esposo",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Nieta",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Nieto",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+  {
+    descripcion: "Otro",
+    estadoId: 1,
+    fechaHoraIngreso: Date.now(),
+  },
+];
     */
 </script>
 
