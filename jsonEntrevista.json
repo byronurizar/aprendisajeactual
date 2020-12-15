@@ -1,0 +1,576 @@
+{
+    "error": false,
+    "codigo": 200,
+    "data": {
+        "entrevistaAmId": 3,
+        "tipoCasoId": 1,
+        "codigoCaso": 24,
+        "nomenclatura": "LX",
+        "grupoFamiliar": "88L",
+        "fechaHechoIni": "2020-01-25T00:00:00.000Z",
+        "fechaHechoFin": "2020-01-25T00:00:00.000Z",
+        "lugarHecho": "Aldea del sur",
+        "municipioHechoId": 55,
+        "deptoHechoId": 5,
+        "tipoContextoId": 3,
+        "lugarRegistro": "Otra Aldea",
+        "muniRegistroId": 3,
+        "deptoRegistroId": 1,
+        "fechaRegistroIni": "2020-11-14T00:00:00.000Z",
+        "fechaRegistroFin": null,
+        "estadoVictimaId": 2,
+        "tipoCasoDidId": 2,
+        "orgAcompaña": "OQ Solutions",
+        "nombreInterprete": "Felipe Tercero",
+        "autGrabar": 1,
+        "duracionGrabar": "55:00",
+        "motivoNoGrabacion": null,
+        "usuarioIngresoId": 1,
+        "estadoId": 1,
+        "TipoCaso": {
+            "tipoCasoId": 1,
+            "descripcion": "FD"
+        },
+        "MunicipioHecho": {
+            "municipioId": 55,
+            "descripcion": "SAN AGUSTIN ACASAGUASTLAN"
+        },
+        "DeptoHecho": {
+            "departamentoId": 5,
+            "paisId": 1,
+            "descripcion": "ESCUINTLA"
+        },
+        "TipoContexto": {
+            "tipoContextoId": 3,
+            "descripcion": "Desaparicion"
+        },
+        "MuniRegistro": {
+            "municipioId": 3,
+            "descripcion": "SAN JOSE PINULA"
+        },
+        "DeptoRegistro": {
+            "departamentoId": 1,
+            "paisId": 1,
+            "descripcion": "GUATEMALA"
+        },
+        "EstadoVictima": {
+            "estadoVictimaId": 2,
+            "descripcion": "Fallecido"
+        },
+        "TipoCasoDid": {
+            "tipoCasoDidId": 2,
+            "descripcion": "Desaparicion"
+        },
+        "Usuario": {
+            "usuarioId": 1,
+            "personaId": 1,
+            "usuario": "administrador"
+        },
+        "CausaMuerteEnt": [
+            {
+                "causaMuerteEntrevistaId": 5,
+                "entrevistaAmId": 3,
+                "causaMuerteId": 1,
+                "especificacion": "prueba",
+                "CausaMuerte": {
+                    "causaMuerteId": 1,
+                    "descripcion": "Herida por proyectil de arma de fuego"
+                }
+            },
+            {
+                "causaMuerteEntrevistaId": 6,
+                "entrevistaAmId": 3,
+                "causaMuerteId": 2,
+                "especificacion": "prueba 2",
+                "CausaMuerte": {
+                    "causaMuerteId": 2,
+                    "descripcion": "Cortante"
+                }
+            }
+        ],
+        "PersonaEntrevistada": [
+            {
+                "personaEntrevistadaId": 1,
+                "entrevistaAmId": 3,
+                "nombreEntrevistado": "Marco Ortega",
+                "generoId": 1,
+                "cui": "2694224470101",
+                "grupoEtnolinguisticoId": 1,
+                "fechaNacimiento": "1995-03-15T00:00:00.000Z",
+                "edadActual": 25,
+                "edadHechoVictima": 20,
+                "lugarNacimiento": "Zona 10",
+                "muniNacimiento": 1,
+                "deptoNacimiento": 1,
+                "nombrePadre": "Marco Ortega",
+                "nombreMadre": "Yaneth Contreras",
+                "direccion": "zona 2, ciudad",
+                "muniDireccion": 1,
+                "deptoDireccion": 1,
+                "telefonoCasa": "22222222",
+                "telefonoCelular": "55555555",
+                "email": "prueba@oqsolutionsgt.com",
+                "leerEscribir": 1,
+                "existeComunicacion": 1,
+                "lugarHechoEntrev": "zona 9",
+                "muniHechoEntre": 1,
+                "deptoHechoEntre": 1,
+                "otrosFamDesap": 1,
+                "BeneficiariosMasc": 1,
+                "BeneficiarioFeme": 1,
+                "lugarOtroEvento": "Asusncion",
+                "muniOtroEvento": 25,
+                "deptoOtroEvento": 5,
+                "contactoInformacion": "41546930",
+                "Genero": {
+                    "generoId": 1,
+                    "descripcion": "Masculino"
+                },
+                "GrupoEtnolinguistico": {
+                    "grupoEtnolinguisticoId": 1,
+                    "descripcion": "Achi´"
+                },
+                "MuniNacVictima": {
+                    "municipioId": 1,
+                    "descripcion": "GUATEMALA"
+                },
+                "DeptoNacVictima": {
+                    "departamentoId": 1,
+                    "paisId": 1,
+                    "descripcion": "GUATEMALA"
+                },
+                "MuniDirVictima": {
+                    "municipioId": 1,
+                    "descripcion": "GUATEMALA"
+                },
+                "DeptoDirVictima": {
+                    "departamentoId": 1,
+                    "paisId": 1,
+                    "descripcion": "GUATEMALA"
+                },
+                "MuniOtroVictima": {
+                    "municipioId": 25,
+                    "descripcion": "SAN SEBASTIAN"
+                },
+                "DeptoOtroVictima": {
+                    "departamentoId": 5,
+                    "paisId": 1,
+                    "descripcion": "ESCUINTLA"
+                },
+                "MuniHecVictima": {
+                    "municipioId": 1,
+                    "descripcion": "GUATEMALA"
+                },
+                "DeptoHecVictima": {
+                    "departamentoId": 1,
+                    "paisId": 1,
+                    "descripcion": "GUATEMALA"
+                },
+                "FamiliaDesap": [
+                    {
+                        "familiaDesapId": 1,
+                        "personaEntrevistadaId": 1,
+                        "nombreFamiliar": "bennacer",
+                        "estadoVictimaId": 1,
+                        "fechaExhumacion": "1995-01-15T00:00:00.000Z",
+                        "lugarExhumacion": "lejos",
+                        "muniExhumacionFamDesap": 25,
+                        "deptoExhumacionFamDesap": 5,
+                        "EstadoVictimaFamilia": {
+                            "estadoVictimaId": 1,
+                            "descripcion": "Desaparecido"
+                        },
+                        "MuniExhuFam": {
+                            "municipioId": 25,
+                            "descripcion": "SAN SEBASTIAN"
+                        },
+                        "DeptoExhuFam": {
+                            "departamentoId": 5,
+                            "paisId": 1,
+                            "descripcion": "ESCUINTLA"
+                        }
+                    },
+                    {
+                        "familiaDesapId": 2,
+                        "personaEntrevistadaId": 1,
+                        "nombreFamiliar": "Brahim Diaz",
+                        "estadoVictimaId": 1,
+                        "fechaExhumacion": "1995-01-15T00:00:00.000Z",
+                        "lugarExhumacion": null,
+                        "muniExhumacionFamDesap": null,
+                        "deptoExhumacionFamDesap": null,
+                        "EstadoVictimaFamilia": {
+                            "estadoVictimaId": 1,
+                            "descripcion": "Desaparecido"
+                        },
+                        "MuniExhuFam": null,
+                        "DeptoExhuFam": null
+                    }
+                ]
+            }
+        ],
+        "InfoGenVictima": [
+            {
+                "infoGeneralVicId": 1,
+                "entrevistaAmId": 3,
+                "primerNombre": "Carlos",
+                "segundoNombre": "Javier",
+                "tercerNombre": "Obdulio",
+                "apellidoPaterno": "Quex",
+                "apellidoMaterno": "Orellana",
+                "apellidoCasada": "De Barrientos",
+                "pseudonimo": "El Quex",
+                "fechaNacimiento": "1992-10-27T00:00:00.000Z",
+                "lugarNacimiento": "Lejos",
+                "muniNacimiento": 55,
+                "deptoNacimiento": 15,
+                "primerNombrePadre": "Carlos",
+                "segundoNombrePadre": "Carlos",
+                "tercerNombrePadre": "Otro",
+                "apellidoPaternoPadre": "Quex",
+                "apellidoMaternoPadre": "Quex",
+                "primerNombreMadre": "Debora",
+                "segundoNombreMadre": "Leticia",
+                "tercerNombreMadre": "Otro",
+                "apellidoPaternoMadre": "Lopez",
+                "apellidoMaternoMadre": "Lopez",
+                "apellidoCasadaMadre": "Otro",
+                "MuniNacVictima": {
+                    "municipioId": 55,
+                    "descripcion": "SAN AGUSTIN ACASAGUASTLAN"
+                },
+                "DeptoNacVictima": {
+                    "departamentoId": 15,
+                    "paisId": 1,
+                    "descripcion": "BAJA VERAPAZ"
+                }
+            }
+        ],
+        "PerfilBiolo": [
+            {
+                "perfilBiologicoId": 1,
+                "entrevistaAmId": 3,
+                "aniosEdadDesap": 35,
+                "mesesEdadDesap": 7,
+                "diasEdadDesap": 12,
+                "generoId": 1,
+                "grupoEtarioId": 1,
+                "estaturaId": 1,
+                "estaturaCedula": "180",
+                "lunaresCicatrices": 1,
+                "lunaresCicatricesDesc": "Bastantes",
+                "lateralidadId": 1,
+                "tatuajes": 1,
+                "tatuajesDesc": "en el brazo",
+                "complexionId": 2,
+                "cabelloId": 2,
+                "colorCabelloId": 1,
+                "bigoteId": 0,
+                "barbaId": 1,
+                "formaRostroId": 1,
+                "lenteId": 0,
+                "fumabaId": 1,
+                "GeneroPB": {
+                    "generoId": 1,
+                    "descripcion": "Masculino"
+                },
+                "GrupoEtarioPB": {
+                    "grupoEtarioId": 1,
+                    "descripcion": "Nonato"
+                },
+                "EstaturaPB": {
+                    "estaturaId": 1,
+                    "descripcion": "Menos de 1.45 mts"
+                },
+                "LateralidadPB": {
+                    "lateralidadId": 1,
+                    "descripcion": "Derecho"
+                },
+                "ComplexionPB": {
+                    "complexionId": 2,
+                    "descripcion": "Regular"
+                },
+                "CabelloPB": {
+                    "cabelloId": 2,
+                    "descripcion": "Ondulado"
+                },
+                "ColorCabelloPB": {
+                    "colorCabelloId": 1,
+                    "descripcion": "Negro"
+                },
+                "FormaRostroPB": {
+                    "formaRostroId": 1,
+                    "descripcion": "Redondo"
+                }
+            }
+        ],
+        "SocioEconoVictima": [
+            {
+                "socioeconomicoVictimaId": 1,
+                "entrevistaAmId": 3,
+                "estadoCivilId": 1,
+                "nombreConyugue": "Luisa Fernanda",
+                "embarazoVictima": 1,
+                "mesesEmbarazoVictima": 3,
+                "cantidadHijos": 4,
+                "lugarUltimoDomicilio": "mas cerca",
+                "muniUltimoDomiciio": 41,
+                "deptoUltimoDomicilio": 5,
+                "ocupacionHabitual": "Escultor",
+                "pasatiempos": "Futbol",
+                "cargoPublico": 1,
+                "cargoPublicoDesc": "vocal alcaldia",
+                "cargoPublicoTiempo": "varios meses",
+                "grupoOrg": 1,
+                "grupoOrgDesc": "los panas",
+                "grupoOrgTiempo": "poco tiempo, un mes",
+                "leeEscribe": 1,
+                "ultimoGradoEscolar": "Tercero Basico",
+                "instEducativa": "san agustin",
+                "servicioMilitar": 1,
+                "servicioMilitarTiempo": "5 años",
+                "religion": "Catolico",
+                "grupoEtnolinVictimaId": 3,
+                "EstadoCivilSE": {
+                    "estadoCivilId": 1,
+                    "descripcion": "Soltero (a)"
+                },
+                "MuniUltimoDomiSE": {
+                    "municipioId": 41,
+                    "descripcion": "SAN BARTOLOME JOCOTENANGO"
+                },
+                "DeptoUltimoDomiSE": {
+                    "departamentoId": 5,
+                    "paisId": 1,
+                    "descripcion": "ESCUINTLA"
+                },
+                "GrupoEtnolinguisticoSE": {
+                    "grupoEtnolinguisticoId": 3,
+                    "descripcion": "Awakateco"
+                }
+            }
+        ],
+        "DocumentoVictima": [
+            {
+                "documentoVictimaId": 1,
+                "entrevistaAmId": 3,
+                "ordenCedulaId": 1,
+                "cedulaIdent": "565048",
+                "carneIdent": "124587",
+                "licenciaConducir": "454547845",
+                "pasaporte": "265585447100",
+                "libroCertNac": "F14",
+                "actaCertNac": "P15",
+                "folioCertNac": "Q52",
+                "libroCertDef": "555SA885",
+                "actaCertDef": "P16",
+                "folioCertDef": "Q55",
+                "otroDocumentoId": 2,
+                "otroDocumento": "tickets de viaje",
+                "fotoVictima": 1,
+                "adjuntaFotoVictima": 1,
+                "detalleFotoVictima": "The last pic",
+                "OrdenCedulaDV": {
+                    "ordenCedulaId": 1,
+                    "descripcion": "A-1 Guatemala"
+                },
+                "OtroDocDV": {
+                    "otroDocumentoId": 2,
+                    "descripcion": "Muerte Presunta"
+                }
+            }
+        ],
+        "EnfermedadVictima": [
+            {
+                "enfermedadVictimaId": 1,
+                "entrevistaAmId": 3,
+                "hospitalizado": 1,
+                "motivoHospId": 3,
+                "nombreHospital": "Los Angeles",
+                "fechaHospitalizacion": "1992-01-15T00:00:00.000Z",
+                "hospitalizacionDesc": "Por fractura",
+                "dolor": 1,
+                "dolorDesc": "muelas",
+                "discapacidad": 1,
+                "discapacidadDesc": "no tenia",
+                "MotivoHosEV": {
+                    "motivoHospId": 3,
+                    "descripcion": "Parto"
+                }
+            }
+        ],
+        "TraumaAMVictima": [
+            {
+                "traumaAmId": 1,
+                "entrevistaAmId": 3,
+                "trauma": 1,
+                "traumaDesc": "Golpe pierna",
+                "causaTrauma": "Caida",
+                "areaTrauma": "Pierna",
+                "diaTrauma": 15,
+                "mesTrauma": 3,
+                "anioTrauma": 1998
+            }
+        ],
+        "DentalVictima": [
+            {
+                "dentalVictimaId": 1,
+                "entrevistaAmId": 3,
+                "trabajosDentales": 1,
+                "nombreDentista": "Dr. Marroquin",
+                "contactoDentista": "42158799",
+                "diaTratamiento": 1,
+                "mesTratamiento": 11,
+                "anioTratamiento": 1998,
+                "placaDental": 1,
+                "dientesParejos": 1,
+                "dientesParejosDesc": "prueba",
+                "separacionVisible": 1,
+                "separacionVisibleDesc": "prueba",
+                "supernumario": 1,
+                "supernumerarioDesc": "prueba",
+                "AusenciaPiezaExtr": 1,
+                "AusenciaPiezaExtrDesc": "prueba",
+                "fractura": 1,
+                "fracturaDesc": "prueba",
+                "manchas": 1,
+                "manchasDesc": "prueba",
+                "dientesCaries": 1,
+                "dientesCariesDesc": "prueba",
+                "desgaste": 1,
+                "desgasteDesc": "prueba",
+                "dolorPiezaId": 1,
+                "enfermedadDental": 1,
+                "enfermedadDentalDesc": "prueba",
+                "rellenos": 1,
+                "rellenosDesc": "prueba",
+                "coronas": 1,
+                "coronasDesc": "prueba",
+                "puente": 1,
+                "puenteDesc": "prueba",
+                "modDental": 1,
+                "modDentalDesc": "prueba",
+                "protesis": 1,
+                "protesisDesc": "prueba",
+                "observaciones": "entrevista ya con dent",
+                "DolorPiezaDV": {
+                    "dolorPiezaId": 1,
+                    "descripcion": "Si"
+                }
+            }
+        ],
+        "TipoMuerte": [
+            {
+                "tipoMuerteVicId": 1,
+                "entrevistaAmId": 3,
+                "presencioHecho": 1,
+                "causaMuerteId": 3,
+                "otrosTestigos": 1,
+                "detenidaPrevioMuerte": 1,
+                "lugarDetencion": "Amatitlan",
+                "muniDetencion": 65,
+                "deptoDetencion": 14,
+                "tiempoDetencion": "6 meses",
+                "violenciaSexual": 1,
+                "violenciaSexualDesc": "prueba",
+                "fallecioSola": 1,
+                "inmovilizada": 1,
+                "inmovilizadaDesc": "prueba",
+                "cuerpoPreparado": 1,
+                "cuerpoPreparadoDesc": "prueba",
+                "ofrendas": 1,
+                "ofrendasDesc": "prueba",
+                "movLugarOriginal": 1,
+                "movLugarOriginalDesc": "prueba",
+                "CausaMuerteTM": {
+                    "causaMuerteId": 3,
+                    "descripcion": "Cortocontundente"
+                }
+            }
+        ],
+        "Inhumacion": [
+            {
+                "inhumacionId": 1,
+                "entrevistaAmId": 3,
+                "inhumacion": 1,
+                "inhumacionEnterado": "avisaron",
+                "horasDespuesEntierro": 5,
+                "diasDespuesEntierro": 0,
+                "mesesDespuesEntierro": 1,
+                "aniosDespuesEntierro": 0,
+                "lugarEntierro": "Amatitlan",
+                "muniEntierro": 19,
+                "deptoEntierro": 4,
+                "otrasPersonasInhumadas": "cuenta que si",
+                "otrasPersonasConocen": "tambien dicen que si"
+            }
+        ],
+        "RopaVictima": [
+            {
+                "ropaVictimaId": 1,
+                "entrevistaAmId": 3,
+                "ropa": 1,
+                "trajeRegional": 1,
+                "muniTraje": 19,
+                "deptoTraje": 5,
+                "prendaSuperior": 2,
+                "prendaSuperiorColor": "rojo",
+                "prendaSuperiorDesc": "prueba",
+                "prendaInferior": 2,
+                "prendaInferiorColor": "rojo",
+                "prendaInferiorDesc": "prueba",
+                "prendaAbrigo": 2,
+                "prendaAbrigoColor": "rojo",
+                "prendaAbrigoDesc": "prueba",
+                "prendainterior": 2,
+                "prendainteriorColor": "rojo",
+                "prendainteriorDesc": "prueba",
+                "prendaCinturon": 2,
+                "prendaCinturonColor": "rojo",
+                "prendaCinturonDesc": "prueba",
+                "calzado": 2,
+                "calzadoColor": "rojo",
+                "calzadoDesc": "prueba",
+                "objetoOrna": 2,
+                "objetoOrnaColor": "rojo",
+                "objetoOrnaDesc": "prueba",
+                "accesorio": 2,
+                "accesorioColor": "rojo",
+                "accesorioDesc": "prueba",
+                "HerramientasTrabajo": "todas las herramientas"
+            }
+        ],
+        "AccionLegal": [
+            {
+                "accionLegalId": 1,
+                "entrevistaAmId": 3,
+                "denuncia": 1,
+                "denunciaDesc": "nada",
+                "contactoOrg": 2,
+                "contactoOrgDesc": "Valores",
+                "infoPublicada": 1,
+                "infoPublicadaDesc": "prensa Libre"
+            }
+        ],
+        "ReconoceCampo": [
+            {
+                "reconocimientoCampoId": 1,
+                "entrevistaAmId": 3,
+                "reconocidoCampo": 1,
+                "nombreReconoce": "Jacob Ortega",
+                "parentescoReconoce": "Hermano",
+                "numeroOsamentaReconoce": "FER-36",
+                "medioReconocimiento": "visual"
+            }
+        ],
+        "InfoAdicional": [
+            {
+                "infoAdicionalId": 1,
+                "entrevistaAmId": 3,
+                "autorizaContacto": 1,
+                "autorizaPublicar": "1",
+                "AutorizaHistoriaVida": "1"
+            }
+        ]
+    }
+}
