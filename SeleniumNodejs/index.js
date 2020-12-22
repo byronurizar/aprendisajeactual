@@ -13,14 +13,10 @@ const Prueba = async () => {
         await driver.get("https://farm3.sat.gob.gt/menu/menuAplicacion.jsp?nombreApp=AgenciaVirtual&pllamada=1");
         setTimeout(async () => {
             await (await driver.findElement(By.className("ThemeOffice2003MainItemText"))).click();
-            let itemLi = await driver.findElement(By.css(".lista1 > li"));
-            console.log({ itemLi })
-            for (let item of itemLi) {
-                console.log("valor", item);
-                console.log("texto", item.item.Gettext())
-            }
+            setTimeout(() => {
+                await driver.get("https://felav.c.sat.gob.gt/fel-web/privado/vistas/fel.jsf?Nit=79956882&amp;Clave=68d38ee533b2be52479802343fa326bf")
+            }, 2000);
         }, 1000);
-
     }, 2000);
 
 
