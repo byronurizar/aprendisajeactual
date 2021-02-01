@@ -1,0 +1,11 @@
+C:\Users\byron_urizar\source\repos\PruebaWcf\SelfHost\bin\Debug\SelfHost.exe.config
+C:\Users\byron_urizar\source\repos\PruebaWcf\SelfHost\bin\Debug\SelfHost.exe
+C:\Users\byron_urizar\source\repos\PruebaWcf\SelfHost\bin\Debug\SelfHost.pdb
+C:\Users\byron_urizar\source\repos\PruebaWcf\SelfHost\bin\Debug\PruebaInfo.dll
+C:\Users\byron_urizar\source\repos\PruebaWcf\SelfHost\bin\Debug\PruebaInfo.pdb
+C:\Users\byron_urizar\source\repos\PruebaWcf\SelfHost\bin\Debug\PruebaInfo.dll.config
+C:\Users\byron_urizar\source\repos\PruebaWcf\SelfHost\obj\Debug\SelfHost.csprojAssemblyReference.cache
+C:\Users\byron_urizar\source\repos\PruebaWcf\SelfHost\obj\Debug\SelfHost.csproj.CoreCompileInputs.cache
+C:\Users\byron_urizar\source\repos\PruebaWcf\SelfHost\obj\Debug\SelfHost.csproj.CopyComplete
+C:\Users\byron_urizar\source\repos\PruebaWcf\SelfHost\obj\Debug\SelfHost.exe
+C:\Users\byron_urizar\source\repos\PruebaWcf\SelfHost\obj\Debug\SelfHost.pdb

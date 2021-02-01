@@ -1,0 +1,10 @@
+C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaInfo\bin\Debug\PruebaInfo.dll.config
+C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaInfo\bin\Debug\PruebaInfo.dll
+C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaInfo\bin\Debug\PruebaInfo.pdb
+C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.csprojAssemblyReference.cache
+C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.Form1.resources
+C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.Properties.Resources.resources
+C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.csproj.GenerateResource.cache
+C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.csproj.CoreCompileInputs.cache
+C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.dll
+C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.pdb

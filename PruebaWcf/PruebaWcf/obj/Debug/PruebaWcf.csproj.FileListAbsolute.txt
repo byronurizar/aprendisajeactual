@@ -1,0 +1,8 @@
+C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaWcf\bin\Debug\App.config
+C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaWcf\bin\Debug\service.exe.config
+C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaWcf\bin\Debug\service.exe
+C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaWcf\bin\Debug\service.pdb
+C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaWcf\obj\Debug\PruebaWcf.csproj.CoreCompileInputs.cache
+C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaWcf\obj\Debug\service.exe
+C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaWcf\obj\Debug\service.pdb
+C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaWcf\obj\Debug\PruebaWcf.csprojAssemblyReference.cache
