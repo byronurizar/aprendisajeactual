@@ -7,6 +7,7 @@ using System.ServiceModel;
 using System.ServiceModel.Description;
 using PruebaInfo;
 using System.ServiceModel.Web;
+using System.ServiceModel.Activation;
 
 namespace SelfHost
 {
@@ -14,16 +15,18 @@ namespace SelfHost
     public interface IHelloWorldService
     {
         [OperationContract]
-        //[WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json)]
+        [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json)]
         string SayHello(string name);
     }
+
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
 
     public class HelloWorldService : IHelloWorldService
     {
         public string SayHello(string name)
         {
             AbrirFomulario formulario = new AbrirFomulario();
-           string data=formulario.open();
+            string data = formulario.open();
             return data;
             //return string.Format("Hello, {0}", name);
         }

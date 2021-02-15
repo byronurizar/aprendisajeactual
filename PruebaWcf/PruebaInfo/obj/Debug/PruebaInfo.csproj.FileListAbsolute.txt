@@ -8,3 +8,13 @@ C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.csp
 C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.csproj.CoreCompileInputs.cache
 C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.dll
 C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.pdb
+C:\demoProyects\aprendisajeactual\PruebaWcf\PruebaInfo\bin\Debug\PruebaInfo.dll.config
+C:\demoProyects\aprendisajeactual\PruebaWcf\PruebaInfo\bin\Debug\PruebaInfo.dll
+C:\demoProyects\aprendisajeactual\PruebaWcf\PruebaInfo\bin\Debug\PruebaInfo.pdb
+C:\demoProyects\aprendisajeactual\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.csprojAssemblyReference.cache
+C:\demoProyects\aprendisajeactual\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.Form1.resources
+C:\demoProyects\aprendisajeactual\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.Properties.Resources.resources
+C:\demoProyects\aprendisajeactual\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.csproj.GenerateResource.cache
+C:\demoProyects\aprendisajeactual\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.csproj.CoreCompileInputs.cache
+C:\demoProyects\aprendisajeactual\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.dll
+C:\demoProyects\aprendisajeactual\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.pdb

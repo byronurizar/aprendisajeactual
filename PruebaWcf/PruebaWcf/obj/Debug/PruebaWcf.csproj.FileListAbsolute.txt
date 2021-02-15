@@ -6,3 +6,11 @@ C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaWcf\obj\Debug\PruebaWcf.cspro
 C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaWcf\obj\Debug\service.exe
 C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaWcf\obj\Debug\service.pdb
 C:\Users\byron_urizar\source\repos\PruebaWcf\PruebaWcf\obj\Debug\PruebaWcf.csprojAssemblyReference.cache
+C:\demoProyects\aprendisajeactual\PruebaWcf\PruebaWcf\bin\Debug\App.config
+C:\demoProyects\aprendisajeactual\PruebaWcf\PruebaWcf\bin\Debug\service.exe.config
+C:\demoProyects\aprendisajeactual\PruebaWcf\PruebaWcf\bin\Debug\service.exe
+C:\demoProyects\aprendisajeactual\PruebaWcf\PruebaWcf\bin\Debug\service.pdb
+C:\demoProyects\aprendisajeactual\PruebaWcf\PruebaWcf\obj\Debug\PruebaWcf.csprojAssemblyReference.cache
+C:\demoProyects\aprendisajeactual\PruebaWcf\PruebaWcf\obj\Debug\PruebaWcf.csproj.CoreCompileInputs.cache
+C:\demoProyects\aprendisajeactual\PruebaWcf\PruebaWcf\obj\Debug\service.exe
+C:\demoProyects\aprendisajeactual\PruebaWcf\PruebaWcf\obj\Debug\service.pdb

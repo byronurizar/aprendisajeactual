@@ -1,0 +1,9 @@
+C:\demoProyects\aprendisajeactual\PruebaWcf\WcfService1\bin\WcfService1.dll.config
+C:\demoProyects\aprendisajeactual\PruebaWcf\WcfService1\bin\WcfService1.dll
+C:\demoProyects\aprendisajeactual\PruebaWcf\WcfService1\bin\WcfService1.pdb
+C:\demoProyects\aprendisajeactual\PruebaWcf\WcfService1\bin\Newtonsoft.Json.dll
+C:\demoProyects\aprendisajeactual\PruebaWcf\WcfService1\bin\Newtonsoft.Json.xml
+C:\demoProyects\aprendisajeactual\PruebaWcf\WcfService1\obj\Debug\WcfService1.csproj.CoreCompileInputs.cache
+C:\demoProyects\aprendisajeactual\PruebaWcf\WcfService1\obj\Debug\WcfService1.csproj.CopyComplete
+C:\demoProyects\aprendisajeactual\PruebaWcf\WcfService1\obj\Debug\WcfService1.dll
+C:\demoProyects\aprendisajeactual\PruebaWcf\WcfService1\obj\Debug\WcfService1.pdb

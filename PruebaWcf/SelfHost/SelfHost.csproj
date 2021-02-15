@@ -33,6 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GdPicture.NET.10, Version=10.2.0.12, Culture=neutral, PublicKeyToken=b62102bee80b7c03, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\GdPicture.NET.10\v4.0_10.2.0.12__b62102bee80b7c03\GdPicture.NET.10.dll</HintPath>
+    </Reference>
+    <Reference Include="GdPicture.NET.10.PDF, Version=3.1.0.12, Culture=neutral, PublicKeyToken=b1d4d4d8c4f6a901, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\GdPicture.NET.10.PDF\v4.0_3.1.0.12__b1d4d4d8c4f6a901\GdPicture.NET.10.PDF.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceModel" />
