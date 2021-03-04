@@ -1,0 +1,1 @@
+var urlApi="http://localhost:3200/entrevista/genograma";
