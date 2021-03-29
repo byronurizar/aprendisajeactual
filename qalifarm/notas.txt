@@ -1,0 +1,75 @@
+Viñeta=> 
+MODULO DE BONOS
+ingreso de valor de viñetas con un numer
+Generación de bonos se ingresa el numer ode factura que se ingreso de SAP
+Opcion Pago de bono, esto lo realiza otro usuario se selecciona el numero de la factura, El bono se tiene que leer una sola vez, y se cambia el estado a pagado
+
+
+SQL
+PagoA se actualiza el campo pago a si
+
+CAMPOS SAP
+
+
+
+
+Generación de bonos en base a número de factura y luego generar viñetas => en bd nos genera una viñeta por cada 
+en viñetas 
+Guardar el número de documento en la proforma 
+
+
+
+TABLAS SAP
+OS_DETALLE_FACTURAS4 where DocNum='10020500'
+LineNum=0
+Quantity indica el número viñetas
+el valor de cada viñeta 
+el codigo de la viñeta debe de ser el DocNum
+
+
+para saber el valor de la viñeta 
+select * from ItemValor
+el valor seria Valor
+
+
+Ingreso valor viñeta
+se ingresa el codigo del producto y pregunta cual es el valor de la viñeta
+
+el valor de la viñeta no se valida, solo lo ingresan 
+
+El valor de la viñeta se deberia de actualizar y indicar que existe
+
+
+IMPRESION DE viñetas
+Generación de biñetas se ingresa numero de factura y generar viñeta, 
+
+
+INGRESO DE VALOR DE VIÑETAS USUARIO TIPO ADMINISTRADOR
+
+Los usuarios se deben de ir a traer a SAP
+
+
+Generar número de liquidacipon al pago de bonos.
+
+La impresión de las viñetas se debe de realizar directo a la impresora 
+
+
+Si leen un bono que ya fue pagado debe de indicar cuando fue pagado 
+Un bono pagado no suma.
+
+Select * from[Hana64].."TEST_QUALI"."OS_DETALLE_FACTURAS4" where "DocNum" = '10020500'
+
+
+
+
+------------------
+Registro de bonos => Ingreso de vlor de viñetas soliciar el codigo de venta
+
+Generación de viñetas => se ingresa el no de factura y se deben de enviar a imprimir las viñetas
+
+Pago de bonos => Tipo de persona 
+
+Genera viñetas => se utiliza el número de factura solo debe generar una sola vez las viñetas
+	En una correcta nos genera una la cantidad de viñetas que indica en el detalle y utilizar la cantidad de cada linea
+en la base de datos actual en la tabla vineta y columna InvoiceNo se debe de registrar el número de la proforma
+
