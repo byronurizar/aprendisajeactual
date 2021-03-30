@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajax-unobtrusive/3.2.6/jquery.unobtrusive-ajax.min.js"></script>
+</head>
+<script>
+    // https://www.yaplex.com/blog/how-to-call-wcf-services-from-javascript-jquery-and-asp-net-ajax
+    const gerInfo = () => {
+        //var url = "http://localhost:59383/Service1.svc";
+        // $.ajax({
+        //     type: "POST",
+        //     url: url + "/TestMethod",
+        //     data: "{}",
+        //     contentType: "application/json; charset=utf-8",
+        //     dataType: "json",
+        //     success: OnSuccessCall,
+        //     error: OnErrorCall
+        // });
+
+        // function OnSuccessCall(response) {
+        //     alert(response.d);
+        // }
+
+
+        // function OnErrorCall(response) {
+        //     alert(response.status + " " + response.statusText);
+        // }
+
+        $.ajax({
+            url: "http://localhost:8080/hello",
+            dataType: "json",
+            timeout: 10000,
+            data: "{'name':'Pruebas'}",
+            type: "POST",
+            success: function (data, textStatus, jqXHR) {
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+            },
+            complete: function (jqXHR, textStatus) {
+            }
+        });
+    }
+
+    const getInfo2 = () => {
+        $.getJSON("http://localhost:59383/Service1.svc/GetData", {},
+            function (data) {
+                alert(data);
+            });
+    }
+</script>
+
+<body>
+    <input type="text" id="txtPrueba" />
+    <button onclick="gerInfo();">Get info</button>
+    <button onclick="getInfo2();">Get info 2</button>
+</body>
+
+</html>
