@@ -31,13 +31,22 @@
         // function OnErrorCall(response) {
         //     alert(response.status + " " + response.statusText);
         // }
-
+        $.support.cors = true;
+		
+		var myUserName = 'Test';
+		var myUserPassword = 'test1234';
+        var serviceUrl = 'http://localhost:24706/';		
+		
+		function getHeaders() {
+			 //btoa is a built in browser cmd for encode Base64
+			return { 'Authorization': "Basic " + btoa("test:testpw") };
+		}
         $.ajax({
-            url: "http://localhost:8080/hello",
-            dataType: "json",
-            timeout: 10000,
-            data: "{'name':'Pruebas'}",
-            type: "POST",
+            headers: getHeaders(),
+            url: "http://localhost:24706/MyService.svc/Items",
+            type: "GET",
+			// tell jQuery we're expecting JSONP
+			dataType: "json",
             success: function (data, textStatus, jqXHR) {
             },
             error: function (jqXHR, textStatus, errorThrown) {

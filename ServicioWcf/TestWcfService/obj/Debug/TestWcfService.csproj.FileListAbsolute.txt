@@ -1,0 +1,22 @@
+C:\Users\byronurizar\Downloads\Codeninja.TestWcfService-master\Codeninja.TestWcfService-master\TestWcfService\obj\Debug\TestWcfService.csprojAssemblyReference.cache
+C:\Users\byronurizar\Downloads\Codeninja.TestWcfService-master\Codeninja.TestWcfService-master\TestWcfService\obj\Debug\TestWcfService.csproj.CoreCompileInputs.cache
+C:\Users\byronurizar\Downloads\Codeninja.TestWcfService-master\Codeninja.TestWcfService-master\TestWcfService\bin\TestWcfService.dll.config
+C:\Users\byronurizar\Downloads\Codeninja.TestWcfService-master\Codeninja.TestWcfService-master\TestWcfService\bin\TestWcfService.dll
+C:\Users\byronurizar\Downloads\Codeninja.TestWcfService-master\Codeninja.TestWcfService-master\TestWcfService\bin\TestWcfService.pdb
+C:\Users\byronurizar\Downloads\Codeninja.TestWcfService-master\Codeninja.TestWcfService-master\TestWcfService\bin\PruebaInfo.dll
+C:\Users\byronurizar\Downloads\Codeninja.TestWcfService-master\Codeninja.TestWcfService-master\TestWcfService\bin\PruebaInfo.pdb
+C:\Users\byronurizar\Downloads\Codeninja.TestWcfService-master\Codeninja.TestWcfService-master\TestWcfService\bin\PruebaInfo.dll.config
+C:\Users\byronurizar\Downloads\Codeninja.TestWcfService-master\Codeninja.TestWcfService-master\TestWcfService\obj\Debug\TestWcfService.csproj.CopyComplete
+C:\Users\byronurizar\Downloads\Codeninja.TestWcfService-master\Codeninja.TestWcfService-master\TestWcfService\obj\Debug\TestWcfService.dll
+C:\Users\byronurizar\Downloads\Codeninja.TestWcfService-master\Codeninja.TestWcfService-master\TestWcfService\obj\Debug\TestWcfService.pdb
+D:\Aprendizaje\Cursos Actuales\ServicioWcf\TestWcfService\bin\TestWcfService.dll.config
+D:\Aprendizaje\Cursos Actuales\ServicioWcf\TestWcfService\bin\TestWcfService.dll
+D:\Aprendizaje\Cursos Actuales\ServicioWcf\TestWcfService\bin\TestWcfService.pdb
+D:\Aprendizaje\Cursos Actuales\ServicioWcf\TestWcfService\bin\PruebaInfo.dll
+D:\Aprendizaje\Cursos Actuales\ServicioWcf\TestWcfService\bin\PruebaInfo.pdb
+D:\Aprendizaje\Cursos Actuales\ServicioWcf\TestWcfService\bin\PruebaInfo.dll.config
+D:\Aprendizaje\Cursos Actuales\ServicioWcf\TestWcfService\obj\Debug\TestWcfService.csprojAssemblyReference.cache
+D:\Aprendizaje\Cursos Actuales\ServicioWcf\TestWcfService\obj\Debug\TestWcfService.csproj.CoreCompileInputs.cache
+D:\Aprendizaje\Cursos Actuales\ServicioWcf\TestWcfService\obj\Debug\TestWcfService.csproj.CopyComplete
+D:\Aprendizaje\Cursos Actuales\ServicioWcf\TestWcfService\obj\Debug\TestWcfService.dll
+D:\Aprendizaje\Cursos Actuales\ServicioWcf\TestWcfService\obj\Debug\TestWcfService.pdb

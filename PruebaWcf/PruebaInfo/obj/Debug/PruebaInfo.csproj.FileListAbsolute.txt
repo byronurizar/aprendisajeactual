@@ -17,3 +17,12 @@ C:\demoProyects\aprendisajeactual\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.cspr
 C:\demoProyects\aprendisajeactual\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.csproj.CoreCompileInputs.cache
 C:\demoProyects\aprendisajeactual\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.dll
 C:\demoProyects\aprendisajeactual\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.pdb
+D:\Aprendizaje\Cursos Actuales\PruebaWcf\PruebaInfo\bin\Debug\PruebaInfo.dll.config
+D:\Aprendizaje\Cursos Actuales\PruebaWcf\PruebaInfo\bin\Debug\PruebaInfo.dll
+D:\Aprendizaje\Cursos Actuales\PruebaWcf\PruebaInfo\bin\Debug\PruebaInfo.pdb
+D:\Aprendizaje\Cursos Actuales\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.Form1.resources
+D:\Aprendizaje\Cursos Actuales\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.Properties.Resources.resources
+D:\Aprendizaje\Cursos Actuales\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.csproj.GenerateResource.cache
+D:\Aprendizaje\Cursos Actuales\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.csproj.CoreCompileInputs.cache
+D:\Aprendizaje\Cursos Actuales\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.dll
+D:\Aprendizaje\Cursos Actuales\PruebaWcf\PruebaInfo\obj\Debug\PruebaInfo.pdb

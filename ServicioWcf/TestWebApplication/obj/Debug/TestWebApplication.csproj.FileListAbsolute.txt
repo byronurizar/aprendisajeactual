@@ -1,0 +1,7 @@
+C:\Users\byronurizar\Downloads\Codeninja.TestWcfService-master\Codeninja.TestWcfService-master\TestWebApplication\bin\TestWebApplication.dll.config
+C:\Users\byronurizar\Downloads\Codeninja.TestWcfService-master\Codeninja.TestWcfService-master\TestWebApplication\bin\TestWebApplication.dll
+C:\Users\byronurizar\Downloads\Codeninja.TestWcfService-master\Codeninja.TestWcfService-master\TestWebApplication\bin\TestWebApplication.pdb
+C:\Users\byronurizar\Downloads\Codeninja.TestWcfService-master\Codeninja.TestWcfService-master\TestWebApplication\obj\Debug\TestWebApplication.csprojAssemblyReference.cache
+C:\Users\byronurizar\Downloads\Codeninja.TestWcfService-master\Codeninja.TestWcfService-master\TestWebApplication\obj\Debug\TestWebApplication.csproj.CoreCompileInputs.cache
+C:\Users\byronurizar\Downloads\Codeninja.TestWcfService-master\Codeninja.TestWcfService-master\TestWebApplication\obj\Debug\TestWebApplication.dll
+C:\Users\byronurizar\Downloads\Codeninja.TestWcfService-master\Codeninja.TestWcfService-master\TestWebApplication\obj\Debug\TestWebApplication.pdb

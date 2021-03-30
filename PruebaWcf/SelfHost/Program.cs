@@ -15,7 +15,7 @@ namespace SelfHost
     public interface IHelloWorldService
     {
         [OperationContract]
-        [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json)]
+        [WebInvoke(UriTemplate = "/TestMethod", Method = "POST", BodyStyle = WebMessageBodyStyle.Bare, RequestFormat = WebMessageFormat.Json)]
         string SayHello(string name);
     }
 
