@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\blopez\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\blopez\\.nuget\\packages"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "aBrGdupIyMHe+kTpSWlkLgW8Yn2wZDvNWZE319pa9CD0vdaHojSrBb2h+BgHBBYHhCibhX5qbSW9mjiOOdqtIA==",
+  "success": true,
+  "projectFilePath": "C:\\demoProyects\\aprendisajeactual\\Prueba winforms\\Prueba winforms.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\blopez\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\blopez\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\blopez\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\blopez\\.nuget\\packages\\microsoft.netcore.app.host.win-x86\\5.0.13\\microsoft.netcore.app.host.win-x86.5.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

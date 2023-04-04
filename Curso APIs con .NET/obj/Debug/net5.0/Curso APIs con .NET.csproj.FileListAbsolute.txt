@@ -1,0 +1,28 @@
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\bin\Debug\net5.0\appsettings.Development.json
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\bin\Debug\net5.0\appsettings.json
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\bin\Debug\net5.0\Curso APIs con .NET.exe
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\bin\Debug\net5.0\Curso APIs con .NET.deps.json
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\bin\Debug\net5.0\Curso APIs con .NET.runtimeconfig.json
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\bin\Debug\net5.0\Curso APIs con .NET.runtimeconfig.dev.json
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\bin\Debug\net5.0\Curso APIs con .NET.dll
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\bin\Debug\net5.0\ref\Curso APIs con .NET.dll
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\bin\Debug\net5.0\Curso APIs con .NET.pdb
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\obj\Debug\net5.0\Curso APIs con .NET.csproj.AssemblyReference.cache
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\obj\Debug\net5.0\Curso APIs con .NET.GeneratedMSBuildEditorConfig.editorconfig
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\obj\Debug\net5.0\Curso APIs con .NET.AssemblyInfoInputs.cache
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\obj\Debug\net5.0\Curso APIs con .NET.AssemblyInfo.cs
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\obj\Debug\net5.0\Curso APIs con .NET.csproj.CoreCompileInputs.cache
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\obj\Debug\net5.0\Curso APIs con .NET.MvcApplicationPartsAssemblyInfo.cs
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\obj\Debug\net5.0\Curso APIs con .NET.MvcApplicationPartsAssemblyInfo.cache
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\obj\Debug\net5.0\staticwebassets\Curso APIs con .NET.StaticWebAssets.Manifest.cache
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\obj\Debug\net5.0\scopedcss\bundle\Curso APIs con .NET.styles.css
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\obj\Debug\net5.0\Curso APIs con .NET.RazorTargetAssemblyInfo.cache
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\obj\Debug\net5.0\Curso APIs con .NET.csproj.CopyComplete
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\obj\Debug\net5.0\Curso APIs con .NET.dll
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\obj\Debug\net5.0\ref\Curso APIs con .NET.dll
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\obj\Debug\net5.0\Curso APIs con .NET.pdb
+C:\demoProyects\aprendisajeactual\Curso APIs con .NET\obj\Debug\net5.0\Curso APIs con .NET.genruntimeconfig.cache
